@@ -70,7 +70,7 @@ You are all set now. `mvn package` command will generate a JAR (and tarballs) in
 
 ## Watching project activities
 
-
+If you are a regular contributor, you'd better subscribe to the [project activity feed](http://feeds2.feedburner.com/netty_project_activities) using your RSS reader.  Alternatively, the activity is sent to the `netty-commits` mailing list.
 
 ## Making a contribution
 
