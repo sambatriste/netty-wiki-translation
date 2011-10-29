@@ -1,4 +1,4 @@
-The Netty project is an effort to provide an asynchronous event-driven network application framework and tools for rapid development of maintainable high performance & high scalability protocol servers & clients.
+The Netty project is an effort to provide an event-driven asynchronous network application framework and tools for rapid development of maintainable high performance & high scalability protocol servers & clients.
 
 * [[Introduction]]
 * [[Documentation]]
