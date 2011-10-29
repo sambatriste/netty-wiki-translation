@@ -9,6 +9,6 @@ The Netty project is an effort to provide an asynchronous event-driven network a
 
 ### Useful Links
 
-* [RSS feed for the project activities](http://feeds.feedburner.com/netty_project_activities)
 * [Twitter](https://twitter.com/netty_project/)
 * [Forums and mailing lists](http://jboss.org/community)
+* [RSS feed for development activities](http://feeds.feedburner.com/netty_project_activities)
