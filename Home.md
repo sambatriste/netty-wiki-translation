@@ -7,7 +7,7 @@ The Netty project is an effort to provide an event-driven asynchronous network a
 * [[Related Projects]]
 * [[Frequently Asked Questions]]
 
-### Useful Links
+## Useful Links
 
 * [Twitter](https://twitter.com/netty_project/)
 * [Forums and mailing lists](http://jboss.org/community)
