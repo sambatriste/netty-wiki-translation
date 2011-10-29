@@ -70,7 +70,7 @@ You are all set now. `mvn package` command will generate a JAR (and tarballs) in
 
 ## Watching project activities
 
-If you are a regular contributor, you'd better subscribe to the [project activity feed](http://feeds2.feedburner.com/netty_project_activities) using your RSS reader.  Alternatively, you can watch the project so that the project activities appear in your Github dashboard, by clicking the 'Watch' button on the [project page](..).
+If you are a regular contributor, you'd better subscribe to the [project activity feed](http://feeds2.feedburner.com/netty_project_activities) using your RSS reader.  Alternatively, you can watch the project so that the project activities appear in your Github dashboard, by clicking the 'Watch' button on the [project page](..). (If you are already watching the project, you will see the 'Unwatch' button instead.)
 
 ## Making a contribution
 
