@@ -1,4 +1,4 @@
-elated Projects based on Netty
+Related Projects based on Netty
 Main Column Settings
 EditMove	Delete
 Do you know an open · closed source project or an online service that use Netty as its networking layer? Please contact us either publicly or privately so that we can list it here.
