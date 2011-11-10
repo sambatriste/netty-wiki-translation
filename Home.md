@@ -2,4 +2,3 @@ For official documentation, please visit [our web site](http://jboss.org/netty).
 
 * [[Related Articles]]
 * [[Related Projects]]
-* [[Related Services]]
