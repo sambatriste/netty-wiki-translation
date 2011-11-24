@@ -1,7 +1,7 @@
 Open Source Projects
 
-    Accord Odette FTP is an OFTP client library that communicates with an OFTP server of various versions including 1.3, 1.4, and 2.0.
-    Actorom is a pure Java implementation of the actor model, aimed at making message-passing concurrency mainstream in everyday Java development.
+* __Accord Odette FTP__ is an OFTP client library that communicates with an OFTP server of various versions including 1.3, 1.4, and 2.0.
+* __Actorom__ is a pure Java implementation of the actor model, aimed at making message-passing concurrency mainstream in everyday Java development.
     Akka is a Scala-based platform that provides simpler scalability, fault-tolerance, concurrency, and remoting through the actor model and software transactional memory.
     Apache James Server is a modular e-mail server platform that integrates SMTP, POP3, IMAP, and NNTP.
     Aspen is a web server engine for JRuby, which is similar to Thin.
