@@ -16,7 +16,7 @@
 * **jGNTP** is a Java-based GNTP implementation that allows your application interacts with a Growl server.
 * **JMemcached** is an implementation of the server side of the memcached protocol.
 * **JXTA** is a set of open protocols that enable any connected device on the network, ranging from cell phones and wireless PDAs to PCs and servers, to communicate and collaborate in a P2P manner.
-* **ICAP Codec** is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
+* **NETTY-ICAP Codec** is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
 * **LittleProxy** is a high-performance HTTP proxy.
 * **LittleShoot** is an open source P2P technology for publishing, searching, and downloading files based on open protocols and open standards.
 * **MessagePack** is a binary-based efficient object serialization library that enables to exchange structured objects between many languages.
