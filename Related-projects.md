@@ -31,6 +31,7 @@
 * **OpenTSDB** is a distributed, scalable, Time Series Database written on top of HBase to store, index, and serve the metrics collected from computer systems.
 * **Play Framework** is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * **PS3 Media Server** is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
+* **RESTExpress** A lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
 * **Restlet Netty** extension is a Restlet server extension that provides REST capabilities on top of Netty.
 * **Teiid** is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * **TomP2P** is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
