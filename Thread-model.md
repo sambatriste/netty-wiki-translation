@@ -29,5 +29,6 @@ Questions:
 * Can we make all these changes in v3 and keep things still backward-compatible?  Wouldn't it be easier to get this done in v4?  Fully asynchronous user application which does all I/O in an handler making heavy use of `ChannelFuture` shouldn't be affected by the current flawed thread model, which means a user can somehow work around this issue, so it might be better move on to v4 instead of making the same changes on two branches.
 
 Answers:
+
 * I think if its to much work to "backport" it to v3 we should just move ahead and "ignore" it for v3. Maybe we can find some "easier" workaround for v3 which would at least help us to get rid of the Channel.close() race, as this is the one that will most likely hit our users. (normanmaurer)
 
