@@ -8,6 +8,8 @@ Current problems (UGLY - causes a race condition in an upstream handler, BAD - d
 * UGLY: The upstream events triggered as a side effect of a downstream event is triggered by the caller thread, 
 * UGLY: The local transport always uses a caller thread to trigger an event.
 * BAD: `channelOpen` is triggered by the thread that called `ChannelFactory.newChannel()`, which is not an I/O thread.
+       It's kind of bad but otherwise its not possible to  limit the concurrent active channels by closing the channel here. If we would do this in the IO-Thread it would not be that efficient.
+
 * BAD: Client-side channels are run by two I/O threads.  One that makes a connection attempts and the other that does actual I/O.
 
 Action items:
@@ -25,3 +27,4 @@ Action items:
 Questions:
 
 * Can we make all these changes in v3 and keep things still backward-compatible?  Wouldn't it be easier to get this done in v4?  Fully asynchronous user application which does all I/O in an handler making heavy use of `ChannelFuture` shouldn't be affected by the current flawed thread model, which means a user can somehow work around this issue, so it might be better move on to v4 instead of making the same changes on two branches.
+
