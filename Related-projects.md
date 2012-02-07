@@ -37,6 +37,7 @@
 * **TomP2P** is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
 * **Unfiltered** is a toolkit for servicing HTTP requests in Scala that provides a consistent vocabulary for handing requests on various server backends.
 * **Webbit** is an event-based WebSocket and HTTP server.
+* **Xitrum** is an async and clustered Scala web framework and HTTP(S) server on top of Netty and Hazelcast.
 
 ## Closed Source Projects and On-line Services
 
