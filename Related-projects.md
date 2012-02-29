@@ -13,6 +13,7 @@
 * **Hotpotato** is a high performance and throughput oriented HTTP client library.
 * **Infinispan** is an extremely scalable, highly avaiable data grid platform.
 * **JBossWS** is a feature-rich JAX-WS compatible web service stack.
+* **Jetserver** is a fast multiplayer java game server written using JBoss Netty and Mike Rettig's Jetlang.It supports TCP and UDP transmission and flash amf3 protocol.
 * **jGNTP** is a Java-based GNTP implementation that allows your application interacts with a Growl server.
 * **JMemcached** is an implementation of the server side of the memcached protocol.
 * **JXTA** is a set of open protocols that enable any connected device on the network, ranging from cell phones and wireless PDAs to PCs and servers, to communicate and collaborate in a P2P manner.
