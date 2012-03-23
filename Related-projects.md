@@ -9,6 +9,7 @@
 * **Elastic Search** is a distributed RESTful search engine built on top of Lucene.
 * **Eucalyptus** is a software infrastructure for implementing on-premise cloud computing using an organization's own IT infrastructure, without modification, special-purpose hardware or reconfiguration.
 * **Flazr** is an implementation of protocols such as RTMP used for multimedia streaming.
+* **[Forest](https://github.com/le-moulin-studio/forest)** is a general purpose friend-to-friend platform.
 * **HornetQ** is a project to build a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system.
 * **Hotpotato** is a high performance and throughput oriented HTTP client library.
 * **Infinispan** is an extremely scalable, highly avaiable data grid platform.
