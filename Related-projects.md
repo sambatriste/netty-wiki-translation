@@ -44,10 +44,10 @@
 
 ## Closed Source Projects and On-line Services
 
-* Apple - in their cloud services according to their job postings.
-* ESN Planet is a feature-rich social real-time web platform which scales horizontally and vertically.
-* Kakao Talk is a mobile messenger over 20 million people have chosen.  They are using Netty for their Android push servers.
-* LiquidLabs LogScape is a high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
-* [RememberTheMilk](http://www.rememberthemilk.com/) - check their blog post.
-* [Twitter](https://twitter.com/) - check their blog post.
+* [Apple](http://www.apple.com/) uses Netty in their cloud services.
+* [ESN Planet](http://www.esn.me/product/planet/) is a feature-rich social real-time web platform which scales horizontally and vertically.
+* [Kakao Talk](http://www.kakao.com/talk/en) is a mobile messenger over 40 million people use.  They built their Android push server with Netty.
+* [LiquidLabs LogScape](http://www.liquidlabs.com/) is a high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
+* [RememberTheMilk](http://www.rememberthemilk.com/) - check their [blog post](http://blog.rememberthemilk.com/2011/08/real-time-updating-comes-to-the-remember-the-milk-web-app/).
+* [Twitter](https://twitter.com/) - check their [blog post](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) and many of their [open source projects](https://github.com/twitter/).
 * [Boundary](http://blog.boundary.com/2012/05/02/know-a-delay-nagles-algorithm-and-you/) - monitors the continuously changing environment of distributed applications in real-time
