@@ -48,5 +48,6 @@
 * **ESN Planet** is a feature-rich social real-time web platform which scales horizontally and vertically.
 * **Kakao Talk** is a mobile messenger over 20 million people have chosen.  They are using Netty for their Android push servers.
 * **LiquidLabs LogScape** is a high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
-* **RememberTheMilk** - check their blog post.
-* **Twitter** - check their blog post.
+* [RememberTheMilk](http://www.rememberthemilk.com/) - check their blog post.
+* [Twitter](https://twitter.com/) - check their blog post.
+* [Boundary](http://blog.boundary.com/2012/05/02/know-a-delay-nagles-algorithm-and-you/) - monitors the continuously changing environment of distributed applications in real-time
