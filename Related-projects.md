@@ -39,6 +39,7 @@
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [TomP2P](http://tomp2p.net) is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html) is a toolkit for servicing HTTP requests in Scala that provides a consistent vocabulary for handing requests on various server backends.
+* [Vert.x](http://vertx.io) - Effortless asynchronous application development for the modern web and enterprise 
 * [Webbit](http://webbitserver.org) is an event-based WebSocket and HTTP server.
 * [Xitrum](http://www.xitrum.net) is an async and clustered Scala web framework and HTTP(S) server on top of Netty and Hazelcast.
 
