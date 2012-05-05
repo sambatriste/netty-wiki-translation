@@ -32,6 +32,7 @@
 * [Norbert](http://sna-projects.com/norbert) is a Scala library which provides cluster management and easy workload partitioning to make building a cluster aware application easy.
 * [OpenR66](http://openr66.free.fr) is an open source file transfer monitor that implements FTP, SSH, HTTP, and proprietary protocols in an efficient and secure way.
 * [OpenTSDB](http://opentsdb.net) is a distributed, scalable, Time Series Database written on top of HBase to store, index, and serve the metrics collected from computer systems.
+* [Peregrine](http://peregrine_mapreduce.bitbucket.org/) is a map reduce framework designed for running iterative jobs across partitions of data. Peregrine is designed to be FAST for executing map reduce jobs by supporting a number of optimizations and features not present in other map reduce frameworks.
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
