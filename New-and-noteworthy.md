@@ -22,9 +22,10 @@ The binary JAR has been split into multiple submodules so that a user can exclud
 
 All Netty jars (except of the netty-all) are now OSGI bundles and can be used in your favorite OSGI-Container.
 
-## Method-Chaining all the way
+## General API changes
 
-Most of operations in Netty now support method chaining to make the usage less cumbersome.
+* Most operations in Netty now supports method chaining for brevity.
+* Non-configuration getters have no `get/is` prefix anymore (e.g. `Channel.getRemoteAddress()` → `Channel.remoteAddress()`)
 
 ## Buffer API changes
 
