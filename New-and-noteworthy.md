@@ -570,26 +570,26 @@ This section shows rough steps to port the Factorial example from 3.x to 4.0.  T
 
 ### Porting the server
 
-# Rewrite `FactorialServer.run()` method to use the new bootstrap API.
-  # No `ChannelFactory` anymore.  Instantiate `NioEventLoop` (one for accepting incoming connections and the other for handling the accepted connections) by yourself.
-# Rename `FactorialServerPipelineFactory` to `FactorialServerInitializer`.
-  # Make it extends `ChannelInitializer<Channel>`.
-  # Instead of creating a new `ChannelPipeline`, get it via `Channel.pipeline()`.
-# Make `FactorialServerHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`.
-  # Replace channelDisconnected() with channelInactive().
-  # handleUpstream() is not used anymore.
-# Make `BigIntegerDecoder` extend `ByteToMessageDecoder<BigInteger>`.
-# Make `NumberEncoder` extend `MessageToByteEncoder<Number>`.
-  # `encode()` does not return a buffer anymore.  Fill the encoded data to the buffer provided by `ByteToMessageDecoder`.
+1. Rewrite `FactorialServer.run()` method to use the new bootstrap API.
+  1. No `ChannelFactory` anymore.  Instantiate `NioEventLoop` (one for accepting incoming connections and the other for handling the accepted connections) by yourself.
+1. Rename `FactorialServerPipelineFactory` to `FactorialServerInitializer`.
+  1. Make it extends `ChannelInitializer<Channel>`.
+  1. Instead of creating a new `ChannelPipeline`, get it via `Channel.pipeline()`.
+1. Make `FactorialServerHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`.
+  1. Replace channelDisconnected() with channelInactive().
+  1. handleUpstream() is not used anymore.
+1. Make `BigIntegerDecoder` extend `ByteToMessageDecoder<BigInteger>`.
+1. Make `NumberEncoder` extend `MessageToByteEncoder<Number>`.
+  1. `encode()` does not return a buffer anymore.  Fill the encoded data to the buffer provided by `ByteToMessageDecoder`.
 
 ### Porting the client
 
 Mostly same with porting the server, but you need to pay attention when you write a potentially large stream.
 
-# Rewrite `FactorialClient.run()` method to use the new bootstrap API.
-# Rename `FactorialClientPipelineFactory` to `FactorialClientInitializer`.
-# Make `FactorialClientHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`
-  # At this point, you find there is no `Channel.isWritable()` nor `channelInterestChanged()` in 4.0.  Instead, you maintain the number of pending writes by yourself.  The new `sendNumbers()` could look like the following:
+1. Rewrite `FactorialClient.run()` method to use the new bootstrap API.
+1. Rename `FactorialClientPipelineFactory` to `FactorialClientInitializer`.
+1. Make `FactorialClientHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`
+  1. At this point, you find there is no `Channel.isWritable()` nor `channelInterestChanged()` in 4.0.  Instead, you maintain the number of pending writes by yourself.  The new `sendNumbers()` could look like the following:
 
 ```
     private void sendNumbers() {
