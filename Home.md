@@ -20,29 +20,29 @@ There are several examples to help your experience with Netty. It is recommended
 
 ### Fundamental
 
-* Echo - the very basic client and server
-* Discard - prevent OutOfMemoryError which is caused by writing too fast
-* UpTime - implement reliable client-side reconnection
+* [Echo](http://netty.io/3.6/xref/org/jboss/netty/example/echo/package-summary.html) - the very basic client and server
+* [Discard](http://netty.io/3.6/xref/org/jboss/netty/example/discard/package-summary.html) - prevent OutOfMemoryError which is caused by writing too fast
+* [UpTime](http://netty.io/3.6/xref/org/jboss/netty/example/uptime/package-summary.html) - implement reliable client-side reconnection
 
 ### Text protocols
 
-* Telnet - a classic line-based network application
-* Quote of the Moment - broadcast UDP/IP client and server
-* SecureChat - an SSL-based chat server derived from the Telnet example
+* [Telnet](http://netty.io/3.6/xref/org/jboss/netty/example/telnet/package-summary.html) - a classic line-based network application
+* [Quote](http://netty.io/3.6/xref/org/jboss/netty/example/qotm/package-summary.html) of the Moment - broadcast UDP/IP client and server
+* [SecureChat](http://netty.io/3.6/xref/org/jboss/netty/example/securechat/package-summary.html) - an SSL-based chat server derived from the Telnet example
 
 ### Binary protocols
 
-* ObjectEcho - exchange serializable Java objects
-* Factorial - write a stateful client / server based on custom binary protocol
-* LocalTime - rapid protocol prototyping with Google Protocol Buffers integration
+* [ObjectEcho](http://netty.io/3.6/xref/org/jboss/netty/example/objectecho/package-summary.html) - exchange serializable Java objects
+* [Factorial](http://netty.io/3.6/xref/org/jboss/netty/example/objectecho/package-summary.html) - write a stateful client / server based on custom binary protocol
+* [LocalTime](http://netty.io/3.6/xref/org/jboss/netty/example/localtime/package-summary.html) - rapid protocol prototyping with Google Protocol Buffers integration
 
 ### HTTP
 
-* HTTP (Snoop) - build your own extremely light-weight HTTP client and server
-* HTTP (File Server) - asynchronous large file streaming in HTTP
-* Web Socket Client & Server - add two-way full-duplex communication channels to HTTP using Web Sockets protocol
+* [HTTP (Snoop)](http://netty.io/3.6/xref/org/jboss/netty/example/http/snoop/package-summary.html) - build your own extremely light-weight HTTP client and server
+* [HTTP (File Server)](http://netty.io/3.6/xref/org/jboss/netty/example/http/file/package-summary.html) - asynchronous large file streaming in HTTP
+* Web Socket [Client](http://netty.io/3.6/xref/org/jboss/netty/example/http/websocketx/client/package-summary.html) & [Server](http://netty.io/3.6/xref/org/jboss/netty/example/http/websocketx/server/package-summary.html) - add two-way full-duplex communication channels to HTTP using Web Sockets protocol
 
 ### Advanced
 
-* Proxy Server - write a highly efficient NIO proxy server
-* Port Unification - run heterogenous services listening on a single port
+* [Proxy Server](http://netty.io/3.6/xref/org/jboss/netty/example/proxy/package-summary.html) - write a highly efficient NIO proxy server
+* [Port Unification](http://netty.io/3.6/xref/org/jboss/netty/example/portunification/package-summary.html) - run heterogenous services listening on a single port
