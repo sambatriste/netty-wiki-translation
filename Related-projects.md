@@ -30,18 +30,16 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
 * [Nifty](https://github.com/facebook/nifty) is a Netty-based Thrift transport implementation.
 * [NIOSMTP](https://github.com/normanmaurer/niosmtp) is an asynchronous SMTP client implementation.
-* [Norbert](http://sna-projects.com/norbert) is a Scala library which provides cluster management and easy workload partitioning to make building a cluster aware application easy.
-* [OpenR66](http://openr66.free.fr) is an open source file transfer monitor that implements FTP, SSH, HTTP, and proprietary protocols in an efficient and secure way.
 * [OpenTSDB](http://opentsdb.net) is a distributed, scalable, Time Series Database written on top of HBase to store, index, and serve the metrics collected from computer systems.
 * [Peregrine](http://peregrine_mapreduce.bitbucket.org/) is a map reduce framework designed for running iterative jobs across partitions of data. Peregrine is designed to be FAST for executing map reduce jobs by supporting a number of optimizations and features not present in other map reduce frameworks.
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
-* [Restlet Netty](http://wiki.restlet.org/docs_2.0/13-restlet/28-restlet/296-restlet.html) extension is a Restlet server extension that provides REST capabilities on top of Netty.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [TomP2P](http://tomp2p.net) is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html) is a toolkit for servicing HTTP requests in Scala that provides a consistent vocabulary for handing requests on various server backends.
-* [Vert.x](http://vertx.io) - Effortless asynchronous application development for the modern web and enterprise 
+* [Vert.x](http://vertx.io) is an effortless asynchronous application development for the modern web and enterprise 
+* [WaarpFtp](http://waarp.github.com/WaarpFtp/) is an FTP Server based on Netty
 * [Webbit](http://webbitserver.org) is an event-based WebSocket and HTTP server.
 * [Xitrum](http://www.xitrum.net) is an async and clustered Scala web framework and HTTP(S) server on top of Netty and Hazelcast.
 
