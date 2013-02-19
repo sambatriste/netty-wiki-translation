@@ -24,6 +24,10 @@ A pull request often contains multiple comments.  Those commits must be squashed
 
 Do not merge a pull request via the web UI unless there's a good reason doing that. Refer to the 'Patch and Apply' section in [the Github help page](https://help.github.com/articles/using-pull-requests#merging-a-pull-request).
 
-### Design ideas
+## Writing a new post
+
+Our web site is generated from an Awestruct project [here](https://github.com/netty/netty-website).  To post a new article, create a new branch, write a new post, and issue a pull request like usual contributions.
+
+## Design ideas
 
 * [[Thread model in 4.x|Thread model]]
