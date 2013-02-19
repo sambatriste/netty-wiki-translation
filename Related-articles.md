@@ -1,15 +1,54 @@
-Please add links to the articles related with Netty here:
+Please make sure the newer article appears first.
 
-    A Simple Netty HTTP Server in Clojure by Nate Murray on 30-Jul-2010
-    512,000 concurrent websockets with Groovy++ and Gretty by Alex Tkachman on 29-Jul-2010
-    Handshaking tutorial with Netty by Bruno de Carvalho on 15-Jul-2010
-    Do we really need Servlet Containers always? (5 part article) by Archanaa Panda on 04-Jul-2010
-    How Netty helped me build a highly scalable HTTP communication server over GPRS by Archanaa Panda on 03-Jul-2010
-    Performance Comparison of Apache MINA and JBoss Netty Revisited by Mike Heath on 25-Nov-2009
-    Writing Your Own Netty Transport by Rafael Marins on 21-Sep-2009
-    Plurk Comet: Handling 100,000+ Concurrent Connections with Netty by Amir Salihefendic on 07-Jun-2009
-    Netty: Custom Pipeline Factory by Nicholas Hagen on 23-Apr-2009
-    Netty: Using Handlers by Nicholas Hagen on 21-Apr-2009
-    Scalable NIO Servers (4 part article) bu Nicholas Hagen on 07-Apr-2009
-    Performance Comparison of Apache MINA and JBoss Netty by Mike Heath on 03-Mar-2009
-    (N)IO Frameworks in Java by Ashish Paliwal on 12-Oct-2008
+## 2013
+
+* [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) by Norman Maurer
+* [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
+* [Netty channels and Scala implicits](http://uberblo.gs/2013/01/netty-channels-with-scala-implicits) by Franz Bettag
+
+## 2012
+
+* [Benchmarking web frameworks for games](http://blog.juiceboxmobile.com/2012/11/20/benchmarking-web-frameworks-for-games/) by Jason McGuirk
+* [Run Servlets with Netty](http://www.jroller.com/agoubard/entry/run_servlets_with_netty#.USMIPDWNKUo) by Anthony Goubard
+* [High performance network programming on the JVM](http://www.slideshare.net/eonnen/high-performance-network-programming-on-the-jvm-oscon-2012) by Erik Onnen
+* [How we got SPDY working with Netty 3.5 for Socko](http://sockoweb.org/2012/06/19/spdy-netty.html) by Vibul Imtarnasan
+* [Netty tutorial part 1.5: On ChannelHandlers and channel options](http://seeallhearall.blogspot.kr/2012/06/netty-tutorial-part-15-on-channel.html) by nickman
+* [Netty tutorial part 1: Introduction to Netty](http://seeallhearall.blogspot.gr/2012/05/netty-tutorial-part-1-introduction-to.html) by nickman
+* [Using SPDY and HTTP transparently using Netty](http://www.smartjava.org/content/using-spdy-and-http-transparently-using-netty) by Jos Dirksen
+* [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (Video w/ [Slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
+* [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (Video) by Brendan McAdams
+* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (Video, German) with Norman Maurer
+* [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
+
+## 2011
+
+* [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (Video) by TheProgrammingTuts
+* [Multiplayer tic-tac-toe using WebSocket, Netty, and JQuery](http://kevinwebber.ca/blog/2011/11/2/multiplayer-tic-tac-toe-in-java-using-the-websocket-api-nett.html) by Kevin Webber
+* [Non-blocking I/O with Netty](http://www.slideshare.net/zaubersoftware/non-blocking-io-with-netty) (Spanish) by Mariano Cortesi and Fernando Zunino
+* [The Node redumption!](http://blog.creapptives.com/post/9924551244/the-node-redumption) (Node.js vs Netty) by maxpert
+* [Rails, Wicket, Grails, Play, Tapestry, Lift, JSP, Context](http://www.jtict.com/blog/rails-wicket-grails-play-lift-jsp/) (See Play framework numbers) by JT Dev
+* [Twitter search is now 3x faster](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) by Krishna Gade
+* [Clojure: Web Socket introduction](http://blog.jayfields.com/2011/02/clojure-web-socket-introduction.html) by Jay Fields
+* [Netty `externalResources()` hangs](http://biasedbit.com/netty-releaseexternalresources-hangs/) by Bruno de Carvalho
+
+## 2010
+
+* [A Simple Netty HTTP Server in Clojure](http://eigenjoy.com/2010/07/30/a-simple-netty-http-server-in-clojure/) by Nate Murray
+* [512,000 concurrent websockets with Groovy++ and Gretty](http://groovy.dzone.com/articles/512000-concurrent-websockets) by Alex Tkachman
+* [Handshaking tutorial with Netty](http://biasedbit.com/handshaking-tutorial-with-netty/) by Bruno de Carvalho
+* [Do we really need Servlet Containers always? (5 parts)](http://thesoftwarekraft.blogspot.kr/2010/07/do-we-really-need-servlet-containers.html) by Archanaa Panda
+* [How Netty helped me build a highly scalable HTTP server over GPRS](http://thesoftwarekraft.blogspot.kr/2010/07/how-jboss-netty-helped-me-build-highly.html) by Archanaa Panda
+
+## 2009
+
+* [Performance Comparison of Apache MINA and JBoss Netty Revisited](http://blog.toadhead.net/index.php/2009/11/25/performance-comparison-of-apache-mina-and-jboss-netty-revisited/) by Mike Heath
+* [Writing Your Own Netty Transport](http://rafaelmarins.com/pub/writing-your-own-netty-transport) by Rafael Marins
+* [Plurk Comet: Handling 100,000+ Concurrent Connections with Netty](http://amix.dk/blog/post/19456) by Amir Salihefendic
+* [Netty: Custom Pipeline Factory](http://www.znetdevelopment.com/blogs/2009/04/23/netty-custom-pipeline-factory/) by Nicholas Hagen
+* [Netty: Using Handlers](http://www.znetdevelopment.com/blogs/2009/04/21/netty-using-handlers/) by Nicholas Hagen
+* [Scalable NIO Servers (4 parts)](http://www.znetdevelopment.com/blogs/2009/04/07/scalable-nio-servers-part-1-performance/) by Nicholas Hagen
+* [Performance Comparison of Apache MINA and JBoss Netty](http://blog.toadhead.net/index.php/2009/03/03/performance-comparison-of-apache-mina-and-jboss-netty/) by Mike Heath
+
+## 2008
+
+* [(N)IO Frameworks in Java](http://www.ashishpaliwal.com/blog/2008/10/nio-frameworks-in-java/) by Ashish Paliwal
