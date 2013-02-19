@@ -46,10 +46,11 @@
 
 ## Closed Source Projects and On-line Services
 
-* [Apple](http://www.apple.com/) uses Netty in their cloud services.
+* [Avast Software](http://www.avast.com/) distributes their anti-virus updates to more than 100M users using Netty.
+* [Boundary](http://blog.boundary.com/2012/05/02/know-a-delay-nagles-algorithm-and-you/) monitors the continuously changing environment of distributed applications in real-time
 * [ESN Planet](http://www.esn.me/product/planet/) is a feature-rich social real-time web platform which scales horizontally and vertically.
+* [Facebook](https://www.facebook.com/) open sourced a Netty-based Thrift transport implementation called [Nifty](https://github.com/facebook/nifty).
 * [Kakao Talk](https://play.google.com/store/apps/details?id=com.kakao.talk&hl=en) is a mobile messenger over 40 million people use.  They built their Android push server with Netty.
 * [LiquidLabs LogScape](http://www.liquidlabs.com/) is a high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
 * [RememberTheMilk](http://www.rememberthemilk.com/) - check their [blog post](http://blog.rememberthemilk.com/2011/08/real-time-updating-comes-to-the-remember-the-milk-web-app/).
 * [Twitter](https://twitter.com/) - check their [blog post](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) and many of their [open source projects](https://github.com/twitter/).
-* [Boundary](http://blog.boundary.com/2012/05/02/know-a-delay-nagles-algorithm-and-you/) - monitors the continuously changing environment of distributed applications in real-time
