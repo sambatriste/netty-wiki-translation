@@ -1,4 +1,4 @@
-Please make sure the newer article appears first.
+Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
 
