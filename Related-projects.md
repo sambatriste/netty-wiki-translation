@@ -1,3 +1,5 @@
+Please make sure the list is sorted alphabetically and remove unmaintained projects (no activity for last 12 months.)
+
 ## Open Source Projects
 
 * [Accord Odette FTP](http://accord.ow2.org/odetteftp) is an OFTP client library that communicates with an OFTP server of various versions including 1.3, 1.4, and 2.0.
