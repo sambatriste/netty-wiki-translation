@@ -11,6 +11,25 @@ Before pushing your commits or issuing a pull request, make sure:
 
 Netty project team uses [IntelliJ IDEA](http://www.jetbrains.com/idea/) as the primary IDE. Download, unzip, and import [this inspection profile](http://netty.io/files/IntelliJ%20IDEA%20Inspection%20Profile.xml.zip) into your IntelliJ IDEA and use it as the default for Netty project. Ensure your modification does not introduce any inspection warning. If you think it's a false positive, suppress the warning by using the `@SuppressWarnings` annotation or `noinspection` line comment as guided by the IDE.  For more information about using the inspector, please refer to [the web help pages](http://www.jetbrains.com/idea/webhelp/inspecting-source-code.html).
 
+### Setting up Eclipse with M2E and Java 7
+
+Netty project can be imported into 
+[Eclipse 3.7](http://www.eclipse.org/downloads/)
+or later with
+[M2E](http://eclipse.org/m2e/)
+integration out of the box.
+
+Netty project Maven pom.xml settings dictate use of Java SE 1.6, 
+while implicitly using Java 7 (1.7) features if present.
+This may result in compilation errors in Eclipse.
+
+One way to deal with this - look in ```Eclipse -> Window -> Preferences -> Installed JRE```
+
+* make sure you have Java 7 installation available under ```Installed JRE```
+* map this Java 7 installation onto Java 6 : ```Installed JRE -> Execution Environments -> Java SE 1.6```
+
+Alternatively, Java 7 JRE can be selected on per-project basis for each Netty module.
+
 ### Git line ending configuration
 
 We use native line ending for all source code (i.e. '`\r`' for *nix and MacOS X, '`\r\n`' for Windows.) Please configure your Git installation so that your build does not fail and you push bad files, following the instructions below:
