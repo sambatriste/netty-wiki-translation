@@ -566,7 +566,7 @@ The following transports were newly added:
 * OIO SCTP transport
 * UDT transport
 
-### Case study: porting the Factorial example
+## Case study: porting the Factorial example
 
 This section shows rough steps to port the Factorial example from 3.x to 4.0.  The Factorial example has been ported to 4.0 already in the `io.netty.example.factorial` package.  Please browse the source code of the example to find every bits changed.
 
