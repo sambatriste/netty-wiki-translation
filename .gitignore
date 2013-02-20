@@ -1,0 +1,19 @@
+#
+# Eclipse metadata.
+#
+.project
+.classpath
+.settings/
+
+#
+# IDEA metadata.
+#
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#
+# Maven build folder.
+#
+target/
