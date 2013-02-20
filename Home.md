@@ -2,8 +2,8 @@ Get started with the user guide and the API reference. Also, [join the community
 
 * 4.0
   * [[User Guide|User guide for 4.x]]
-  * [API Reference](http://netty.io/3.6/api/) (Javadoc)
-  * [Source Code](http://netty.io/3.6/xref/) (Xref)
+  * [API Reference](http://netty.io/4.0/api/) (Javadoc)
+  * [Source Code](http://netty.io/4.0/xref/) (Xref)
   * [[New and Noteworthy]]
 * 3.6
   * [[User Guide|User guide for 3.x]]
