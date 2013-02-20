@@ -16,6 +16,7 @@ The binary JAR has been split into multiple submodules so that a user can exclud
        handler/         - channel handlers
        codec/           - codec framework
        codec-http/      - HTTP, Web Sockets, SPDY, and RTSP codec
+       codec-socks/     - Socks codec
        example/         - examples
        all/             - generates an all-in-one JAR
        tarball/         - generates a tarball distribution
