@@ -2,7 +2,6 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
 
-* [Zero-copy event-driven servers with Netty](http://de.slideshare.net/danbim/zerocopy-eventdriven-servers-with-netty) (Slides) by Daniel Bimschas
 * [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) (Slides) by Norman Maurer
 * [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
 * [Netty channels and Scala implicits](http://uberblo.gs/2013/01/netty-channels-with-scala-implicits) by Franz Bettag
@@ -23,6 +22,7 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2011
 
+* [Zero-copy event-driven servers with Netty](http://de.slideshare.net/danbim/zerocopy-eventdriven-servers-with-netty) (Slides) by Daniel Bimschas
 * [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (Video) by TheProgrammingTuts
 * [Multiplayer tic-tac-toe using WebSocket, Netty, and JQuery](http://kevinwebber.ca/blog/2011/11/2/multiplayer-tic-tac-toe-in-java-using-the-websocket-api-nett.html) by Kevin Webber
 * [Non-blocking I/O with Netty](http://www.slideshare.net/zaubersoftware/non-blocking-io-with-netty) (Spanish) by Mariano Cortesi and Fernando Zunino
