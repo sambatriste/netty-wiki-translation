@@ -1,11 +1,11 @@
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
-* 4.0
+* v 4.0
   * [[User Guide|User guide for 4.x]]
   * [API Reference](http://netty.io/4.0/api/) (Javadoc)
   * [Source Code](http://netty.io/4.0/xref/) (Xref)
   * [[New and Noteworthy]]
-* 3.6
+* v 3.6
   * [[User Guide|User guide for 3.x]]
   * [API Reference](http://netty.io/3.6/api/) (Javadoc)
   * [Source Code](http://netty.io/3.6/xref/) (Xref)
@@ -14,7 +14,17 @@ Get started with the user guide and the API reference. Also, [join the community
 
 We often find there are people in the world who are much more talented in technical writing than we, and they kindly wrote [[great articles|Related Articles]] for the community.
 
-## Examples
+## Examples (v 4.0)
+
+### UDT
+
+UDT is [UDP-based Data Transfer Protocol](http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol)
+
+* [Byte Streams](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes) - use UDT in TCP-like bytes streaming mode
+* [Message Flows](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message) - use UDT in UDP-like guaranteed message delivery mode
+* [Rendezvous Connect](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous) - use UDT in symmetric peer-to-peer rendezvous connect mode
+
+## Examples (v 3.6)
 
 There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.
 
