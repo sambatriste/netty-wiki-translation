@@ -6,20 +6,22 @@ The package name of Netty has been changed from org.jboss.netty to io.netty sinc
 
 The binary JAR has been split into multiple submodules so that a user can exclude unnecessary features from the class path.  The current structure looks like this following:
 
-    netty/ 
-       common/          - utility and logging
-       buffer/          - buffer API
-       transport/       - channel API and its core implementations
-       transport-rtrx/  - RTRX transport implementation
-       transport-sctp/  - SCTP transport implementation
-       transport-udt/   - UDT transport implementation
-       handler/         - channel handlers
-       codec/           - codec framework
-       codec-http/      - HTTP, Web Sockets, SPDY, and RTSP codec
-       codec-socks/     - Socks codec
-       example/         - examples
-       all/             - generates an all-in-one JAR
-       tarball/         - generates a tarball distribution
+| Module | Description    |
+|--------|----------------|
+| [netty](https://github.com/netty/netty)  | project parent |
+| [common](https://github.com/netty/netty/tree/master/common) | utility and logging |
+| [buffer](https://github.com/netty/netty/tree/master/buffer) | buffer API |
+| [transport](https://github.com/netty/netty/tree/master/transport) | channel API and its core implementations |
+| [transport-rtrx](https://github.com/netty/netty/tree/master/transport-rxtx) | RTRX transport implementation |
+| [transport-sctp](https://github.com/netty/netty/tree/master/transport-sctp) | SCTP transport implementation |
+| [transport-udt](https://github.com/netty/netty/tree/master/transport-udt)  | UDT transport implementation |
+| [handler](https://github.com/netty/netty/tree/master/handler) | channel handlers |
+| [codec](https://github.com/netty/netty/tree/master/codec) | codec framework |
+| [codec-http](https://github.com/netty/netty/tree/master/codec-http) | HTTP, Web Sockets, SPDY, and RTSP codec |
+| [codec-socks](https://github.com/netty/netty/tree/master/codec-socks) | Socks codec |
+| [example](https://github.com/netty/netty/tree/master/example) | examples |
+| [all](https://github.com/netty/netty/tree/master/all) | generates an all-in-one JAR |
+| [tarball](https://github.com/netty/netty/tree/master/tarball) | generates a tarball distribution |
 
 All Netty jars (except of the netty-all) are now OSGI bundles and can be used in your favorite OSGI-Container.
 
