@@ -2,7 +2,8 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
 
-* [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) by Norman Maurer
+* [Zero-copy event-driven servers with Netty](http://de.slideshare.net/danbim/zerocopy-eventdriven-servers-with-netty) (Slides) by Daniel Bimschas
+* [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) (Slides) by Norman Maurer
 * [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
 * [Netty channels and Scala implicits](http://uberblo.gs/2013/01/netty-channels-with-scala-implicits) by Franz Bettag
 
