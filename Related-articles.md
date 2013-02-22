@@ -8,6 +8,8 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2012
 
+* [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
+* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (Video, German) with Norman Maurer
 * [Benchmarking web frameworks for games](http://blog.juiceboxmobile.com/2012/11/20/benchmarking-web-frameworks-for-games/) by Jason McGuirk
 * [Run Servlets with Netty](http://www.jroller.com/agoubard/entry/run_servlets_with_netty#.USMIPDWNKUo) by Anthony Goubard
 * [High performance network programming on the JVM](http://www.slideshare.net/eonnen/high-performance-network-programming-on-the-jvm-oscon-2012) by Erik Onnen
@@ -15,10 +17,9 @@ Please make sure the newer article appears first and there is no duplicate.
 * [Netty tutorial part 1.5: On ChannelHandlers and channel options](http://seeallhearall.blogspot.kr/2012/06/netty-tutorial-part-15-on-channel.html) by nickman
 * [Netty tutorial part 1: Introduction to Netty](http://seeallhearall.blogspot.gr/2012/05/netty-tutorial-part-1-introduction-to.html) by nickman
 * [Using SPDY and HTTP transparently using Netty](http://www.smartjava.org/content/using-spdy-and-http-transparently-using-netty) by Jos Dirksen
+* [Fun with Netty and Async I/O](http://timboudreau.com/blog/Fun_with_Netty_and_Async_IO/read) by Tim Boudreau
 * [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (Video w/ [Slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
 * [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (Video) by Brendan McAdams
-* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (Video, German) with Norman Maurer
-* [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
 
 ## 2011
 
