@@ -31,10 +31,10 @@ Please make sure the newer article appears first and there is no duplicate.
 * [Rails, Wicket, Grails, Play, Tapestry, Lift, JSP, Context](http://www.jtict.com/blog/rails-wicket-grails-play-lift-jsp/) (See Play framework numbers) by JT Dev
 * [Twitter search is now 3x faster](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) by Krishna Gade
 * [Clojure: Web Socket introduction](http://blog.jayfields.com/2011/02/clojure-web-socket-introduction.html) by Jay Fields
-* [Netty `externalResources()` hangs](http://biasedbit.com/netty-releaseexternalresources-hangs/) by Bruno de Carvalho
 
 ## 2010
 
+* [Netty `externalResources()` hangs](http://biasedbit.com/netty-releaseexternalresources-hangs/) by Bruno de Carvalho
 * [A Simple Netty HTTP Server in Clojure](http://eigenjoy.com/2010/07/30/a-simple-netty-http-server-in-clojure/) by Nate Murray
 * [512,000 concurrent websockets with Groovy++ and Gretty](http://groovy.dzone.com/articles/512000-concurrent-websockets) by Alex Tkachman
 * [Handshaking tutorial with Netty](http://biasedbit.com/handshaking-tutorial-with-netty/) by Bruno de Carvalho
