@@ -349,7 +349,7 @@ Thanks to this change (i.e. separation of `ChannelFactory` and I/O threads), a u
 
 3.x provided no way to create a new Channel from an existing JDK socket such as `java.nio.channels.SocketChannel`.  You can with 4.0.
 
-### Deregistration and re-registraion of a Channel from·to an I/O thread
+### Deregistration and re-registration of a Channel from·to an I/O thread
 
 Once a new `Channel` is created in 3.x, it is completely tied to a single I/O thread until its underlying socket is closed.  In 4.0, a user can deregister a `Channel` from its I/O thread to gain the full control of its underlying JDK socket.  For example, you can take advantage of high-level non-blocking I/O Netty provides to deal with complex protocols, and then later deregister the `Channel` and switch to blocking mode to transfer a file at possible maximum throughput.  Of course, it is possible to register the deregistered `Channel` back again.
 
