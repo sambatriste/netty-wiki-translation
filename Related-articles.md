@@ -4,6 +4,7 @@ Please make sure the newer article appears first and there is no duplicate.
 
 * [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) (Slides) by Norman Maurer
 * [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
+* [Routing Web Service Done Quickly with Scala and Netty](http://blog.sustainablesoftware.com.au/2013/01/21/routing-web-service-done-quickly-with-scala-and-netty/) by Sustainable Software Pty Ltd.
 * [Netty channels and Scala implicits](http://uberblo.gs/2013/01/netty-channels-with-scala-implicits) by Franz Bettag
 
 ## 2012
