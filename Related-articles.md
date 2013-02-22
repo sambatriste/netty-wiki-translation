@@ -16,8 +16,8 @@ Please make sure the newer article appears first and there is no duplicate.
 * [Run Servlets with Netty](http://www.jroller.com/agoubard/entry/run_servlets_with_netty#.USMIPDWNKUo) by Anthony Goubard
 * [High performance network programming on the JVM](http://www.slideshare.net/eonnen/high-performance-network-programming-on-the-jvm-oscon-2012) by Erik Onnen
 * [How we got SPDY working with Netty 3.5 for Socko](http://sockoweb.org/2012/06/19/spdy-netty.html) by Vibul Imtarnasan
-* [Netty tutorial part 1.5: On ChannelHandlers and channel options](http://seeallhearall.blogspot.kr/2012/06/netty-tutorial-part-15-on-channel.html) by nickman
-* [Netty tutorial part 1: Introduction to Netty](http://seeallhearall.blogspot.gr/2012/05/netty-tutorial-part-1-introduction-to.html) by nickman
+* [Netty tutorial part 1.5: On ChannelHandlers and channel options](http://seeallhearall.blogspot.com/2012/06/netty-tutorial-part-15-on-channel.html) by nickman
+* [Netty tutorial part 1: Introduction to Netty](http://seeallhearall.blogspot.com/2012/05/netty-tutorial-part-1-introduction-to.html) by nickman
 * [Using SPDY and HTTP transparently using Netty](http://www.smartjava.org/content/using-spdy-and-http-transparently-using-netty) by Jos Dirksen
 * [Fun with Netty and Async I/O](http://timboudreau.com/blog/Fun_with_Netty_and_Async_IO/read) by Tim Boudreau
 
@@ -38,8 +38,8 @@ Please make sure the newer article appears first and there is no duplicate.
 * [A Simple Netty HTTP Server in Clojure](http://eigenjoy.com/2010/07/30/a-simple-netty-http-server-in-clojure/) by Nate Murray
 * [512,000 concurrent websockets with Groovy++ and Gretty](http://groovy.dzone.com/articles/512000-concurrent-websockets) by Alex Tkachman
 * [Handshaking tutorial with Netty](http://biasedbit.com/handshaking-tutorial-with-netty/) by Bruno de Carvalho
-* [Do we really need Servlet Containers always? (5 parts)](http://thesoftwarekraft.blogspot.kr/2010/07/do-we-really-need-servlet-containers.html) by Archanaa Panda
-* [How Netty helped me build a highly scalable HTTP server over GPRS](http://thesoftwarekraft.blogspot.kr/2010/07/how-jboss-netty-helped-me-build-highly.html) by Archanaa Panda
+* [Do we really need Servlet Containers always? (5 parts)](http://thesoftwarekraft.blogspot.com/2010/07/do-we-really-need-servlet-containers.html) by Archanaa Panda
+* [How Netty helped me build a highly scalable HTTP server over GPRS](http://thesoftwarekraft.blogspot.com/2010/07/how-jboss-netty-helped-me-build-highly.html) by Archanaa Panda
 
 ## 2009
 
