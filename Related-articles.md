@@ -24,11 +24,10 @@ Please make sure the newer article appears first and there is no duplicate.
 ## 2011
 
 * [Zero-copy event-driven servers with Netty](http://de.slideshare.net/danbim/zerocopy-eventdriven-servers-with-netty) (Slides) by Daniel Bimschas
-* [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (Video) by TheProgrammingTuts
 * [Multiplayer tic-tac-toe using WebSocket, Netty, and JQuery](http://kevinwebber.ca/blog/2011/11/2/multiplayer-tic-tac-toe-in-java-using-the-websocket-api-nett.html) by Kevin Webber
 * [Non-blocking I/O with Netty](http://www.slideshare.net/zaubersoftware/non-blocking-io-with-netty) (Spanish) by Mariano Cortesi and Fernando Zunino
 * [The Node redumption!](http://blog.creapptives.com/post/9924551244/the-node-redumption) (Node.js vs Netty) by maxpert
-* [Rails, Wicket, Grails, Play, Tapestry, Lift, JSP, Context](http://www.jtict.com/blog/rails-wicket-grails-play-lift-jsp/) (See Play framework numbers) by JT Dev
+* [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (Video) by TheProgrammingTuts
 * [Twitter search is now 3x faster](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) by Krishna Gade
 * [Clojure: Web Socket introduction](http://blog.jayfields.com/2011/02/clojure-web-socket-introduction.html) by Jay Fields
 
