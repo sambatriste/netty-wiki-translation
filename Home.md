@@ -1,11 +1,11 @@
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
-* v 4.0
+* Version 4.0
   * [[User Guide|User guide for 4.x]]
   * [API Reference](http://netty.io/4.0/api/) (Javadoc)
   * [Source Code](http://netty.io/4.0/xref/) (Xref)
   * [[New and Noteworthy]]
-* v 3.6
+* Version 3.6
   * [[User Guide|User guide for 3.x]]
   * [API Reference](http://netty.io/3.6/api/) (Javadoc)
   * [Source Code](http://netty.io/3.6/xref/) (Xref)
@@ -14,45 +14,112 @@ Get started with the user guide and the API reference. Also, [join the community
 
 We often find there are people in the world who are much more talented in technical writing than we, and they kindly wrote [[great articles|Related Articles]] for the community.
 
-## Examples (v 4.0)
+## Examples
 
-### UDT
+There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.  You also might want to browse the complete list of examples ([3.6](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example) and [4.0](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example))
 
-UDT is [UDP-based Data Transfer Protocol](http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol)
-
-* [Byte Streams](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes) - use UDT in TCP-like bytes streaming mode
-* [Message Flows](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message) - use UDT in UDP-like guaranteed message delivery mode
-* [Rendezvous Connect](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous) - use UDT in symmetric peer-to-peer rendezvous connect mode
-
-## Examples (v 3.6)
-
-There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.
-
-### Fundamental
-
-* [Echo](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/echo) - the very basic client and server
-* [Discard](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/discard) - prevent OutOfMemoryError which is caused by writing too fast
-* [UpTime](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/uptime) - implement reliable client-side reconnection
-
-### Text protocols
-
-* [Telnet](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/telnet) - a classic line-based network application
-* [Quote](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/qotm) of the Moment - broadcast UDP/IP client and server
-* [SecureChat](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/securechat) - an SSL-based chat server derived from the Telnet example
-
-### Binary protocols
-
-* [ObjectEcho](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho) - exchange serializable Java objects
-* [Factorial](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho) - write a stateful client / server based on custom binary protocol
-* [LocalTime](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/localtime) - rapid protocol prototyping with Google Protocol Buffers integration
-
-### HTTP
-
-* [HTTP (Snoop)](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/snoop) - build your own extremely light-weight HTTP client and server
-* [HTTP (File Server)](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/file) - asynchronous large file streaming in HTTP
-* Web Socket [Client](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/client) & [Server](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/server) - add two-way full-duplex communication channels to HTTP using Web Sockets protocol
-
-### Advanced
-
-* [Proxy Server](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/proxy) - write a highly efficient NIO proxy server
-* [Port Unification](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/portunification) - run heterogenous services listening on a single port
+<div class="tabbable">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#wiki-example-3" data-toggle="tab">3.6</a></li>
+<li><a href="#wiki-example-4" data-toggle="tab">4.0</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="wiki-example-3">
+<h3>Fundamental</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/echo">Echo</a> - the very basic client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/discard">Discard</a> - prevent <tt>OutOfMemoryError</tt> which is caused by writing too fast</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/uptime">UpTime</a> - implement reliable client-side reconnection</li>
+</ul>
+<h3>Text protocols</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/telnet">Telnet</a> - a classic line-based network application</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/qotm">Quote</a> of the Moment - broadcast UDP/IP client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/securechat">SecureChat</a> - an SSL-based chat server derived from the Telnet example</li>
+</ul>
+<h3>Binary protocols</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/localtime">LocalTime</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
+</ul>
+<h3>HTTP</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/snoop">HTTP (Snoop)</a> - build your own extremely light-weight HTTP client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/file">HTTP (File Server)</a> - asynchronous large file streaming in HTTP</li>
+<li>Web Socket <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/client">Client</a> &amp; <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/server">Server</a> - add two-way full-duplex communication channels to HTTP using Web Sockets protocol</li>
+</ul>
+<h3>Advanced</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/proxy">Proxy Server</a> - write a highly efficient NIO proxy server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/portunification">Port Unification</a> - run heterogeneous services listening on a single port</li>
+</ul>
+</div>
+<div class="tab-pane" id="wiki-example-4">
+<h3>Fundamental</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/echo">Echo</a> - the very basic client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/discard">Discard</a> - prevent OutOfMemoryError which is caused by writing too fast</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/uptime">UpTime</a> - implement reliable client-side reconnection</li>
+</ul>
+<h3>Text protocols</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/telnet">Telnet</a> - a classic line-based network application</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/qotm">Quote</a> of the Moment - broadcast UDP/IP client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/securechat">SecureChat</a> - an SSL-based chat server derived from the Telnet example</li>
+</ul>
+<h3>Binary protocols</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/objectecho">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/worldclock">WorldClock</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
+</ul>
+<h3>HTTP</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/snoop">HTTP (Snoop)</a> - build your own extremely light-weight HTTP client and server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/file">HTTP (File Server)</a> - asynchronous large file streaming in HTTP</li>
+<li>Web Socket <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/websocketx/client">Client</a> &amp; <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/websocketx/server">Server</a> - add two-way full-duplex communication channels to HTTP using Web Sockets protocol</li>
+</ul>
+<h3>Advanced</h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/proxy">Proxy Server</a> - write a highly efficient NIO proxy server</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/portunification">Port Unification</a> - run heterogeneous services listening on a single port</li>
+</ul>
+<h3><a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a></h3>
+<ul>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes">Byte Streams</a> - use UDT in TCP-like bytes streaming mode</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message">Message Flows</a> - use UDT in UDP-like guaranteed message delivery mode</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous">Rendezvous Connect</a> - use UDT in symmetric peer-to-peer rendezvous connect mode</li>
+</ul>
+</div>
+</div>
+</div>
