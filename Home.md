@@ -16,7 +16,7 @@ We often find there are people in the world who are much more talented in techni
 
 ## Examples
 
-There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.  You also might want to browse the complete list of examples ([3.6](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example) and [4.0](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example))
+There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.  You also might want to browse the complete list of examples ([3.6](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example) and [4.0](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example).)
 
 <div class="tabbable">
 <ul class="nav nav-tabs">
