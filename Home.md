@@ -1,4 +1,4 @@
-<div id="wiki-notoc"/>
+<div id="wiki-notoc"></div>
 
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
