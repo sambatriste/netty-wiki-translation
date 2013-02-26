@@ -115,14 +115,14 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/portunification">Port Unification</a> - run heterogeneous services listening on a single port</li>
 </ul>
-<h4><a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a></h4>
+<h4><abbr title="UDP-based Data Transfer Protocol" class="initialism">UDT</abbr></h4>
 <ul>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes">Byte Streams</a> - use UDT in TCP-like bytes streaming mode</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes">Byte Streams</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in TCP-like bytes streaming mode</li>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message">Message Flows</a> - use UDT in UDP-like guaranteed message delivery mode</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message">Message Flows</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in UDP-like guaranteed message delivery mode</li>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous">Rendezvous Connect</a> - use UDT in symmetric peer-to-peer rendezvous connect mode</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous">Rendezvous Connect</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in symmetric peer-to-peer rendezvous connect mode</li>
 </ul>
 </div>
 </div>
