@@ -1,3 +1,5 @@
+<div id="wiki-notoc"/>
+
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
 * Version 4.0
@@ -20,8 +22,8 @@ There are several examples to help your experience with Netty. It is recommended
 
 <div class="tabbable">
 <ul class="nav nav-tabs">
-<li class="active"><a href="#wiki-example-3" data-toggle="tab">3.6</a></li>
-<li><a href="#wiki-example-4" data-toggle="tab">4.0</a></li>
+<li class="active"><a href="#wiki-example-3">3.6</a></li>
+<li><a href="#wiki-example-4">4.0</a></li>
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="wiki-example-3">
