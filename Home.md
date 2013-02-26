@@ -30,29 +30,29 @@ There are several examples to help your experience with Netty. It is recommended
 
 ### Fundamental
 
-* [Echo](http://netty.io/3.6/xref/org/jboss/netty/example/echo/package-summary.html) - the very basic client and server
-* [Discard](http://netty.io/3.6/xref/org/jboss/netty/example/discard/package-summary.html) - prevent OutOfMemoryError which is caused by writing too fast
-* [UpTime](http://netty.io/3.6/xref/org/jboss/netty/example/uptime/package-summary.html) - implement reliable client-side reconnection
+* [Echo](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/echo) - the very basic client and server
+* [Discard](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/discard) - prevent OutOfMemoryError which is caused by writing too fast
+* [UpTime](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/uptime) - implement reliable client-side reconnection
 
 ### Text protocols
 
-* [Telnet](http://netty.io/3.6/xref/org/jboss/netty/example/telnet/package-summary.html) - a classic line-based network application
-* [Quote](http://netty.io/3.6/xref/org/jboss/netty/example/qotm/package-summary.html) of the Moment - broadcast UDP/IP client and server
-* [SecureChat](http://netty.io/3.6/xref/org/jboss/netty/example/securechat/package-summary.html) - an SSL-based chat server derived from the Telnet example
+* [Telnet](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/telnet) - a classic line-based network application
+* [Quote](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/qotm) of the Moment - broadcast UDP/IP client and server
+* [SecureChat](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/securechat) - an SSL-based chat server derived from the Telnet example
 
 ### Binary protocols
 
-* [ObjectEcho](http://netty.io/3.6/xref/org/jboss/netty/example/objectecho/package-summary.html) - exchange serializable Java objects
-* [Factorial](http://netty.io/3.6/xref/org/jboss/netty/example/objectecho/package-summary.html) - write a stateful client / server based on custom binary protocol
-* [LocalTime](http://netty.io/3.6/xref/org/jboss/netty/example/localtime/package-summary.html) - rapid protocol prototyping with Google Protocol Buffers integration
+* [ObjectEcho](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho) - exchange serializable Java objects
+* [Factorial](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho) - write a stateful client / server based on custom binary protocol
+* [LocalTime](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/localtime) - rapid protocol prototyping with Google Protocol Buffers integration
 
 ### HTTP
 
-* [HTTP (Snoop)](http://netty.io/3.6/xref/org/jboss/netty/example/http/snoop/package-summary.html) - build your own extremely light-weight HTTP client and server
-* [HTTP (File Server)](http://netty.io/3.6/xref/org/jboss/netty/example/http/file/package-summary.html) - asynchronous large file streaming in HTTP
-* Web Socket [Client](http://netty.io/3.6/xref/org/jboss/netty/example/http/websocketx/client/package-summary.html) & [Server](http://netty.io/3.6/xref/org/jboss/netty/example/http/websocketx/server/package-summary.html) - add two-way full-duplex communication channels to HTTP using Web Sockets protocol
+* [HTTP (Snoop)](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/snoop) - build your own extremely light-weight HTTP client and server
+* [HTTP (File Server)](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/file) - asynchronous large file streaming in HTTP
+* Web Socket [Client](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/client) & [Server](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/server) - add two-way full-duplex communication channels to HTTP using Web Sockets protocol
 
 ### Advanced
 
-* [Proxy Server](http://netty.io/3.6/xref/org/jboss/netty/example/proxy/package-summary.html) - write a highly efficient NIO proxy server
-* [Port Unification](http://netty.io/3.6/xref/org/jboss/netty/example/portunification/package-summary.html) - run heterogenous services listening on a single port
+* [Proxy Server](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/proxy) - write a highly efficient NIO proxy server
+* [Port Unification](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/portunification) - run heterogenous services listening on a single port
