@@ -25,7 +25,8 @@ There are several examples to help your experience with Netty. It is recommended
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="wiki-example-3">
-<h3>Fundamental</h3>
+<h3>Examples for version 3.6</h3>
+<h4>Fundamental</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/echo">Echo</a> - the very basic client and server</li>
@@ -34,7 +35,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/uptime">UpTime</a> - implement reliable client-side reconnection</li>
 </ul>
-<h3>Text protocols</h3>
+<h4>Text protocols</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/telnet">Telnet</a> - a classic line-based network application</li>
@@ -43,7 +44,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/securechat">SecureChat</a> - an SSL-based chat server derived from the Telnet example</li>
 </ul>
-<h3>Binary protocols</h3>
+<h4>Binary protocols</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
@@ -52,7 +53,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/localtime">LocalTime</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
 </ul>
-<h3>HTTP</h3>
+<h4>HTTP</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/snoop">HTTP (Snoop)</a> - build your own extremely light-weight HTTP client and server</li>
@@ -60,7 +61,7 @@ There are several examples to help your experience with Netty. It is recommended
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/file">HTTP (File Server)</a> - asynchronous large file streaming in HTTP</li>
 <li>Web Socket <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/client">Client</a> &amp; <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/http/websocketx/server">Server</a> - add two-way full-duplex communication channels to HTTP using Web Sockets protocol</li>
 </ul>
-<h3>Advanced</h3>
+<h4>Advanced</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/proxy">Proxy Server</a> - write a highly efficient NIO proxy server</li>
@@ -69,7 +70,8 @@ There are several examples to help your experience with Netty. It is recommended
 </ul>
 </div>
 <div class="tab-pane" id="wiki-example-4">
-<h3>Fundamental</h3>
+<h3>Examples for version 4.0</h3>
+<h4>Fundamental</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/echo">Echo</a> - the very basic client and server</li>
@@ -78,7 +80,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/uptime">UpTime</a> - implement reliable client-side reconnection</li>
 </ul>
-<h3>Text protocols</h3>
+<h4>Text protocols</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/telnet">Telnet</a> - a classic line-based network application</li>
@@ -87,7 +89,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/securechat">SecureChat</a> - an SSL-based chat server derived from the Telnet example</li>
 </ul>
-<h3>Binary protocols</h3>
+<h4>Binary protocols</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
@@ -96,7 +98,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/worldclock">WorldClock</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
 </ul>
-<h3>HTTP</h3>
+<h4>HTTP</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/snoop">HTTP (Snoop)</a> - build your own extremely light-weight HTTP client and server</li>
@@ -104,14 +106,14 @@ There are several examples to help your experience with Netty. It is recommended
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/file">HTTP (File Server)</a> - asynchronous large file streaming in HTTP</li>
 <li>Web Socket <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/websocketx/client">Client</a> &amp; <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/http/websocketx/server">Server</a> - add two-way full-duplex communication channels to HTTP using Web Sockets protocol</li>
 </ul>
-<h3>Advanced</h3>
+<h4>Advanced</h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/proxy">Proxy Server</a> - write a highly efficient NIO proxy server</li>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/portunification">Port Unification</a> - run heterogeneous services listening on a single port</li>
 </ul>
-<h3><a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a></h3>
+<h4><a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a></h4>
 <ul>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/bytes">Byte Streams</a> - use UDT in TCP-like bytes streaming mode</li>
