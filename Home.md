@@ -78,7 +78,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/echo">Echo</a> - the very basic client and server</li>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/discard">Discard</a> - prevent OutOfMemoryError which is caused by writing too fast</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/discard">Discard</a> - prevent <tt>OutOfMemoryError</tt> which is caused by writing too fast</li>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/uptime">UpTime</a> - implement reliable client-side reconnection</li>
 </ul>
