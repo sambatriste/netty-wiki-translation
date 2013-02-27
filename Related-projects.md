@@ -12,6 +12,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Gatling](http://gatling-tool.org) is an asynchronous and efficient stress tool developed with Netty and Akka.
 * [Hammersmith](https://github.com/bwmcadams/hammersmith) is a pure asynchronous MongoDB driver for Scala
 * [Higgs](https://github.com/zcourts/higgs) is a high performance, message oriented network library.
+* [Holmes](http://ccheneau.github.com/Holmes/) is a Java application that implements DLNA/UPnP protocol for playing videos, music, pictures and podcasts (RSS) to compatible devices.
 * [HornetQ](http://www.jboss.org/hornetq) is a project to build a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system.
 * [Hotpotato](https://github.com/brunodecarvalho/BBHotpotato) is a high performance and throughput oriented HTTP client library.
 * [Infinispan](http://www.jboss.org/infinispan) is an extremely scalable, highly avaiable data grid platform.
