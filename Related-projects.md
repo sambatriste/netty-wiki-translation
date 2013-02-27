@@ -1,4 +1,4 @@
-Please make sure the list is sorted alphabetically and remove unmaintained projects (no activity for last 12 months.)
+Please make sure the list is sorted alphabetically and remove unmaintained projects (no commit activity for last 12 months.)
 
 ## Open Source Projects
 
