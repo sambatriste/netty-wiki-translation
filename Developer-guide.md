@@ -1,4 +1,4 @@
-<div class="alert"><strong>Looking for a user guide?</strong> Please note that this guide is not a 'user guide'.  It is intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.  If you are looking for the documentation for users, please visit <a href="http://netty.io/wiki/index.html">the documentation home</a>.</div>
+<div class="alert"><strong>Looking for a user guide?</strong> Please note that this guide is not a 'user guide'.  It is intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.  If you are looking for the documentation for users, please visit [[the documentation home|Home]].</div>
 
 ## Working with the source code
 
