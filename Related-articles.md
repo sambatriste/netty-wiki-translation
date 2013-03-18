@@ -2,7 +2,8 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
 
-* [Never awaitUninterruptibly() on Netty Channels](http://nitschinger.at/Never-await-Uninterruptibly-on-Netty-Channels) by Michael Nitschinger
+* [Use Netty to proxy your requests](http://www.mastertheboss.com/netty/use-netty-to-proxy-your-requests) by MasterTheBoss.com
+* [Never `awaitUninterruptibly()` on Netty Channels](http://nitschinger.at/Never-await-Uninterruptibly-on-Netty-Channels) by Michael Nitschinger
 * [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) (Slides) by Norman Maurer
 * [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
 * [Routing Web Service Done Quickly with Scala and Netty](http://blog.sustainablesoftware.com.au/2013/01/21/routing-web-service-done-quickly-with-scala-and-netty/) by Sustainable Software Pty Ltd.
