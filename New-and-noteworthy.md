@@ -2,7 +2,7 @@ This document walks you through the list of notable changes and new features in 
 
 ## Project structure changes
 
-The package name of Netty has been changed from org.jboss.netty to io.netty since [we are not part of JBoss.org anymore](fixme).
+The package name of Netty has been changed from org.jboss.netty to io.netty since [we are not part of JBoss.org anymore](http://netty.io/news/2011/11/04/new-web-site.html).
 
 The binary JAR has been split into multiple submodules so that a user can exclude unnecessary features from the class path.  The current structure looks like this following:
 
