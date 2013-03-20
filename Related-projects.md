@@ -6,6 +6,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Apache James Server](http://james.apache.org/server) is a modular e-mail server platform that integrates SMTP, POP3, IMAP, and NNTP.
 * [Arquillian](http://www.jboss.org/arquillian.html) is an innovative in-container testing platform for the JVM
 * [Async HTTP Client](https://github.com/AsyncHttpClient/async-http-client) is a simple-to-use library that allows you to execute HTTP requests and process the HTTP responses asynchronously.
+* [BungeeCord](http://www.spigotmc.org/threads/392/) is the de facto proxy solution for combining multiple Minecraft servers into a cloud / hub system.
 * [Elastic Search](http://www.elasticsearch.org) is a distributed RESTful search engine built on top of Lucene.
 * [Eucalyptus](http://open.eucalyptus.com) is a software infrastructure for implementing on-premise cloud computing using an organization's own IT infrastructure, without modification, special-purpose hardware or reconfiguration.
 * [Forest](https://github.com/le-moulin-studio/forest) is a general purpose friend-to-friend platform.
@@ -36,6 +37,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
+* [Spigot](http://www.spigotmc.org/) Is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [TomP2P](http://tomp2p.net) is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html) is a toolkit for servicing HTTP requests in Scala that provides a consistent vocabulary for handing requests on various server backends.
