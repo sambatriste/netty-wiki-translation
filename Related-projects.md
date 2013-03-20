@@ -37,7 +37,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
-* [Spigot](http://www.spigotmc.org/) Is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
+* [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [TomP2P](http://tomp2p.net) is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
 * [Unfiltered](http://unfiltered.databinder.net/Unfiltered.html) is a toolkit for servicing HTTP requests in Scala that provides a consistent vocabulary for handing requests on various server backends.
