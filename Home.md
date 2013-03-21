@@ -122,7 +122,9 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/message">Message Flows</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in UDP-like guaranteed message delivery mode</li>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous">Rendezvous Connect</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in symmetric peer-to-peer rendezvous connect mode</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendevous">Rendezvous message flow Connect</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in symmetric peer-to-peer message flow rendezvous connect mode</li>
+<li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/udt/echo/rendezvousBytes">Rendezvous byte stream Connect</a> - use <a href="http://en.wikipedia.org/wiki/UDP-based_Data_Transfer_Protocol">UDT</a> in symmetric peer-to-peer byte stream rendezvous connect mode</li>
 </ul>
 </div>
 </div>
