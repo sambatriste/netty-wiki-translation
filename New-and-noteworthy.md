@@ -298,7 +298,7 @@ public void inboundBufferUpdated(ChannelHandlerContext ctx) {
         Queue<MyMessage> buf = ctx.inboundMessageBuffer();
         for (;;) {
             MyMessage msg = buf.poll();
-            if (buf == null) {
+            if (msg == null) {
                 break;
             }
             ...
