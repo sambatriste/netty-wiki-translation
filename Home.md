@@ -1,4 +1,4 @@
-<div id="wiki-notoc"></div><div class="pull-right"><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif"></a></div>
+<div id="wiki-notoc"></div><div class="pull-right"><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif" alt="Book: Netty in Action"></a></div>
 
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
