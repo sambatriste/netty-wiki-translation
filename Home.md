@@ -1,4 +1,11 @@
-<div id="wiki-notoc"></div><div class="bookpromo well"><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif" alt="Book: Netty in Action"></a><p>Use code <strong>13netco</strong> for a 37% discount!</p></div>
+<div id="wiki-notoc"></div>
+<div class="bookpromo well">
+<ul class="nav nav-list">
+<li class="nav-header">Book: Netty in Action</li>
+<li><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif" alt="Book: Netty in Action"></a></li>
+<li>Use code <strong>13netco</strong> for a 37% discount!</li>
+</ul>
+</div>
 
 Get started with the user guide and the API reference. Also, [join the community](http://netty.io/community.html) to get more information.
 
