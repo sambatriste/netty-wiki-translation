@@ -1,9 +1,8 @@
-<div id="wiki-notoc"></div>
-<div class="bookpromo well">
+<div id="wiki-notoc" class="bookpromo well">
 <ul class="nav nav-list">
-<li class="nav-header">Book: Netty in Action</li>
+<li class="nav-header">Need a Book?</li>
 <li><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif" alt="Book: Netty in Action"></a></li>
-<li>Use code <strong>13netco</strong> for a 37% discount!</li>
+<li><a href="http://www.manning.com/maurer/">Use code <strong>13netco</strong> for a 37% discount!</a></li>
 </ul>
 </div>
 
