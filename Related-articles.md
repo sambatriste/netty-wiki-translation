@@ -2,6 +2,7 @@ Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
 
+* [Framework Benchmarks](http://www.techempower.com/blog/2013/03/28/framework-benchmarks/) by TechEmpower.com
 * [Use Netty to proxy your requests](http://www.mastertheboss.com/netty/use-netty-to-proxy-your-requests) by MasterTheBoss.com
 * [Never `awaitUninterruptibly()` on Netty Channels](http://nitschinger.at/Never-await-Uninterruptibly-on-Netty-Channels) by Michael Nitschinger
 * [Netty 4 presentation](http://de.slideshare.net/normanmaurer/netty4) (Slides) by Norman Maurer
