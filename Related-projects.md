@@ -15,7 +15,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Higgs](https://github.com/zcourts/higgs) is a high performance, message oriented network library.
 * [Holmes](http://ccheneau.github.com/Holmes/) is a Java application that implements DLNA/UPnP protocol for playing videos, music, pictures and podcasts (RSS) to compatible devices.
 * [HornetQ](http://www.jboss.org/hornetq) is a project to build a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system.
-* [Hotpotato](https://github.com/brunodecarvalho/BBHotpotato) is a high performance and throughput oriented HTTP client library.
+* [http-client](https://github.com/brunodecarvalho/http-client) is a high performance and throughput oriented HTTP client library.
 * [Infinispan](http://www.jboss.org/infinispan) is an extremely scalable, highly avaiable data grid platform.
 * [JBossWS](http://www.jboss.org/jbossws) is a feature-rich JAX-WS compatible web service stack.
 * [Jetserver](https://github.com/menacher/java-game-server) is a fast multiplayer java game server written using JBoss Netty and Mike Rettig's Jetlang. It supports TCP and UDP transmission and Flash AMF3 protocol.
