@@ -22,6 +22,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [JXTA](http://jxta.kenai.com) is a set of open protocols that enable any connected device on the network, ranging from cell phones and wireless PDAs to PCs and servers, to communicate and collaborate in a P2P manner.
 * [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
 * [Netty-SocketIO](https://github.com/mrniko/netty-socketio) is a Socket.IO server written on top of Netty
+* [Netty-ZMTP](https://github.com/spotify/netty-zmtp) is a collection of Netty channel handlers that aims to implement ZMTP/1.0, the ZeroMQ Message Transport Protocol.
 * [LittleProxy](http://www.littleshoot.org/littleproxy) is a high-performance HTTP proxy.
 * [LittleShoot](http://www.littleshoot.org) is an open source P2P technology for publishing, searching, and downloading files based on open protocols and open standards.
 * [MessagePack](http://msgpack.org) is a binary-based efficient object serialization library that enables to exchange structured objects between many languages.
