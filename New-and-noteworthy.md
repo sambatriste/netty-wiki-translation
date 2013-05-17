@@ -204,7 +204,7 @@ void sendFile(ChannelHandlerContext ctx, FileRegion region, ChannelPromise promi
 ctx.sendUpstream(evt);
  
 // After:
-ctx.fireInboundBufferUpdated();
+ctx.nextInboundMessageBuffer().add(evt)
 ```
 
 All these changes mean a user cannot extend the non-existing `ChannelEvent` interface anymore.  How then does the user define his or her own event type such as `IdleStateEvent`?  `ChannelHandler` in 4.0 has a handler method called `userEventTriggered()` which is dedicated to this specific user case.
