@@ -2,51 +2,54 @@ This document walks you through the list of notable changes and new features in 
 
 ## Project structure changes
 
-The package name of Netty has been changed from org.jboss.netty to io.netty since [we are not part of JBoss.org anymore](http://netty.io/news/2011/11/04/new-web-site.html).
+The package name of Netty has been changed from `org.jboss.netty` to `io.netty` since [we are not part of JBoss.org anymore](http://netty.io/news/2011/11/04/new-web-site.html).
 
 The binary JAR has been split into multiple submodules so that a user can exclude unnecessary features from the class path.  The current structure looks like this following:
 
-| Module | Description    |
-|--------|----------------|
-| [netty](https://github.com/netty/netty)  | project parent |
-| [common](https://github.com/netty/netty/tree/master/common) | utility and logging |
-| [buffer](https://github.com/netty/netty/tree/master/buffer) | buffer API |
-| [transport](https://github.com/netty/netty/tree/master/transport) | channel API and its core implementations |
-| [transport-rtrx](https://github.com/netty/netty/tree/master/transport-rxtx) | RTRX transport implementation |
-| [transport-sctp](https://github.com/netty/netty/tree/master/transport-sctp) | SCTP transport implementation |
-| [transport-udt](https://github.com/netty/netty/tree/master/transport-udt)  | UDT transport implementation |
-| [handler](https://github.com/netty/netty/tree/master/handler) | channel handlers |
-| [codec](https://github.com/netty/netty/tree/master/codec) | codec framework |
-| [codec-http](https://github.com/netty/netty/tree/master/codec-http) | HTTP, Web Sockets, SPDY, and RTSP codec |
-| [codec-socks](https://github.com/netty/netty/tree/master/codec-socks) | Socks codec |
-| [example](https://github.com/netty/netty/tree/master/example) | examples |
-| [all](https://github.com/netty/netty/tree/master/all) | generates an all-in-one JAR |
-| [tarball](https://github.com/netty/netty/tree/master/tarball) | generates a tarball distribution |
+| Artifact ID          | Description                                       
+|----------------------|---------------------------------------------------
+| netty-parent         | Maven parent POM
+| netty-common         | Utility classes and logging facade
+| netty-buffer         | `ByteBuf` API that replaces `java.nio.ByteBuffer`
+| netty-transport      | Channel API and core transports
+| netty-transport-rxtx | [Rxtx](http://goo.gl/vTFBv) transport
+| netty-transport-sctp | [SCTP](http://goo.gl/oXxaU) transport
+| netty-transport-udt  | [UDT](http://udt.sourceforge.net/) transport
+| netty-handler        | Useful `ChannelHandler` implementations
+| netty-codec          | Codec framework that helps write an encoder and a decoder
+| netty-codec-http     | Codecs related with HTTP, Web Sockets, SPDY, and RTSP
+| netty-codec-socks    | Codecs related with SOCKS protocol
+| netty-all            | All-in-one JAR that combines all artifacts above
+| netty-tarball        | Tarball distribution
+| netty-example        | Examples
+| netty-testsuite-*    | A collection of integration tests
+| netty-microbench     | Microbenchmarks
 
-All Netty jars (except for the netty-all jar) are now OSGi bundles and can be used in your favorite OSGi-Container.
+All artifacts (except for `netty-all.jar`) are now OSGi bundles and can be used in your favorite OSGi container.
 
 ## General API changes
 
 * Most operations in Netty now support method chaining for brevity.
-* Non-configuration getters have no `get/is` prefix anymore (e.g. `Channel.getRemoteAddress()` → `Channel.remoteAddress()`)
+* Non-configuration getters have no `get-` prefix anymore. (e.g. `Channel.getRemoteAddress()` → `Channel.remoteAddress()`)
+  * Boolean properties are still prefixed with `is-` to avoid confusion (e.g. 'empty' is both article and verb, so `empty()` can mean two things.)
 
 ## Buffer API changes
 
 ### ChannelBuffer → ByteBuf
 
-Thanks to the structural changes mentioned above, the buffer API can be used as a separate package.  Therefore, the type name `ChannelBuffer` does not make sense anymore, and has been renamed to `ByteBuf`.
+Thanks to the structural changes mentioned above, the buffer API can be used as a separate package.  Even if you are not interested in adopting Netty as a network application framework, you can still use our buffer API.  Therefore, the type name `ChannelBuffer` does not make sense anymore, and has been renamed to `ByteBuf`.
 
-The utility class `ChannelBuffers`, which creates a new buffer, has been split into two utility classes, `Unpooled` and `BufUtil`.  As can be guessed from its name, 4.0 introduced pooled `ByteBuf`s which can be allocated via the `ByteBufAllocator` implementations.
+The utility class `ChannelBuffers`, which creates a new buffer, has been split into two utility classes, `Unpooled` and `ByteBufUtil`.  As can be guessed from its name `Unpooled`, 4.0 introduced pooled `ByteBuf`s which can be allocated via `ByteBufAllocator` implementations.
 
-### Most buffers are dynamic with configurable maximum capacity
+### Most buffers are dynamic with maximum capacity
 
-In 3.x, buffers were fixed or dynamic.  The capacity of a fixed buffer does not change once it is created while the capacity of a dynamic buffer changes whenever `write*(...)` method requires more space.
+In 3.x, buffers were fixed or dynamic.  The capacity of a fixed buffer does not change once it is created while the capacity of a dynamic buffer changes whenever its `write*(...)` method requires more space.
 
-Since 4.0, all buffers are dynamic.  However, they are better than the old dynamic.  You can decrease or increase the capacity of a buffer more easily and more safely.  It's easy because there is a new method `ByteBuf.capacity(int newCapacity)`. It's safe because you can set the maximum capacity of a buffer so that it does not grow boundlessly.
+Since 4.0, all buffers are dynamic.  However, they are better than the old dynamic buffers.  You can decrease or increase the capacity of a buffer more easily and more safely.  It's easy because there is a new method `ByteBuf.capacity(int newCapacity)`. It's safe because you can set the maximum capacity of a buffer so that it does not grow boundlessly.
 
 ```java
 // No more dynamicBuffer() - use buffer().
-ByteBuf buf = ByteBuf.buffer();
+ByteBuf buf = Unpooled.buffer();
 
 // Increase the capacity of the buffer.
 buf.capacity(1024);
@@ -60,7 +63,7 @@ The only exception is the buffer which wraps a single buffer or a single byte ar
 
 ### New interface: CompositeByteBuf
 
-A new interface named `CompositeByteBuf` defines various advanced operations for composite buffer implementations.  A user can save bulk memory copy operations using a composite buffer at the cost of relatively expensive random access.  To create a new composite buffer, use either `Unpooled.wrappedBuffer(...)` like before or `Unpooled.compositeBuffer(...)`.
+A new interface named `CompositeByteBuf` defines various advanced operations for composite buffer implementations.  A user can save bulk memory copy operations using a composite buffer at the cost of relatively expensive random access.  To create a new composite buffer, use either `Unpooled.wrappedBuffer(...)` like before, `Unpooled.compositeBuffer(...)`, or `ByteBufAllocator.compositeBuffer()`.
 
 ### Predictable NIO buffer conversion
 
@@ -87,42 +90,20 @@ System.out.format("%08x%n", leBuf.getInt(0));
 assert buf != leBuf;
 assert buf == buf.order(ByteOrder.BIG_ENDIAN);
 ```
-### Pooled ByteBuf
+### Pooled `ByteBuf`
 
-As mentioned before, Netty 4 introduced pooled `ByteBuf` instances. This can be useful for many reasons, including but not limited to:
+Netty 4 introduces a high-performance buffer pool which combines [buddy allocation](http://en.wikipedia.org/wiki/Buddy_memory_allocation) and [slab allocation](http://en.wikipedia.org/wiki/Slab_allocation), which gives the following benefits:
 
-* Limit GC pressure because of heavy allocation/deallocation when using unpooled `ByteBuf`s
-* Better handling of direct (native) `ByteBuf`
-* A `ByteBuf` can be obtained via a `ByteBufAllocator`.
+* Reduced GC pressure incurred by frequent allocation and deallocation of the buffers
+* Reduced memory bandwidth consumption incurred when creating a new buffer which  inevitably has to be filled with zeroes
+* Timely deallocation of direct buffers
 
-```java
-public interface ByteBufAllocator {
- 
-    ByteBuf buffer();
-    ByteBuf buffer(int initialCapacity);
-    ByteBuf buffer(int initialCapacity, int maxCapacity);
-    ByteBuf heapBuffer();
-    ByteBuf heapBuffer(int initialCapacity);
-    ByteBuf heapBuffer(int initialCapacity, int maxCapacity);
-    ByteBuf directBuffer();
-    ByteBuf directBuffer(int initialCapacity);
-    ByteBuf directBuffer(int initialCapacity, int maxCapacity);
-    ByteBuf ioBuffer();
- 
-    CompositeByteBuf compositeBuffer();
-    CompositeByteBuf compositeBuffer(int maxNumComponents);
-    CompositeByteBuf compositeHeapBuffer();
-    CompositeByteBuf compositeHeapBuffer(int maxNumComponents);
-    CompositeByteBuf compositeDirectBuffer();
-    CompositeByteBuf compositeDirectBuffer(int maxNumComponents);
-}
-```
-
-To get the current `ByteBufAllocator` from a handler, use the `ChannelHandlerContext.alloc()` or `Channel.alloc()` method:
+To take advantage of this feature, unless a user wants to get an unpooled buffer, he or she should get a buffer from a [`ByteBufAllocator`](http://netty.io/4.0/api/index.html?io/netty/buffer/AbstractByteBufAllocator.html):
 
 ```java
 Channel channel = ...;
-ByteBuf buf = channel.alloc().buffer(512);
+ByteBufAllocator alloc = channel.alloc();
+ByteBuf buf = alloc.buffer(512);
 ....
 channel.write(buf);
  
@@ -132,9 +113,35 @@ ByteBuf buf2 = ctx.alloc().buffer(512);
 channel.write(buf2)
 ```
 
-Once a `ByteBuf` is written to the remote peer it will automatically get released to the pool again.
+Once a `ByteBuf` is written to the remote peer it will automatically be returned to the pool it originated from.
 
-The default `ByteBufAllocator` is `PooledByteBufAllocator`. If you do not wish to use buffer pooling or use your own allocator, you can use `Channel.config().setAllocator(..)` with an alternative allocator such as `UnpooledByteBufAllocator`.
+The default `ByteBufAllocator` is `PooledByteBufAllocator`. If you do not wish to use buffer pooling or use your own allocator, use `Channel.config().setAllocator(...)` with an alternative allocator such as `UnpooledByteBufAllocator`.
+
+#### `ByteBuf` is always reference counted
+
+To control the life cycle of a `ByteBuf` in a more predictable way, Netty does not rely on the garbage collector anymore but employs an explicit reference counter.  Here's the basic rule:
+
+* When a buffer is allocated, its initial reference count is 1.
+* If the reference count of the buffer is decreased to 0, it is deallocated or returned to the pool it originated from.
+* The following attempts trigger an `IllegalReferenceCountException`:
+  * Accessing a buffer whose reference count is 0,
+  * Decreasing the reference count to a negative value, or
+  * Increasing the reference count beyond `Integer.MAX_VALUE`.
+* Derived buffers (e.g. slices and duplicates) and swapped buffers (i.e. little endian buffers) share the reference count with the buffer it was derived from.  Note the the reference count does not change when a derived buffer is created.
+
+When a `ByteBuf` is used in a `ChannelPipeline`, there are additional rules you need to keep in mind:
+
+* Each inbound (a.k.a. upstream) handler in a pipeline has to release the received messages. Netty does not release them automatically for you.
+  * Note that codec framework does release the messages automatically and a user has to increase the reference count if he or she wants to pass a message as-is to the next handler.
+* When an outbound (a.k.a. downstream) message reaches at the beginning of the pipeline, Netty will release it after writing it out.
+
+#### Automatic buffer leak detection
+
+Although reference counting is very powerful, it is also error-prone.  To help a user find where he or she forgot to release the buffers, the leak detector logs the stack trace of the location where the leaked buffer was allocated automatically.
+
+Because the leak detector relies on `PhantomReference` and obtaining a stack trace is a very expensive operation, it samples approximately 1% of allocations only.  Therefore, it's a good idea to run the application for a reasonably long time to find all possible leaks.
+
+Once all leaks are found and fixed.  You can turn this feature off to remove its runtime overhead completely by specifying the `-Dio.netty.noResourceLeakDetection` JVM option.
 
 ## Channel API changes
 
@@ -151,15 +158,9 @@ In 3.x, `ChannelHandler` was just a tag interface, and `ChannelUpstreamHandler`,
 
 ```java
 public interface ChannelHandler {
- 
-    void beforeAdd(ChannelHandlerContext ctx) throws Exception;
-    void afterAdd(ChannelHandlerContext ctx) throws Exception;
-    void beforeRemove(ChannelHandlerContext ctx) throws Exception;
-    void afterRemove(ChannelHandlerContext ctx) throws Exception;
- 
+    void handlerAdded(ChannelHandlerContext ctx) throws Exception;
+    void handlerRemoved(ChannelHandlerContext ctx) throws Exception;
     void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception;
-    void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception;
-    ...
 }
 ```
 
