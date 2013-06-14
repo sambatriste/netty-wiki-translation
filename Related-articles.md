@@ -1,7 +1,7 @@
 Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
-
+* [Configuring Netty 4 with spring](http://nerdronix.blogspot.com/?view=classic#!/2013/06/netty-4-configuration-using-spring-maven.html) by Abraham Menacherry
 * [Framework Benchmarks Round 2](http://www.techempower.com/blog/2013/04/05/frameworks-round-2/) by TechEmpower.com
 * [Framework Benchmarks](http://www.techempower.com/blog/2013/03/28/framework-benchmarks/) by TechEmpower.com
 * [Use Netty to proxy your requests](http://www.mastertheboss.com/netty/use-netty-to-proxy-your-requests) by MasterTheBoss.com
