@@ -6,24 +6,24 @@ The package name of Netty has been changed from `org.jboss.netty` to `io.netty` 
 
 The binary JAR has been split into multiple submodules so that a user can exclude unnecessary features from the class path.  The current structure looks like this following:
 
-| Artifact ID          | Description                                       
-|----------------------|---------------------------------------------------
-| netty-parent         | Maven parent POM
-| netty-common         | Utility classes and logging facade
-| netty-buffer         | `ByteBuf` API that replaces `java.nio.ByteBuffer`
-| netty-transport      | Channel API and core transports
-| netty-transport-rxtx | [Rxtx](http://goo.gl/vTFBv) transport
-| netty-transport-sctp | [SCTP](http://goo.gl/oXxaU) transport
-| netty-transport-udt  | [UDT](http://udt.sourceforge.net/) transport
-| netty-handler        | Useful `ChannelHandler` implementations
-| netty-codec          | Codec framework that helps write an encoder and a decoder
-| netty-codec-http     | Codecs related with HTTP, Web Sockets, SPDY, and RTSP
-| netty-codec-socks    | Codecs related with SOCKS protocol
-| netty-all            | All-in-one JAR that combines all artifacts above
-| netty-tarball        | Tarball distribution
-| netty-example        | Examples
-| netty-testsuite-*    | A collection of integration tests
-| netty-microbench     | Microbenchmarks
+| Artifact ID            | Description                                       
+|------------------------|---------------------------------------------------
+| `netty-parent`         | Maven parent POM
+| `netty-common`         | Utility classes and logging facade
+| `netty-buffer`         | `ByteBuf` API that replaces `java.nio.ByteBuffer`
+| `netty-transport`      | Channel API and core transports
+| `netty-transport-rxtx` | [Rxtx](http://goo.gl/vTFBv) transport
+| `netty-transport-sctp` | [SCTP](http://goo.gl/oXxaU) transport
+| `netty-transport-udt`  | [UDT](http://udt.sourceforge.net/) transport
+| `netty-handler`        | Useful `ChannelHandler` implementations
+| `netty-codec`          | Codec framework that helps write an encoder and a decoder
+| `netty-codec-http`     | Codecs related with HTTP, Web Sockets, SPDY, and RTSP
+| `netty-codec-socks`    | Codecs related with SOCKS protocol
+| `netty-all`            | All-in-one JAR that combines all artifacts above
+| `netty-tarball`        | Tarball distribution
+| `netty-example`        | Examples
+| `netty-testsuite-*`    | A collection of integration tests
+| `netty-microbench`     | Microbenchmarks
 
 All artifacts (except for `netty-all.jar`) are now OSGi bundles and can be used in your favorite OSGi container.
 
@@ -31,11 +31,11 @@ All artifacts (except for `netty-all.jar`) are now OSGi bundles and can be used 
 
 * Most operations in Netty now support method chaining for brevity.
 * Non-configuration getters have no `get-` prefix anymore. (e.g. `Channel.getRemoteAddress()` → `Channel.remoteAddress()`)
-  * Boolean properties are still prefixed with `is-` to avoid confusion (e.g. 'empty' is both article and verb, so `empty()` can mean two things.)
+  * Boolean properties are still prefixed with `is-` to avoid confusion (e.g. 'empty' is both an article and a verb, so `empty()` can have two meanings.)
 
 ## Buffer API changes
 
-### ChannelBuffer → ByteBuf
+### `ChannelBuffer` → `ByteBuf`
 
 Thanks to the structural changes mentioned above, the buffer API can be used as a separate package.  Even if you are not interested in adopting Netty as a network application framework, you can still use our buffer API.  Therefore, the type name `ChannelBuffer` does not make sense anymore, and has been renamed to `ByteBuf`.
 
@@ -61,7 +61,7 @@ buf.capacity(512);
 
 The only exception is the buffer which wraps a single buffer or a single byte array, created by `wrappedBuffer()`.  You cannot increase its capacity because it invalidates the whole point of wrapping an existing buffer - saving memory copies.  If you want to change the capacity after you wrap a buffer, you should just create a new buffer with enough capacity and copy the buffer you wanted to wrap.
 
-### New interface: CompositeByteBuf
+### New interface: `CompositeByteBuf`
 
 A new interface named `CompositeByteBuf` defines various advanced operations for composite buffer implementations.  A user can save bulk memory copy operations using a composite buffer at the cost of relatively expensive random access.  To create a new composite buffer, use either `Unpooled.wrappedBuffer(...)` like before, `Unpooled.compositeBuffer(...)`, or `ByteBufAllocator.compositeBuffer()`.
 
@@ -90,9 +90,9 @@ System.out.format("%08x%n", leBuf.getInt(0));
 assert buf != leBuf;
 assert buf == buf.order(ByteOrder.BIG_ENDIAN);
 ```
-### Pooled `ByteBuf`
+### Pooled buffers
 
-Netty 4 introduces a high-performance buffer pool which combines [buddy allocation](http://en.wikipedia.org/wiki/Buddy_memory_allocation) and [slab allocation](http://en.wikipedia.org/wiki/Slab_allocation), which gives the following benefits:
+Netty 4 introduces a high-performance buffer pool which is a variant of [jemalloc](http://www.canonware.com/jemalloc/) that combines [buddy allocation](http://en.wikipedia.org/wiki/Buddy_memory_allocation) and [slab allocation](http://en.wikipedia.org/wiki/Slab_allocation). It gives the following benefits:
 
 * Reduced GC pressure incurred by frequent allocation and deallocation of the buffers
 * Reduced memory bandwidth consumption incurred when creating a new buffer which  inevitably has to be filled with zeroes
@@ -113,7 +113,7 @@ ByteBuf buf2 = ctx.alloc().buffer(512);
 channel.write(buf2)
 ```
 
-Once a `ByteBuf` is written to the remote peer it will automatically be returned to the pool it originated from.
+Once a `ByteBuf` is written to the remote peer it will be returned automatically to the pool it originated from.
 
 The default `ByteBufAllocator` is `PooledByteBufAllocator`. If you do not wish to use buffer pooling or use your own allocator, use `Channel.config().setAllocator(...)` with an alternative allocator such as `UnpooledByteBufAllocator`.
 
@@ -143,6 +143,17 @@ Because the leak detector relies on `PhantomReference` and obtaining a stack tra
 
 Once all leaks are found and fixed.  You can turn this feature off to remove its runtime overhead completely by specifying the `-Dio.netty.noResourceLeakDetection` JVM option.
 
+## `io.netty.util.concurrent`
+
+Along with the new standalone buffer API, 4.0 provides various constructs which are useful for writing asynchronous applications in general at the new package called `io.netty.util.concurrent`.  Some of those constructs are:
+
+* `Future` and `Promise` - similar to `ChannelFuture`, but has no dependency to `Channel`
+* `EventExecutor` and `EventExecutorGroup` - generic event loop API
+
+They are used as the base of the channel API which will be explained later in this document.  For example, `ChannelFuture` extends `io.netty.util.concurrent.Future` and `EventLoopGroup` extends `EventExecutorGroup`.
+
+![Event loop type hierarchy diagram](http://img.motd.kr/uml/gist/8a6c3c47800370ee898a "")
+
 ## Channel API changes
 
 In 4.0, many classes under the `io.netty.channel` package have gone through a major overhaul, and thus simple text search-and-replace will not make your 3.x application work with 4.0.  This section will try to show the thought process behind such a big change, rather than being an exhaustive resource for all the changes.
@@ -152,9 +163,9 @@ In 4.0, many classes under the `io.netty.channel` package have gone through a ma
 
 The terms 'upstream' and 'downstream' were pretty confusing to beginners.  4.0 uses 'inbound' and 'outbound' wherever possible.
 
-#### New ChannelHandler hierarchy
+#### New `ChannelHandler` type hierarchy
 
-In 3.x, `ChannelHandler` was just a tag interface, and `ChannelUpstreamHandler`, `ChannelDownstreamHandler`, and `LifeCycleAwareChannelHandler` defined the actual handler methods.  In Netty 4, `ChannelHandler` merges `LifeCycleAwareChannelHandler` along with a couple more methods which are going to be useful to any handler implementations:
+In 3.x, `ChannelHandler` was just a tag interface, and `ChannelUpstreamHandler`, `ChannelDownstreamHandler`, and `LifeCycleAwareChannelHandler` defined the actual handler methods.  In Netty 4, `ChannelHandler` merges `LifeCycleAwareChannelHandler` along with a couple more methods which are useful to both an inbound and an outbound handler:
 
 ```java
 public interface ChannelHandler {
@@ -166,9 +177,9 @@ public interface ChannelHandler {
 
 The following diagram depicts the new type hierarchy:
 
-fixme
+![ChannelHandler type hierarchy diagram](http://img.motd.kr/uml/gist/188244c4b3d6b01c0156)
 
-#### ChannelHandler with no event object
+#### `ChannelHandler` with no event object
 
 In 3.x, every I/O operation created a `ChannelEvent` object.  For each read / write, it additionally created a new `ChannelBuffer`.  It simplified the internals of Netty quite a lot because it delegates resource management and buffer pooling to the JVM.  However, it often was the root cause of GC pressure and uncertainty which are sometimes observed in a Netty-based application under high load.
 
@@ -176,26 +187,25 @@ In 3.x, every I/O operation created a `ChannelEvent` object.  For each read / wr
 
 ```java
 // Before:
-void handleUpstream(ChannelHandlerContext ctx, ChannelEvent e) throws Exception;
-void handleDownstream(ChannelHandlerContext ctx, ChannelEvent e) throws Exception;
+void handleUpstream(ChannelHandlerContext ctx, ChannelEvent e);
+void handleDownstream(ChannelHandlerContext ctx, ChannelEvent e);
  
 // After:
-void channelRegistered(ChannelHandlerContext ctx) throws Exception;
-void channelUnregistered(ChannelHandlerContext ctx) throws Exception;
-void channelActive(ChannelHandlerContext ctx) throws Exception;
-void channelInactive(ChannelHandlerContext ctx) throws Exception;
-void inboundBufferUpdated(ChannelHandlerContext ctx) throws Exception;
+void channelRegistered(ChannelHandlerContext ctx);
+void channelUnregistered(ChannelHandlerContext ctx);
+void channelActive(ChannelHandlerContext ctx);
+void channelInactive(ChannelHandlerContext ctx);
+void messageReceived(ChannelHandlerContext ctx, MessageList<Object> messages);
  
-void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelFuture future) throws Exception;
+void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelFuture future);
 void connect(
         ChannelHandlerContext ctx, SocketAddress remoteAddress,
-        SocketAddress localAddress, ChannelFuture future) throws Exception;
-void disconnect(ChannelHandlerContext ctx, ChannelFuture future) throws Exception;
-void close(ChannelHandlerContext ctx, ChannelFuture future) throws Exception;
-void deregister(ChannelHandlerContext ctx, ChannelFuture future) throws Exception;
-void flush(ChannelHandlerContext ctx, ChannelFuture future) throws Exception;
+        SocketAddress localAddress, ChannelFuture future);
+void disconnect(ChannelHandlerContext ctx, ChannelFuture future);
+void close(ChannelHandlerContext ctx, ChannelFuture future);
+void deregister(ChannelHandlerContext ctx, ChannelFuture future);
+void write(ChannelHandlerContext ctx, MessageList<Object> messages ChannelFuture future);
 void read(ChannelHandlerContext ctx);
-void sendFile(ChannelHandlerContext ctx, FileRegion region, ChannelPromise promise) throws Exception;
 ```
 
 `ChannelHandlerContext` has also been changed to reflect the changes mentioned above:
@@ -205,122 +215,60 @@ void sendFile(ChannelHandlerContext ctx, FileRegion region, ChannelPromise promi
 ctx.sendUpstream(evt);
  
 // After:
-ctx.nextInboundMessageBuffer().add(evt)
+ctx.fireMessageReceived(receivedMessages);
 ```
 
-All these changes mean a user cannot extend the non-existing `ChannelEvent` interface anymore.  How then does the user define his or her own event type such as `IdleStateEvent`?  `ChannelHandler` in 4.0 has a handler method called `userEventTriggered()` which is dedicated to this specific user case.
+All these changes mean a user cannot extend the non-existing `ChannelEvent` interface anymore.  How then does a user define his or her own event type such as `IdleStateEvent`?  `ChannelInboundHandler` in 4.0 has a handler method called `userEventTriggered()` which is dedicated to this specific user case.
 
 #### Simplified channel state model
 
 When a new connected `Channel` is created in 3.x, at least three `ChannelStateEvent`s are triggered: `channelOpen`, `channelBound`, and `channelConnected`.  When a `Channel` is closed, at least 3 more: `channelDisconnected`, `channelUnbound`, and `channelClosed`.
 
-fixme
+![Netty 3 Channel state diagram](http://img.motd.kr/uml/gist/4335d63c530b6e1c5e2e)
 
 However, it's of dubious value to trigger that many events.  It is more useful for a user to get notified when a `Channel` enters the state where it can perform reads and writes.
 
-fixme
+![Netty 4 Channel state diagram](http://img.motd.kr/uml/gist/6effb68ad2515ca0d618)
 
 `channelOpen`, `channelBound`, and `channelConnected` have been merged to `channelActive`.  `channelDisconnected`, `channelUnbound`, and `channelClosed` have been merged to `channelInactive`.  Likewise, `Channel.isBound()` and `isConnected()` have been merged to `isActive()`.
 
 Note that `channelRegistered` and `channelUnregistered` are not equivalent to `channelOpen` and `channelClosed`.  They are new states introduced to support dynamic registration, deregistration, and re-registration of a `Channel`, as illustrated below:
 
-fixme
+![Netty 4 Channel state diagram for re-registration](http://img.motd.kr/uml/gist/6382530f7890b9f16472)
 
-#### Per-handler buffer
+##### Not necessarily one message per `messageReceived`
 
-Unlike 3.x, which creates a new heap buffer on every read operation to trigger a upstream `MessageEvent`, 4.0 does not create a new buffer every time.  It reads data from a socket directly into the inbound buffer created by the user's `ChannelInboundByteHandler` and `ChannelInboundMessageHandler` implementation.
-
-Because the inbound buffer created by the handler is reused until the associated channel is closed, the GC overhead and the memory bandwidth consumption stays minimal.  Also, a user has complete control over when the received data is discarded, and the codec implementation becomes much simpler and efficient.
-
-Similarly, it is not Netty that creates an outbound buffer: a user's `ChannelOutboundByteHandler` and `ChannelOutboundMessageHandler` do.
-
-##### Not necessarily one event per message
-
-4.0 does not have `messageReceived` or `writeRequested` handler method anymore.  They are replaced with `inboundBufferUpdated` and `flush`.  A user enqueues one or more messages to an inbound (or outbound) buffer and triggers an `inboundBufferUpdated` (or `flush`) event.
+4.0 uses a list-like data structure called `MessageList` to exchange a list of inbound or outbound messages.  A single message is represented as a `MessageList` whose size is 1.
 
 ```java
-public void inboundBufferUpdated(ChannelHandlerContext ctx) {
-    Queue<MyMessage> in = ctx.inboundMessageBuffer();
-    Queue<MyNewMessage> out = ctx.nextInboundMessageBuffer();
-    for (;;) {
-        MyMessage m = in.poll();
-        if (m == null) {
-            break;
-        }
+public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+    final int size = msgs.size();
+    final MessageList<Object> decodedMsgs = MessageList.newInstance();
+    for (int i = 0; i < size; i ++) {
+        MyMessage m = (MyMessage) msgs.get(i);
         MyNewMessage decoded = decode(m);
-        out.add(decoded);
+        decodedMsgs.add(decoded);
     }
-    ctx.fireInboundBufferUpdated();
+
+    msgs.recycle(); // Return msgs to the pool.
+    ctx.fireMessageReceived(decodedMsgs);
 }
 
-public void flush(ChannelHandlerContext ctx, ChannelFuture future) {
-    Queue<MyNewMessage> in = ctx.outboundMessageBuffer();
-    Queue<MyMessage> out = ctx.nextOutboundMessageBuffer();
-    for (;;) {
-        MyNewMessage m = in.poll();
-        if (m == null) {
-            break;
-        }
+public void write(ChannelHandlerContext ctx, MessageList<Object> msgs, ChannelPromose promise) {
+    final int size = msgs.size();
+    final MessageList<Object> encodedMsgs = MessageList.newInstance();
+    for (int i = 0; i < size; i ++) {
+        MyNewMessage m = (MyNewMessage) msgs.get(i);
         MyMessage encoded = encode(m);
-        out.add(encoded);
+        encodedMsgs.add(encoded);
     }
-    ctx.flush(future);
+
+    msgs.recycle(); // Return msgs to the pool.
+    ctx.write(encodedMsgs);
 }
 ```
 
-Alternatively, a user can trigger such event for every single inbound (or outbound) message to emulate the old behavior although it might be less efficient than the new way.
-
-##### Message handler vs. Byte handler
-
-In 3.x, a `MessageEvent` holds an arbitrary object.  It can be either a `ChannelBuffer` or a user-defined object and they are treated the same:
-
-```java
-@Override
-public void messageReceived(ChannelHandlerContext ctx, MessageEvent evt) {
-    Object msg = evt.getMessage();
-    if (msg instanceof ChannelBuffer) {
-        ChannelBuffer buf = (ChannelBuffer) msg;
-        ...
-    } else {
-        MyMessage myMsg = (MyMessage) msg;
-        ...
-    }
-}
-```
-
-In 4.0, they are treated differently since a handler does not handle an individual message but handles multiple messages:
-
-```java
-public void inboundBufferUpdated(ChannelHandlerContext ctx) {
-    if (ctx.hasInboundByteBuffer()) {
-        ByteBuf buf = ctx.inboundByteBuffer();
-        ...
-    } else {
-        Queue<MyMessage> buf = ctx.inboundMessageBuffer();
-        for (;;) {
-            MyMessage msg = buf.poll();
-            if (msg == null) {
-                break;
-            }
-            ...
-        }
-    }
-}
-```
-
-You might find it interesting that a `ServerChannel`'s handler is an inbound handler whose inbound buffer is `Queue<Channel>`.
-
-##### Handler adapters
-
-Most users will find creating and managing its life cycle tedious, and therefore a user is supposed to extend the predefined adapter classes to make their life easier:
-
-* `ChannelHandlerAdapter`
-* `ChannelStateHandlerAdapter`
-* `ChannelOperationHandlerAdapter`
-* `ChannelInboundMessageHandlerAdapter`
-* `ChannelInboundByteHandlerAdapter`
-* `ChannelOutboundMessageHandlerAdapter`
-* `ChannelOutboundByteHandlerAdapter`
+Alternatively, a user can trigger such event for every single inbound (or outbound) message to emulate the old behavior although it is most likely less efficient.
 
 ### Sensible and less error-prone inbound traffic suspension
 
@@ -384,14 +332,14 @@ anotherGroup.register(ch);
 When a `Channel` is registered to an `EventLoopGroup`, the `Channel` is actually registered to one of the `EventLoop`s which is managed by the `EventLoopGroup`.  `EventLoop` implements `java.util.concurrent.ScheduledExecutorService`.  It means a user can execute or schedule an arbitrary `Runnable` or `Callable` in an I/O thread where the user's channel belongs to.  Along with the new well-defined thread model, which will be explained later, it became extremely easier to write a thread-safe handler.
 
 ```java
-public class MyHandler extends ChannelOutboundMessageHandlerAdapter {
+public class MyHandler extends ChannelOutboundHandlerAdapter {
     ...
-    public void flush(ChannelHandlerContext ctx, ChannelFuture f) {
+    public void write(ChannelHandlerContext ctx, MessageList<Object> msgs, ChannelPromise p) {
         ...
-        ctx.flush(f);
- 
+        ctx.write(msgs, p);
+        
         // Schedule a write timeout.
-        ctx.executor().schedule(new MyWriteTimeoutTask(), 30, TimeUnit.SECONDS);
+        ctx.executor().schedule(new MyWriteTimeoutTask(p), 30, TimeUnit.SECONDS);
         ...
     }
 }
@@ -407,9 +355,9 @@ public class Main {
 
 ### Simplified shutdown
 
-There's no more `releaseExternalResources()`.  You can close all open channels immediately and make all I/O threads stop themselves by calling `EventLoopGroup.shutdown()`, just like you shut down your thread pool with `java.util.concurrent.ExecutorService.shutdown()`.
+There's no more `releaseExternalResources()`.  You can close all open channels immediately and make all I/O threads stop themselves by calling `EventLoopGroup.shutdownGracefully()`.
 
-### Type-safe ChannelOptions
+### Type-safe `ChannelOption`
 
 There are two ways to configure the socket parameters of a `Channel` in Netty.  One is to call the setters of a `ChannelConfig` explicitly, such as `SocketChannelConfig.setTcpNoDelay(true)`.  It is the most type-safe way.  The other is to call `ChannelConfig.setOption()` method.  Sometimes you have to determine what socket options to configure in runtime, and this method is ideal for such cases.  However, it is error-prone in 3.x because a user has to specify the option as a pair of a string and an object.  If a user calls with the wrong option name or value, he or she will encounter a `ClassCastException` or the specified option might even be ignored silently.
 
@@ -433,7 +381,7 @@ cfg.setOption(ChannelOption.TCP_NODELAY, 0); // Compile error
 In response to user demand, you can attach any object to `Channel` and `ChannelHandlerContext`.  A new interface called `AttributeMap`, which `Channel` and `ChannelHandlerContext` extend, has been added.  Instead, `ChannelLocal` and `Channel.attachment` are removed.  The attributes are garbage-collected when their associated `Channel` is garbage-collected.
 
 ```java
-public class MyHandler extends ChannelInboundMessageHandlerAdapter<MyMessage> {
+public class MyHandler extends ChannelInboundHandlerAdapter {
  
     private static final AttributeKey<MyState> STATE =
             new AttributeKey<MyState>("MyHandler.state");
@@ -445,7 +393,7 @@ public class MyHandler extends ChannelInboundMessageHandlerAdapter<MyMessage> {
     }
  
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, MyMessage msg) {
+    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
         MyState state = ctx.attr(STATE).get();
     }
     ...
@@ -461,10 +409,12 @@ The new bootstrap also employs a fluent interface.
 ```java
 public static void main(String[] args) throws Exception {
     // Configure the server.
-    ServerBootstrap b = new ServerBootstrap();
+    EventLoopGroup bossGroup = new NioEventLoopGroup();
+    EventLoopGroup workerGroup = new NioEventLoopGroup();
     try {
-        b.group(new NioEventLoopGroup(), new NioEventLoopGroup())
-         .channel(new NioServerSocketChannel())
+        ServerBootstrap b = new ServerBootstrap();
+        b.group(bossGroup, workerGroup)
+         .channel(NioServerSocketChannel.class)
          .option(ChannelOption.SO_BACKLOG, 100)
          .localAddress(8080)
          .childOption(ChannelOption.TCP_NODELAY, true)
@@ -482,20 +432,25 @@ public static void main(String[] args) throws Exception {
         f.channel().closeFuture().sync();
     } finally {
         // Shut down all event loops to terminate all threads.
-        b.shutdown();
+        bossGroup.shutdownGracefully();
+        workerGroup.shutdownGracefully();
+        
+        // Wait until all threads are terminated.
+        bossGroup.terminationFuture.sync();
+        workerGroup.terminationFuture.sync();
     }
 }
 ```
 
-#### ChannelPipelineFactory → ChannelInitializer
+#### `ChannelPipelineFactory` → `ChannelInitializer`
 
 As you noticed in the example above, there is no `ChannelPipelineFactory` anymore.  It has been replaced with `ChannelInitializer`, which gives more control over `Channel` and `ChannelPipeline` configuration.
 
 Please note that you don't create a new `ChannelPipeline` by yourself.  After observing many use cases reported so far, the Netty project team concluded that it has no benefit for a user to create his or her own pipeline implementation or to extend the default implementation.  Therefore, `ChannelPipeline` is not created by a user anymore.  `ChannelPipeline` is automatically created by a `Channel`.
 
-### ChannelFuture split to ChannelFuture and ChannelPromise
+### `ChannelFuture` → `ChannelFuture` and `ChannelPromise`
 
-`ChannelFuture` has been split into `ChannelFuture` and `ChannelPromise`. This not only makes the contract of consumer and producer of an asynchronous operation explicit, but also make it more safe to use the returned `ChannelFuture` in a chain (like filtering), because the state of the `ChannelFuture` cannot be changed.
+`ChannelFuture` has been split into `ChannelFuture` and `ChannelPromise`. This not only makes the contract of consumer and producer of an asynchronous operation explicit, but also makes it more safe to use the returned `ChannelFuture` in a chain (like filtering), because the state of the `ChannelFuture` cannot be changed.
 
 Due to this change, some methods now accept `ChannelPromise` rather than `ChannelFuture` to modify its state.
 
@@ -503,7 +458,7 @@ Due to this change, some methods now accept `ChannelPromise` rather than `Channe
 
 There is no well-defined thread model in 3.x although there was an attempt to fix its inconsistency in 3.5.  4.0 defines a strict thread model that helps a user write a ChannelHandler without worrying too much about thread safety.
 
-* Netty will never call a `ChannelHandler`'s methods concurrently (except for `newInbound/OutboundBuffer()` and `freeInbound/OutboundBuffer()` methods), unless the `ChannelHandler` is annotated with `@Shareable`. This is regardless of the type of handler methods - inbound, outbound, or life cycle event handler methods.
+* Netty will never call a `ChannelHandler`'s methods concurrently, unless the `ChannelHandler` is annotated with `@Shareable`. This is regardless of the type of handler methods - inbound, outbound, or life cycle event handler methods.
   * A user does not need to synchronize either inbound or outbound event handler methods anymore.
   * 4.0 disallows adding a `ChannelHandler` more than once unless it's annotated with `@Sharable`.
 * There is always [happens-before](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/package-summary.html#MemoryVisibility) relationship between each `ChannelHandler` method invocations made by Netty.
@@ -517,7 +472,7 @@ There is no well-defined thread model in 3.x although there was an attempt to fi
   * If two handlers in the same pipeline are assigned with different `EventExecutor`s, they are invoked simultaneously.  A user has to pay attention to thread safety if more than one handler access shared data even if the shared data is accessed only by the handlers in the same pipeline.
 * The `ChannelFutureListeners` added to `ChannelFuture` are always invoked by the `EventLoop` thread assigned to the future's associated `Channel`.
 
-### No more ExecutionHandler - it's in the core.
+### No more `ExecutionHandler` - it's in the core.
 
 You can specify an `EventExecutor` when you add a `ChannelHandler` to a `ChannelPipeline` to tell the pipeline to always invoke the handler methods of the added `ChannelHandler` via the specified `EventExecutor`.
 
@@ -532,10 +487,6 @@ p.addLast(e1, new MyDatabaseAccessingHandler());
 p.addLast(e2, new MyHardDiskAccessingHandler());
 ```
 
-`EventExecutor` is a supertype of `EventLoop`, and it also extends `ScheduledExecutorService`.
-
-fixme
-
 ## Codec framework changes
 
 There were substantial internal changes in the codec framework because 4.0 requires a handler to create and manage its buffer (see Per-handler buffer section in this document.)  However, the changes from a user's perspective are not very big.
@@ -545,9 +496,9 @@ There were substantial internal changes in the codec framework because 4.0 requi
 * `OneToOneEncoder` and `OneToOneDecoder` were replaced with `MessageToMessageEncoder` and `MessageToMessageDecoder`.
 * The method signatures of `decode()`, `decodeLast()`, `encode()` were changed slightly to support generics and to remove redundant parameters.
 
-### Codec embedder → EmbeddedChannel
+### Codec embedder → `EmbeddedChannel`
 
-Codec embedder has been replaced by `io.netty.channel.embedded.EmbeddedByteChannel` and `EmbeddedMessageChannel`. `EmbeddedChannel` allows a user unit-test any kind of pipeline including a codec.
+Codec embedder has been replaced by `io.netty.channel.embedded.EmbeddedChannel` to allow a user to test any kind of pipeline including a codec.
 
 ### HTTP codec
 
@@ -565,7 +516,6 @@ For more detail, please refer to the updated `HttpSnoopServer` example.  If you 
 
 The following transports were newly added:
 
-* AIO socket transport which uses the NIO.2 `AsynchronousSocketChannel`
 * OIO SCTP transport
 * UDT transport
 
@@ -576,11 +526,11 @@ This section shows rough steps to port the Factorial example from 3.x to 4.0.  T
 ### Porting the server
 
 1. Rewrite `FactorialServer.run()` method to use the new bootstrap API.
-  1. No `ChannelFactory` anymore.  Instantiate `NioEventLoop` (one for accepting incoming connections and the other for handling the accepted connections) by yourself.
+  1. No `ChannelFactory` anymore.  Instantiate `NioEventLoopGroup` (one for accepting incoming connections and the other for handling the accepted connections) by yourself.
 1. Rename `FactorialServerPipelineFactory` to `FactorialServerInitializer`.
   1. Make it extends `ChannelInitializer<Channel>`.
   1. Instead of creating a new `ChannelPipeline`, get it via `Channel.pipeline()`.
-1. Make `FactorialServerHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`.
+1. Make `FactorialServerHandler` extends `ChannelInboundHandlerAdapter`.
   1. Replace channelDisconnected() with channelInactive().
   1. handleUpstream() is not used anymore.
 1. Make `BigIntegerDecoder` extend `ByteToMessageDecoder<BigInteger>`.
@@ -593,36 +543,5 @@ Mostly same with porting the server, but you need to pay attention when you writ
 
 1. Rewrite `FactorialClient.run()` method to use the new bootstrap API.
 1. Rename `FactorialClientPipelineFactory` to `FactorialClientInitializer`.
-1. Make `FactorialClientHandler` extends `ChannelInboundMessageHandlerAdapter<BigInteger>`
-  1. At this point, you find there is no `Channel.isWritable()` nor `channelInterestChanged()` in 4.0.  Instead, you maintain the number of pending writes by yourself.  The new `sendNumbers()` could look like the following:
-
-```
-    private void sendNumbers() {
-        // Do not send more than 4096 numbers.
-        boolean finished = false;
-        MessageBuf<Object> out = ctx.nextOutboundMessageBuffer();
-        while (out.size() < 4096) {
-            if (i <= count) {
-                out.add(Integer.valueOf(i));
-                i ++;
-            } else {
-                finished = true;
-                break;
-            }
-        }
-
-        ChannelFuture f = ctx.flush();
-        if (!finished) {
-            f.addListener(numberSender);
-        }
-    }
-
-    private final ChannelFutureListener numberSender = new ChannelFutureListener() {
-        @Override
-        public void operationComplete(ChannelFuture future) throws Exception {
-            if (future.isSuccess()) {
-                sendNumbers();
-            }
-        }
-    };
+1. Make `FactorialClientHandler` extends `ChannelInboundHandlerAdapter`
 ```
