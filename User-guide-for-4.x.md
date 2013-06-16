@@ -11,7 +11,7 @@ However, a general purpose protocol or its implementation sometimes does not sca
 Another inevitable case is when you have to deal with a legacy proprietary protocol to ensure the interoperability with an old system. What matters in this case is how quickly we can implement that protocol while not sacrificing the stability and performance of the resulting application.
 
 ## The Solution
-[The Netty project](http://netty.io/) is an effort to provide an asynchronous event-driven network application framework and tooling for the rapid development of maintainable high-performance · high-scalability protocol servers and clients.
+[The Netty project] is an effort to provide an asynchronous event-driven network application framework and tooling for the rapid development of maintainable high-performance · high-scalability protocol servers and clients.
 
 In other words, Netty is a NIO client server framework which enables quick and easy development of network applications such as protocol servers and clients. It greatly simplifies and streamlines network programming such as TCP and UDP socket server development.
 
@@ -25,7 +25,7 @@ This chapter tours around the core constructs of Netty with simple examples to l
 If you prefer top-down approach in learning something, you might want to start from Chapter 2, Architectural Overview and get back here.
 
 ### Before Getting Started
-The minimum requirements to run the examples which are introduced in this chapter are only two; the latest version of Netty and JDK 1.6 or above. The latest version of Netty is available in [the project download page](http://netty.io/downloads). To download the right version of JDK, please refer to your preferred JDK vendor's web site.
+The minimum requirements to run the examples which are introduced in this chapter are only two; the latest version of Netty and JDK 1.7 or above. The latest version of Netty is available in [the project download page](http://netty.io/downloads). To download the right version of JDK, please refer to your preferred JDK vendor's web site.
 
 As you read, you might have more questions about the classes introduced in this chapter. Please refer to the API reference whenever you want to know more about them. All class names in this document are linked to the online API reference for your convenience. Also, please don't hesitate to [contact the Netty project community](http://netty.io/community.html) and let us know if there's any incorrect information, errors in grammar and typo, and if you have a good idea to improve the documentation.
 
@@ -54,8 +54,8 @@ To implement the `DISCARD` protocol, the only thing you need to do is to ignore 
 		}
 	}
 
-* `DiscardServerHandler` extends [`ChannelInboundByteHandlerAdapter`](http://netty.io/4.0/api/io/netty/channel/ChannelInboundByteHandlerAdapter.html), which is an implementation of [`ChannelInboundByteHandler`](http://netty.io/4.0/api/io/netty/channel/ChannelInboundByteHandler.html). `ChannelInboundByteHandler` provides various event handler methods that you can override. For now, it is just enough to extend `ChannelInboundByteHandlerAdapter` rather than to implement the handler interface by yourself.
-* We override the `inboundBufferUpdate()` event handler method here. This method is called with a [`ByteBuf`](http://netty.io/4.0/api/io/netty/buffer/ByteBuf.html), which contains the received data, whenever new data is received from a client. In this example, we just discard the received data by calling `clear()` on the `ByteBuf` to implement the `DISCARD` protocol.
+* `DiscardServerHandler` extends [`ChannelInboundByteHandlerAdapter`], which is an implementation of [`ChannelInboundByteHandler`]. `ChannelInboundByteHandler` provides various event handler methods that you can override. For now, it is just enough to extend `ChannelInboundByteHandlerAdapter` rather than to implement the handler interface by yourself.
+* We override the `inboundBufferUpdate()` event handler method here. This method is called with a [`ByteBuf`], which contains the received data, whenever new data is received from a client. In this example, we just discard the received data by calling `clear()` on the `ByteBuf` to implement the `DISCARD` protocol.
 * The `exceptionCaught()` event handler method is called with a Throwable when an exception was raised by Netty due to I/O error or by a handler implementation due to the exception thrown while processing events. In most cases, the caught exception should be logged and its associated channel should be closed here, although the implementation of this method can be different depending on what you want to do to deal with an exceptional situation. For example, you might want to send a response message with an error code before closing the connection.
 
 So far so good. We have implemented the first half of the `DISCARD` server. What's left now is to write the `main()` method which starts the server with the `DiscardServerHandler`.
@@ -96,11 +96,26 @@ So far so good. We have implemented the first half of the `DISCARD` server. What
 		}
 	}
 
-* [`ServerBootstrap`](http://netty.io/4.0/api/io/netty/bootstrap/ServerBootstrap.html) is a helper class that sets up a server. You can set up the server using a [`Channel`](http://netty.io/4.0/api/io/netty/channel/Channel.html) directly. However, please note that this is a tedious process and you do not need to do that in most cases.
-* [`NioEventLoopGroup`](http://netty.io/4.0/api/io/netty/channel/nio/NioEventLoopGroup.html) processes all I/O requests and performs I/O. Netty provides various [`EventLoopGroup`](http://netty.io/4.0/api/io/netty/channel/EventLoopGroup.html) implementations for different kind of transports. We are implementing a server-side application in this example, and therefore two `NioEventLoopGroup` will be used. The first is used to handle the accept of new connections and the second will serve the I/O of them. The used `EventLoopGroup` implementation is resposible to manage its used threads. How many Threads are used and how they are mapped to the created `Channel`s depends on the implementation and may be even configurable via the constructor. Please refer to the apidocs.
+* [`ServerBootstrap`] is a helper class that sets up a server. You can set up the server using a [`Channel`](http://netty.io/4.0/api/io/netty/channel/Channel.html) directly. However, please note that this is a tedious process and you do not need to do that in most cases.
+* [`NioEventLoopGroup`] processes all I/O requests and performs I/O. Netty provides various [`EventLoopGroup`] implementations for different kind of transports. We are implementing a server-side application in this example, and therefore two `NioEventLoopGroup` will be used. The first is used to handle the accept of new connections and the second will serve the I/O of them. The used `EventLoopGroup` implementation is resposible to manage its used threads. How many Threads are used and how they are mapped to the created `Channel`s depends on the implementation and may be even configurable via the constructor. Please refer to the apidocs.
 * Here, we specify to use the `NioServerSocketChannel` class which will be used to instance a new `Channel` that will accept new connections.
-* Here, we configure the [`ChannelInitializer`](http://static.netty.io/4.0/api/io/netty/channel/ChannelInitializer.html). Whenever a new connection is accepted by the server, it will be called. Most of the times you want to add [`ChannelHandlers`](http://static.netty.io/4.0/api/io/netty/channel/ChannelHandler.html) to the pipeline of the accepted connection. In this example we add the `DiscardServerHandler`. As the application gets complicated, it is likely that you will add more handlers to the pipeline and extract this anonymous class into a top level class eventually.
-* You can also set the parameters which are specific to the `Channel` implementation. We are writing a TCP/IP server, so we are allowed to set the socket options such as `tcpNoDelay` and `keepAlive`. Please refer to the apidocs of [`ChannelOption`](http://netty.io/4.0/api/io/netty/channel/ChannelOption.html) and the specific [`ChannelConfig`](http://netty.io/4.0/api/io/netty/channel/ChannelConfig.html) implementations to get an overview about the supported `ChannelOption`s.
+* Here, we configure the [`ChannelInitializer`]. Whenever a new connection is accepted by the server, it will be called. Most of the times you want to add [`ChannelHandler`]s to the pipeline of the accepted connection. In this example we add the `DiscardServerHandler`. As the application gets complicated, it is likely that you will add more handlers to the pipeline and extract this anonymous class into a top level class eventually.
+* You can also set the parameters which are specific to the `Channel` implementation. We are writing a TCP/IP server, so we are allowed to set the socket options such as `tcpNoDelay` and `keepAlive`. Please refer to the apidocs of [`ChannelOption`] and the specific [`ChannelConfig`] implementations to get an overview about the supported `ChannelOption`s.
 * We are ready to go now. What's left is to bind to the port and to start the server. Here, we bind to the port `8080` of all NICs (network interface cards) in the machine. You can now call the `bind()` method as many times as you want (with different bind addresses.)
 
 Congratulations! You've just finished your first server on top of Netty.
+
+
+[The Netty project]: http://netty.io/
+
+[`ByteBuf`]: http://netty.io/4.0/api/io/netty/buffer/ByteBuf.html
+[`Channel`]: http://netty.io/4.0/api/io/netty/channel/Channel.html
+[`ChannelConfig`]: http://netty.io/4.0/api/io/netty/channel/ChannelConfig.html
+[`ChannelHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelHandler.html
+[`ChannelInboundByteHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundByteHandler.html
+[`ChannelInboundByteHandlerAdapter`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundByteHandlerAdapter.html
+[`ChannelInitializer`]: http://netty.io/4.0/api/io/netty/channel/ChannelInitializer.html
+[`ChannelOption`]: http://netty.io/4.0/api/io/netty/channel/ChannelOption.html
+[`EventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/EventLoopGroup.html
+[`NioEventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/nio/NioEventLoopGroup.html
+[`ServerBootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/ServerBootstrap.html
