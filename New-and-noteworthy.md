@@ -32,6 +32,7 @@ All artifacts (except for `netty-all.jar`) are now OSGi bundles and can be used 
 * Most operations in Netty now support method chaining for brevity.
 * Non-configuration getters have no `get-` prefix anymore. (e.g. `Channel.getRemoteAddress()` → `Channel.remoteAddress()`)
   * Boolean properties are still prefixed with `is-` to avoid confusion (e.g. 'empty' is both an article and a verb, so `empty()` can have two meanings.)
+* For API changes between 4.0 CR3 and 4.0 CR4 see [14158070bf - Revamp the core API to reduce memory footprint and consumption](https://github.com/netty/netty/commit/14158070bf8b3f831702061ffd657c84179fc639)
 
 ## Buffer API changes
 
