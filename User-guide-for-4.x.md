@@ -143,16 +143,60 @@ So far so good. We have implemented the first half of the `DISCARD` server. What
 
 Congratulations! You've just finished your first server on top of Netty.
 
+### Looking into the Received Data
+Now that we have written our first server, we need to test if it really works. The easiest way to test it is to use the *telnet* command. For example, you could enter `telnet localhost 8080` in the command line and type something.
+
+However, can we say that the server is working fine? We cannot really know that because it is a discard server. You will not get any response at all. To prove it is really working, let us modify the server to print what it has received.
+
+We already know that [`MessageList`] is filled whenever data is received and the `messageReceived` handler method will be invoked. Let us put some code into the `messageReceived` method of the `DiscardServerHandler`:
+
+    @Override
+    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+        MessageList<ByteBuf> messages = msgs.cast();
+        for (ByteBuf in : messages) {
+            while(in.readable()) {
+                System.out.println((char) buf.readByte());
+                System.out.flush();
+            }
+        }
+        msgs.releaseAllAndRecycle();
+    }
+
+If you run the *telnet* command again, you will see the server prints what has received.
+
+The full source code of the discard server is located in the [`io.netty.example.discard`] package of the distribution.
+
+### Writing an Echo Server
+So far, we have been consuming data without responding at all. A server, however, is usually supposed to respond to a request. Let us learn how to write a response message to a client by implementing the [`ECHO`](http://tools.ietf.org/html/rfc862) protocol, where any received data is sent back.
+
+The only difference from the discard server we have implemented in the previous sections is that it sends the received data back instead of printing the received data out to the console. Therefore, it is enough again to modify the `messageReceived()` method:
+
+    @Override
+    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) throws Exception {
+        ctx.write(msgs);
+    }
+
+* A [`ChannelHandlerContext`] object has a reference to the outbound `MessageList` in the [`ChannelPipeline`]. We can call the `write()` method with the inbound `MessageList` as parameter. This will transfer the content of the inbound `MessageList` to the outbound `MessageList`.
+
+If you run the *telnet* command again, you will see the server sends back whatever you have sent to it.
+
+The full source code of the echo server is located in the [`io.netty.example.echo`] package of the distribution.
+
 [The Netty project]: http://netty.io/
 
 [`Channel`]: http://netty.io/4.0/api/io/netty/channel/Channel.html
 [`ChannelConfig`]: http://netty.io/4.0/api/io/netty/channel/ChannelConfig.html
+[`ChannelHandlerContext`]: http://netty.io/4.0/api/io/netty/channel/ChannelHandlerContext.html
 [`ChannelHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelHandler.html
 [`ChannelInboundHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundHandler.html
 [`ChannelInboundHandlerAdapter`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundHandlerAdapter.html
 [`ChannelInitializer`]: http://netty.io/4.0/api/io/netty/channel/ChannelInitializer.html
 [`ChannelOption`]: http://netty.io/4.0/api/io/netty/channel/ChannelOption.html
+[`ChannelPipeline`]: http://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html
 [`EventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/EventLoopGroup.html
 [`MessageList`]: http://netty.io/4.0/api/io/netty/channel/MessageList.html
 [`NioEventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/nio/NioEventLoopGroup.html
 [`ServerBootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/ServerBootstrap.html
+
+[`io.netty.example.discard`]: http://netty.io/4.0/xref/io/netty/example/discard/package-summary.html
+[`io.netty.example.echo`]: http://netty.io/4.0/xref/io/netty/example/echo/package-summary.html
