@@ -75,41 +75,64 @@ To implement the `DISCARD` protocol, the only thing you need to do is to ignore 
 
 So far so good. We have implemented the first half of the `DISCARD` server. What's left now is to write the `main()` method which starts the server with the `DiscardServerHandler`.
 
-	package io.netty.example.discard;
-	
-	import java.net.InetSocketAddress;
-	
-	import io.netty.bootstrap.ServerBootstrap;
-	import io.netty.channel.ChannelFuture;
-	import io.netty.channel.ChannelInitializer;
-	import io.netty.channel.ChannelOption;
-	import io.netty.channel.nio.NioEventLoopGroup;
-	import io.netty.channel.socket.SocketChannel;
-	import io.netty.channel.socket.nio.NioServerSocketChannel;
-	
-	public class DiscardServer {
-		public static void main(String[] args) throws Exception {
-			ServerBootstrap bootstrap = new ServerBootstrap();
-			try {
-				bootstrap.group(new NioEventLoopGroup(), new NioEventLoopGroup())
-					.channel(NioServerSocketChannel.class)
-					.childHandler(new ChannelInitializer<SocketChannel>() {
-						@Override
-						protected void initChannel(SocketChannel channel) {
-							channel.pipeline().addLast(new DiscardServerHandler());
-						}
-					})
-					.childOption(ChannelOption.TCP_NODELAY, true)
-					.childOption(ChannelOption.SO_KEEPALIVE, true);
-				
-				ChannelFuture future = bootstrap.bind(new InetSocketAddress(8080)).sync();
-				
-				future.channel().closeFuture().sync();
-			} finally {
-				bootstrap.shutdown();
-			}
-		}
-	}
+    package io.netty.example.discard;
+    
+    import io.netty.bootstrap.ServerBootstrap;
+    import io.netty.channel.ChannelFuture;
+    import io.netty.channel.ChannelInitializer;
+    import io.netty.channel.EventLoopGroup;
+    import io.netty.channel.nio.NioEventLoopGroup;
+    import io.netty.channel.socket.SocketChannel;
+    import io.netty.channel.socket.nio.NioServerSocketChannel;
+    
+    /**
+     * Discards any incoming data.
+     */
+    public class DiscardServer {
+    
+        private final int port;
+    
+        public DiscardServer(int port) {
+            this.port = port;
+        }
+    
+        public void run() throws Exception {
+            EventLoopGroup bossGroup = new NioEventLoopGroup();
+            EventLoopGroup workerGroup = new NioEventLoopGroup();
+            try {
+                ServerBootstrap b = new ServerBootstrap();
+                b.group(bossGroup, workerGroup)
+                 .channel(NioServerSocketChannel.class)
+                 .childHandler(new ChannelInitializer<SocketChannel>() {
+                     @Override
+                     public void initChannel(SocketChannel ch) throws Exception {
+                         ch.pipeline().addLast(new DiscardServerHandler());
+                     }
+                 });
+    
+                // Bind and start to accept incoming connections.
+                ChannelFuture f = b.bind(port).sync();
+    
+                // Wait until the server socket is closed.
+                // In this example, this does not happen, but you can do that to gracefully
+                // shut down your server.
+                f.channel().closeFuture().sync();
+            } finally {
+                workerGroup.shutdownGracefully();
+                bossGroup.shutdownGracefully();
+            }
+        }
+    
+        public static void main(String[] args) throws Exception {
+            int port;
+            if (args.length > 0) {
+                port = Integer.parseInt(args[0]);
+            } else {
+                port = 8080;
+            }
+            new DiscardServer(port).run();
+        }
+    }
 
 * [`ServerBootstrap`] is a helper class that sets up a server. You can set up the server using a [`Channel`] directly. However, please note that this is a tedious process and you do not need to do that in most cases.
 * [`NioEventLoopGroup`] processes all I/O requests and performs I/O. Netty provides various [`EventLoopGroup`] implementations for different kind of transports. We are implementing a server-side application in this example, and therefore two `NioEventLoopGroup` will be used. The first is used to handle the accept of new connections and the second will serve the I/O of them. The used `EventLoopGroup` implementation is resposible to manage its used threads. How many Threads are used and how they are mapped to the created `Channel`s depends on the implementation and may be even configurable via the constructor. Please refer to the apidocs.
@@ -119,7 +142,6 @@ So far so good. We have implemented the first half of the `DISCARD` server. What
 * We are ready to go now. What's left is to bind to the port and to start the server. Here, we bind to the port `8080` of all NICs (network interface cards) in the machine. You can now call the `bind()` method as many times as you want (with different bind addresses.)
 
 Congratulations! You've just finished your first server on top of Netty.
-
 
 [The Netty project]: http://netty.io/
 
