@@ -273,12 +273,11 @@ public class TimeClient {
     public static void main(String[] args) throws Exception {
         String host = args[0];
         int port = Integer.parseInt(args[1]);
-        EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         
         try {
             Bootstrap b = new Bootstrap(); // (1)
-            b.group(bossGroup, workerGroup);
+            b.group(workerGroup);
             b.channel(NioSocketChannel.class); // (2)
             b.option(ChannelOption.SO_KEEPALIVE, true); // (3)
             b.handler(new ChannelInitializer<SocketChannel>() {
@@ -294,7 +293,6 @@ public class TimeClient {
             // Wait until the connection is closed.
             f.channel().closeFuture().sync();
         } finally {
-            bossGroup.shutdownGracefully();
             workerGroup.shudownGracefully();
         }
     }
