@@ -203,7 +203,7 @@ The protocol to implement in this section is the [`TIME`](http://tools.ietf.org/
 Because we are going to ignore any received data but to send a message as soon as a connection is established, we cannot use the `messageReceived()` method this time. Instead, we should override the `channelActive()` method. The following is the implementation: 
 
 ```java
-package org.jboss.netty.example.time;
+package io.netty.example.time;
 
 public class TimeServerHandler extends ChannelInboundHandlerAdapter {
 
@@ -263,8 +263,330 @@ $ rdate -o <port> -p <host>
 ```
 where `<port>` is the port number you specified in the `main()` method and `<host>` is usually `localhost`. 
 
+### Writing a Time Client
+
+Unlike `DISCARD` and `ECHO` servers, we need a client for the `TIME` protocol because a human cannot translate a 32-bit binary data into a date on a calendar. In this section, we discuss how to make sure the server works correctly and learn how to write a client with Netty.
+
+The biggest and only difference between a server and a client in Netty is that different [`Bootstrap`] and [`Channel`] implementations are used. Please take a look at the following code:
+
+```java
+package io.netty.example.time;
+
+public class TimeClient {
+    public static void main(String[] args) throws Exception {
+        String host = args[0];
+        int port = Integer.parseInt(args[1]);
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        
+        try {
+            Bootstrap b = new Bootstrap(); // (1)
+            b.group(bossGroup, workerGroup);
+            b.channel(NioSocketChannel.class); // (2)
+            b.option(ChannelOption.SO_KEEPALIVE, true); // (3)
+            b.handler(new ChannelInitializer<SocketChannel>() {
+                @Override
+                public void initChannel(SocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new TimeClientHandler());
+                }
+            });
+            
+            // Start the client.
+            ChannelFuture f = b.connect(host, port).sync(); // (4)
+
+            // Wait until the connection is closed.
+            f.channel().closeFuture().sync();
+        } finally {
+            bossGroup.shutdownGracefully();
+            workerGroup.shudownGracefully();
+        }
+    }
+}
+```
+
+1. [`Bootstrap`] is similar to [`ServerBootstrap`] except that it's for non-server channels such as a client-side or connectionless channel.
+1. Instead of [`NioServerSocketChannel`], [`NioSocketChannel`] is being used to create a client-side [`Channel`].
+1. Note that we do not use `childOption()` here unlike we did with `ServerBootstrap` because the client-side [`SocketChannel`] does not have a parent.
+1. We should call the `connect()` method instead of the `bind()` method. 
+
+As you can see, it is not really different from the the server-side code. What about the [`ChannelHandler'] implementation? It should receive a 32-bit integer from the server, translate it into a human readable format, print the translated time, and close the connection: 
+
+```java
+package io.netty.example.time;
+
+import java.util.Date;
+
+public class TimeClientHandler extends ChannelInboundHandlerAdapter {
+    @Override
+    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+        ByteBuf m = (ByteBuf) msgs.get(0); // (1)
+        long currentTimeMillis = (buf.readInt() - 2208988800L) * 1000L;
+        System.out.println(new Date(currentTimeMillis));
+        msgs.releaseAllAndRecycle();
+        ctx.close();
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        cause.printStackTrace();
+        ctx.close();
+    }
+}
+```
+
+1. Handle the first message only.  Note the size of `MessageList` is greater than 0 here.
+
+It looks very simple and does not look any different from the server side example. However, this handler sometimes will refuse to work raising an `IndexOutOfBoundsException`. We discuss why this happens in the next section. 
+
+### Dealing with a Stream-based Transport 
+
+#### One Small Caveat of Socket Buffer
+
+In a stream-based transport such as TCP/IP, received data is stored into a socket receive buffer. Unfortunately, the buffer of a stream-based transport is not a queue of packets but a queue of bytes. It means, even if you sent two messages as two independent packets, an operating system will not treat them as two messages but as just a bunch of bytes. Therefore, there is no guarantee that what you read is exactly what your remote peer wrote. For example, let us assume that the TCP/IP stack of an operating system has received three packets: 
+
+![Three packets received as they were sent](http://img.motd.kr/uml/gist/0cd9cc6674a6b895a0ce)
+
+Because of this general property of a stream-based protocol, there's high chance of reading them in the following fragmented form in your application:
+
+![Three packets split and merged into four buffers](http://img.motd.kr/uml/gist/b31c0bd7bbfc69fd82d6)
+
+Therefore, a receiving part, regardless it is server-side or client-side, should defrag the received data into one or more meaningful frames that could be easily understood by the application logic. In case of the example above, the received data should be framed like the following:
+
+![Four buffers defragged into three](http://img.motd.kr/uml/gist/0cd9cc6674a6b895a0ce)
+
+#### The First Solution
+
+Now let us get back to the `TIME` client example. We have the same problem here. A 32-bit integer is a very small amount of data, and it is not likely to be fragmented often. However, the problem is that it can be fragmented, and the possibility of fragmentation will increase as the traffic increases.
+
+The simplistic solution is to create an internal cumulative buffer and wait until all 4 bytes are received into the internal buffer. The following is the modified `TimeClientHandler` implementation that fixes the problem:
+
+```java
+package io.netty.example.time;
+
+import java.util.Date;
+
+public class TimeClientHandler extends ChannelInboundHandlerAdapter {
+    private ByteBuf buf;
+    
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) {
+        buf = ctx.alloc().buffer(4); // (1)
+    }
+    
+    @Override
+    public void handlerRemoved(ChannelHandlerContext ctx) {
+        buf.release(); // (1)
+        buf = null;
+    }
+    
+    @Override
+    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+        for (ByteBuf m: msgs.<ByteBuf>cast()) { // (2)
+            buf.writeBytes(m); // (3)
+        }
+        msgs.releaseAllAndRecycle();
+        
+        if (buf.readableBytes() >= 4) { // (4)
+            long currentTimeMillis = (buf.readInt() - 2208988800L) * 1000L;
+            System.out.println(new Date(currentTimeMillis));
+            ctx.close();
+        }
+    }
+    
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        cause.printStackTrace();
+        ctx.close();
+    }
+}
+```
+
+1. A [`ChannelHandler`] has two life cycle listener methods: `handlerAdded()` and `handlerRemoved()`.  You can perform an arbitrary (de)initialization task as long as it does not block for a long time.
+1. `MessageList.<T>cast()` enables you to cast the type parameter of a `MessageList` without getting annoying unchecked type warnings.
+1. First, all received data should be cumulated into `buf`. 
+1. And then, the handler must check if `buf` has enough data, 4 bytes in this example, and proceed to the actual business logic. Otherwise, Netty will call the `messageReceived()` method again when more data arrives, and eventually all 4 bytes will be cumulated.
+
+#### The Second Solution
+
+Although the first solution has resolved the problem with the `TIME` client, the modified handler does not look that clean. Imagine a more complicated protocol which is composed of multiple fields such as a variable length field. Your [`ChannelInboundHandler`] implementation will become unmaintainable very quickly.
+
+As you may have noticed, you can add more than one [`ChannelHandler`] to a [`ChannelPipeline`], and therefore, you can split one monolithic [`ChannelHandler`] into multiple modular ones to reduce the complexity of your application. For example, you could split `TimeClientHandler` into two handlers:
+
+* `TimeDecoder` which deals with the fragmentation issue, and
+* the initial simple version of `TimeClientHandler`.
+
+Fortunately, Netty provides an extensible class which helps you write the first one out of the box:
+
+```java
+package io.netty.example.time;
+
+public class TimeDecoder extends ByteToMessageDecoder { // (1)
+    @Override
+    protected void decode(ChannelHandlerContext ctx, ByteBuf in, MessageList<Object> out) { // (2)
+        if (in.readableBytes() < 4) {
+            return; // (3)
+        }
+        
+        out.add(in.readBytes(4)); // (4)
+    }
+}
+```
+
+1. [`ByteToMessageDecoder`] is an implementation of [`ChannelInboundHandler`] which makes it easy to which deals with the fragmentation issue.
+2. [`ByteToMessageDecoder`] calls the `decode()` method with an internally maintained cumulative buffer whenever new data is received.
+3. `decode()` can decide to add nothing to `out` where there is not enough data in the cumulative buffer.  [`ByteToMessageDecoder`] will call `decode()` again when there is more data received.
+4. If `decode()` adds an object to `out`, it means the decoder decoded a message successfully.  [`ByteToMessageDecoder`] will discard the read part of the cumulative buffer.  Please remember that you don't need to decode multiple messages. [`ByteToMessageDecoder`] will keep calling the `decode()` method until it adds nothing to `out`.
+
+Now that we have another handler to insert into the [`ChannelPipeline`], we should modify the [`ChannelInitializer`] implementation in the `TimeClient`:
+
+```java
+b.handler(new ChannelInitializer<SocketChannel>() {
+    @Override
+    public void initChannel(SocketChannel ch) throws Exception {
+        ch.pipeline().addLast(new TimeDecoder(), new TimeClientHandler());
+    }
+});
+```
+
+If you are an adventurous person, you might want to try the [`ReplayingDecoder`] which simplifies the decoder even more. You will need to consult the API reference for more information though.
+
+```java
+public class TimeDecoder extends ReplayingDecoder<VoidEnum> {
+    @Override
+    protected void decode(
+            ChannelHandlerContext ctx, ByteBuf in, MessageList<Object> out, VoidEnum state) {
+        out.add(in.readBytes(4));
+    }
+}
+```
+
+Additionally, Netty provides out-of-the-box decoders which enables you to implement most protocols very easily and helps you avoid from ending up with a monolithic unmaintainable handler implementation. Please refer to the following packages for more detailed examples: 
+
+* [`io.netty.example.factorial`] for a binary protocol, and
+* [`io.netty.example.telnet`] for a text line-based protocol.
+
+### Speaking in POJO instead of `ByteBuf`
+
+All the examples we have reviewed so far used a [`ByteBuf`] as a primary data structure of a protocol message. In this section, we will improve the `TIME` protocol client and server example to use a POJO instead of a [`ByteBuf`].
+
+The advantage of using a POJO in your [`ChannelHandler`]s is obvious; your handler becomes more maintainable and reusable by separating the code which extracts information from `ByteBuf` out from the handler. In the `TIME` client and server examples, we read only one 32-bit integer and it is not a major issue to use `ByteBuf` directly. However, you will find it is necessary to make the separation as you implement a real world protocol.
+
+First, let us define a new type called `UnixTime`.
+
+```java
+package io.netty.example.time;
+
+import java.util.Date;
+
+public class UnixTime {
+
+    private final int value;
+    
+    public UnixTime() {
+        this((int) (System.currentTimeMillis() / 1000L + 2208988800L));
+    }
+    
+    public UnixTime(int value) {
+        this.value = value;
+    }
+        
+    public int value() {
+        return value;
+    }
+        
+    @Override
+    public String toString() {
+        return new Date((value() - 2208988800L) * 1000L).toString();
+    }
+}
+```
+
+We can now revise the `TimeDecoder` to produce a `UnixTime` instead of a [`ByteBuf`].
+
+```java
+@Override
+protected Object decode(ChannelHandlerContext ctx, ByteBuf in, MessageList<Object> out) {
+    if (in.readableBytes() < 4) {
+        return;
+    }
+
+    out.add(new UnixTime(buffer.readInt());
+}
+```
+
+With the updated decoder, the `TimeClientHandler` does not use [`ByteBuf`] anymore:
+
+```java
+@Override
+public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+    UnixTime m = (UnixTime) msgs.get(0);
+    System.out.println(m);
+    ctx.close();
+}
+```
+
+Much simpler and elegant, right? The same technique can be applied on the server side. Let us update the `TimeServerHandler` first this time:
+
+```java
+@Override
+public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) {
+    ChannelFuture f = e.getChannel().write(new UnixTime());
+    f.addListener(ChannelFutureListener.CLOSE);
+}
+```
+
+Now, the only missing piece is an encoder, which is an implementation of [`ChannelOutboundHandler`] that translates a `UnixTime` back into a [`ByteBuf`]. It's much simpler than writing a decoder because there's no need to deal with packet fragmentation and assembly when encoding a message.
+
+```java
+package io.netty.example.time;
+
+public class TimeEncoder extends ChannelOutboundHandlerAdapter {
+    @Override
+    public void write(ChannelHandlerContext ctx, MessageList<Object> msgs, ChannelPromise promise) {
+        MessageList<ByteBuf> out = MessageList.newInstance();
+        for (UnixTime m: msgs.<UnixTime>cast()) {
+            ByteBuf encoded = ctx.alloc().buffer(4);
+            encoded.writeInt(m.value());
+            out.add(encoded);
+        }
+        msgs.releaseAllAndRecycle();
+        ctx.write(out, promise); // (1)
+    }
+}
+```
+
+1. Note that we pass the original [`ChannelPromise`] as-is so that Netty marks it as success or failure when the encoded data is actually written out to the wire.
+
+To simplify even further, you can make use of [`MessageToByteEncoder`]:
+
+```java
+public class TimeEncoder extends MessageToByteEncoder<UnixTime> {
+    @Override
+    protected void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) {
+        out.writeInt(msg.value());
+    }
+}
+
+```
+
+The last task left is to insert a `TimeEncoder` into the [`ChannelPipeline`] on the server side, and it is left as a trivial exercise.
+
+### Shutting Down Your Application
+
+Shutting down a Netty application is usually as simple as shutting down all [`EventLoopGroup`]s you created via `shutdownGracefully()`.  It returns a [`Future`] that notifies you when the [`EventLoopGroup`] has been terminated completely and all [`Channel`]s that belong to the group have been closed.
+
+### Summary
+
+In this chapter, we had a quick tour of Netty with a demonstration on how to write a fully working network application on top of Netty.
+
+There is more detailed information about Netty in the upcoming chapters. We also encourage you to review the Netty examples in the [`io.netty.example`] package.
+
+Please also note that [the community](http://netty.io/community.html) is always waiting for your questions and ideas to help you and keep improving Netty and its documentation based on your feed back. 
+
+[`Bootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/Bootstrap.html
 [`ByteBuf`]: http://netty.io/4.0/api/io/netty/buffer/ByteBuf.html
 [`ByteBufAllocator`]: http://netty.io/4.0/api/io/netty/buffer/ByteBufAllocator.html
+[`ByteToMessageDecoder`]: http://netty.io/4.0/api/io/netty/handler/codec/ByteToMessageDecoder.html
 [`Channel`]: http://netty.io/4.0/api/io/netty/channel/Channel.html
 [`ChannelConfig`]: http://netty.io/4.0/api/io/netty/channel/ChannelConfig.html
 [`ChannelFuture`]: http://netty.io/4.0/api/io/netty/channel/ChannelFuture.html
@@ -275,13 +597,24 @@ where `<port>` is the port number you specified in the `main()` method and `<hos
 [`ChannelInboundHandlerAdapter`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundHandlerAdapter.html
 [`ChannelInitializer`]: http://netty.io/4.0/api/io/netty/channel/ChannelInitializer.html
 [`ChannelOption`]: http://netty.io/4.0/api/io/netty/channel/ChannelOption.html
+[`ChannelOutboundHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelOutboundHandler.html
+
 [`ChannelPipeline`]: http://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html
+[`ChannelPromise`]: http://netty.io/4.0/api/io/netty/channel/ChannelPromise.html
 [`EventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/EventLoopGroup.html
+[`Future`]: http://netty.io/4.0/api/io/netty/util/concurrent/Future.html
 [`MessageList`]: http://netty.io/4.0/api/io/netty/channel/MessageList.html
+[`MessageToByteEncoder`]: http://netty.io/4.0/api/io/netty/handler/codec/MessageToByteEncoder.html
 [`NioEventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/nio/NioEventLoopGroup.html
 [`NioServerSocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/nio/NioServerSocketChannel.html
+[`NioSocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/nio/NioSocketChannel.html
+[`ReplayingDecoder`]: http://netty.io/4.0/api/io/netty/handler/codec/ReplayingDecoder.html
 [`ServerBootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/ServerBootstrap.html
 [`ServerChannel`]: http://netty.io/4.0/api/io/netty/channel/ServerChannel.html
+[`SocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/SocketChannel.html
 
+[`io.netty.example`]: https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example
 [`io.netty.example.discard`]: http://netty.io/4.0/xref/io/netty/example/discard/package-summary.html
 [`io.netty.example.echo`]: http://netty.io/4.0/xref/io/netty/example/echo/package-summary.html
+[`io.netty.example.factorial`]: http://netty.io/4.0/xref/io/netty/example/factorial/package-summary.html
+[`io.netty.example.telnet`]: http://netty.io/4.0/xref/io/netty/example/telnet/package-summary.html
