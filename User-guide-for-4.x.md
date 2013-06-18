@@ -277,9 +277,9 @@ public class TimeClient {
         
         try {
             Bootstrap b = new Bootstrap(); // (1)
-            b.group(workerGroup);
-            b.channel(NioSocketChannel.class); // (2)
-            b.option(ChannelOption.SO_KEEPALIVE, true); // (3)
+            b.group(workerGroup); (2)
+            b.channel(NioSocketChannel.class); // (3)
+            b.option(ChannelOption.SO_KEEPALIVE, true); // (4)
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
@@ -288,7 +288,7 @@ public class TimeClient {
             });
             
             // Start the client.
-            ChannelFuture f = b.connect(host, port).sync(); // (4)
+            ChannelFuture f = b.connect(host, port).sync(); // (5)
 
             // Wait until the connection is closed.
             f.channel().closeFuture().sync();
@@ -300,6 +300,7 @@ public class TimeClient {
 ```
 
 1. [`Bootstrap`] is similar to [`ServerBootstrap`] except that it's for non-server channels such as a client-side or connectionless channel.
+1. If you specify only one [`EventLoopGroup`], it will be used both as a boss group and as a worker group. The boss worker is not used for the client side though.
 1. Instead of [`NioServerSocketChannel`], [`NioSocketChannel`] is being used to create a client-side [`Channel`].
 1. Note that we do not use `childOption()` here unlike we did with `ServerBootstrap` because the client-side [`SocketChannel`] does not have a parent.
 1. We should call the `connect()` method instead of the `bind()` method. 
