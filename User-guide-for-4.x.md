@@ -277,7 +277,7 @@ public class TimeClient {
         
         try {
             Bootstrap b = new Bootstrap(); // (1)
-            b.group(workerGroup); (2)
+            b.group(workerGroup); // (2)
             b.channel(NioSocketChannel.class); // (3)
             b.option(ChannelOption.SO_KEEPALIVE, true); // (4)
             b.handler(new ChannelInitializer<SocketChannel>() {
@@ -525,8 +525,8 @@ Much simpler and elegant, right? The same technique can be applied on the server
 
 ```java
 @Override
-public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) {
-    ChannelFuture f = e.getChannel().write(new UnixTime());
+public void channelActive(ChannelHandlerContext ctx) {
+    ChannelFuture f = ctx.write(new UnixTime());
     f.addListener(ChannelFutureListener.CLOSE);
 }
 ```
