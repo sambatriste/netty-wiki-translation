@@ -1,6 +1,7 @@
 Please make sure the newer article appears first and there is no duplicate.
 
 ## 2013
+* [What is Netty?](http://ayedo.github.io/netty/2013/06/19/what-is-netty.html) by Alon Dolev
 * [Creating a multiplayer HTML5 game using Websockets and Netty 4](http://nerdronix.blogspot.com/2013/06/creating-multiplayer-game-using-html-5.html) by Abraham Menacherry
 * [Configuring Netty 4 with spring](http://nerdronix.blogspot.com/?view=classic#!/2013/06/netty-4-configuration-using-spring-maven.html) by Abraham Menacherry
 * [Framework Benchmarks Round 2](http://www.techempower.com/blog/2013/04/05/frameworks-round-2/) by TechEmpower.com
