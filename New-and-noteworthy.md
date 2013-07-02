@@ -437,8 +437,8 @@ public static void main(String[] args) throws Exception {
         workerGroup.shutdownGracefully();
         
         // Wait until all threads are terminated.
-        bossGroup.terminationFuture.sync();
-        workerGroup.terminationFuture.sync();
+        bossGroup.terminationFuture().sync();
+        workerGroup.terminationFuture().sync();
     }
 }
 ```
