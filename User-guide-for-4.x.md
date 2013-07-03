@@ -156,7 +156,7 @@ public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs)
     MessageList<ByteBuf> messages = msgs.cast();
     try {
         for (ByteBuf in : messages) {
-            while (in.readable()) { // (1)
+            while (in.isReadable()) { // (1)
                 System.out.println((char) in.readByte());
                 System.out.flush();
             }
