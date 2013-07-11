@@ -305,7 +305,7 @@ public class TimeClient {
 1. Note that we do not use `childOption()` here unlike we did with `ServerBootstrap` because the client-side [`SocketChannel`] does not have a parent.
 1. We should call the `connect()` method instead of the `bind()` method. 
 
-As you can see, it is not really different from the the server-side code. What about the [`ChannelHandler'] implementation? It should receive a 32-bit integer from the server, translate it into a human readable format, print the translated time, and close the connection: 
+As you can see, it is not really different from the the server-side code. What about the [`ChannelHandler`] implementation? It should receive a 32-bit integer from the server, translate it into a human readable format, print the translated time, and close the connection: 
 
 ```java
 package io.netty.example.time;
