@@ -428,7 +428,7 @@ public class TimeDecoder extends ByteToMessageDecoder { // (1)
 }
 ```
 
-1. [`ByteToMessageDecoder`] is an implementation of [`ChannelInboundHandler`] which makes it easy to which deals with the fragmentation issue.
+1. [`ByteToMessageDecoder`] is an implementation of [`ChannelInboundHandler`] which makes it easy to deal with the fragmentation issue.
 2. [`ByteToMessageDecoder`] calls the `decode()` method with an internally maintained cumulative buffer whenever new data is received.
 3. `decode()` can decide to add nothing to `out` where there is not enough data in the cumulative buffer.  [`ByteToMessageDecoder`] will call `decode()` again when there is more data received.
 4. If `decode()` adds an object to `out`, it means the decoder decoded a message successfully.  [`ByteToMessageDecoder`] will discard the read part of the cumulative buffer.  Please remember that you don't need to decode multiple messages. [`ByteToMessageDecoder`] will keep calling the `decode()` method until it adds nothing to `out`.
