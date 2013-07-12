@@ -519,7 +519,7 @@ protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
         return;
     }
 
-    out.add(new UnixTime(buffer.readInt());
+    out.add(new UnixTime(in.readInt()));
 }
 ```
 
