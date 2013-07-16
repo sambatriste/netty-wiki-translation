@@ -42,6 +42,10 @@ Thanks to the structural changes mentioned above, the buffer API can be used as 
 
 The utility class `ChannelBuffers`, which creates a new buffer, has been split into two utility classes, `Unpooled` and `ByteBufUtil`.  As can be guessed from its name `Unpooled`, 4.0 introduced pooled `ByteBuf`s which can be allocated via `ByteBufAllocator` implementations.
 
+### `ByteBuf` is not an interface but an abstract class
+
+According to our internal performance test, converting `ByteBuf` from an interface to an abstract class improved the overall throughput around 5%.
+
 ### Most buffers are dynamic with maximum capacity
 
 In 3.x, buffers were fixed or dynamic.  The capacity of a fixed buffer does not change once it is created while the capacity of a dynamic buffer changes whenever its `write*(...)` method requires more space.
@@ -62,9 +66,9 @@ buf.capacity(512);
 
 The only exception is the buffer which wraps a single buffer or a single byte array, created by `wrappedBuffer()`.  You cannot increase its capacity because it invalidates the whole point of wrapping an existing buffer - saving memory copies.  If you want to change the capacity after you wrap a buffer, you should just create a new buffer with enough capacity and copy the buffer you wanted to wrap.
 
-### New interface: `CompositeByteBuf`
+### New buffer type: `CompositeByteBuf`
 
-A new interface named `CompositeByteBuf` defines various advanced operations for composite buffer implementations.  A user can save bulk memory copy operations using a composite buffer at the cost of relatively expensive random access.  To create a new composite buffer, use either `Unpooled.wrappedBuffer(...)` like before, `Unpooled.compositeBuffer(...)`, or `ByteBufAllocator.compositeBuffer()`.
+A new buffer implementation named `CompositeByteBuf` defines various advanced operations for composite buffer implementations.  A user can save bulk memory copy operations using a composite buffer at the cost of relatively expensive random access.  To create a new composite buffer, use either `Unpooled.wrappedBuffer(...)` like before, `Unpooled.compositeBuffer(...)`, or `ByteBufAllocator.compositeBuffer()`.
 
 ### Predictable NIO buffer conversion
 
@@ -117,6 +121,8 @@ channel.write(buf2)
 Once a `ByteBuf` is written to the remote peer it will be returned automatically to the pool it originated from.
 
 The default `ByteBufAllocator` is `PooledByteBufAllocator`. If you do not wish to use buffer pooling or use your own allocator, use `Channel.config().setAllocator(...)` with an alternative allocator such as `UnpooledByteBufAllocator`.
+
+NOTE: At the moment, the default allocator is `UnpooledByteBufAllocator`.  Once we ensure there's no memory leak in `PooledByteBufAllocator`, we will default back again to it.
 
 #### `ByteBuf` is always reference counted
 
@@ -196,16 +202,17 @@ void channelRegistered(ChannelHandlerContext ctx);
 void channelUnregistered(ChannelHandlerContext ctx);
 void channelActive(ChannelHandlerContext ctx);
 void channelInactive(ChannelHandlerContext ctx);
-void messageReceived(ChannelHandlerContext ctx, MessageList<Object> messages);
+void channelRead(ChannelHandlerContext ctx, Ojbect message);
  
-void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelFuture future);
+void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelPromise promise);
 void connect(
         ChannelHandlerContext ctx, SocketAddress remoteAddress,
-        SocketAddress localAddress, ChannelFuture future);
-void disconnect(ChannelHandlerContext ctx, ChannelFuture future);
-void close(ChannelHandlerContext ctx, ChannelFuture future);
-void deregister(ChannelHandlerContext ctx, ChannelFuture future);
-void write(ChannelHandlerContext ctx, MessageList<Object> messages ChannelFuture future);
+        SocketAddress localAddress, ChannelPromise promise);
+void disconnect(ChannelHandlerContext ctx, ChannelPromise promise);
+void close(ChannelHandlerContext ctx, ChannelPromise promise);
+void deregister(ChannelHandlerContext ctx, ChannelPromise promise);
+void write(ChannelHandlerContext ctx, Object message, ChannelPromise promise);
+void flush(ChannelHandlerContext ctx);
 void read(ChannelHandlerContext ctx);
 ```
 
@@ -216,7 +223,7 @@ void read(ChannelHandlerContext ctx);
 ctx.sendUpstream(evt);
  
 // After:
-ctx.fireMessageReceived(receivedMessages);
+ctx.fireChanenlRead(receivedMessage);
 ```
 
 All these changes mean a user cannot extend the non-existing `ChannelEvent` interface anymore.  How then does a user define his or her own event type such as `IdleStateEvent`?  `ChannelInboundHandler` in 4.0 has a handler method called `userEventTriggered()` which is dedicated to this specific user case.
@@ -237,39 +244,11 @@ Note that `channelRegistered` and `channelUnregistered` are not equivalent to `c
 
 ![Netty 4 Channel state diagram for re-registration](http://img.motd.kr/uml/gist/6382530f7890b9f16472)
 
-##### Not necessarily one message per `messageReceived`
+##### `write()` does not flush automatically
 
-4.0 uses a list-like data structure called `MessageList` to exchange a list of inbound or outbound messages.  A single message is represented as a `MessageList` whose size is 1.
+4.0 introduced a new operation called `flush()` which explicitly flushes the outbound buffer of a `Channel`, and `write()` operation does not flush automatically.  You can think of this as a `java.io.BufferedOutputStream`, except that it works at message level.
 
-```java
-public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
-    final int size = msgs.size();
-    final MessageList<Object> decodedMsgs = MessageList.newInstance();
-    for (int i = 0; i < size; i ++) {
-        MyMessage m = (MyMessage) msgs.get(i);
-        MyNewMessage decoded = decode(m);
-        decodedMsgs.add(decoded);
-    }
-
-    msgs.recycle(); // Return msgs to the pool.
-    ctx.fireMessageReceived(decodedMsgs);
-}
-
-public void write(ChannelHandlerContext ctx, MessageList<Object> msgs, ChannelPromose promise) {
-    final int size = msgs.size();
-    final MessageList<Object> encodedMsgs = MessageList.newInstance();
-    for (int i = 0; i < size; i ++) {
-        MyNewMessage m = (MyNewMessage) msgs.get(i);
-        MyMessage encoded = encode(m);
-        encodedMsgs.add(encoded);
-    }
-
-    msgs.recycle(); // Return msgs to the pool.
-    ctx.write(encodedMsgs);
-}
-```
-
-Alternatively, a user can trigger such event for every single inbound (or outbound) message to emulate the old behavior although it is most likely less efficient.
+Because of this change, you must be very careful not to forget to call `ctx.flush()` after writing something.  Alternatively, you could use a shortcut method `writeAndFlush()`.
 
 ### Sensible and less error-prone inbound traffic suspension
 
@@ -335,9 +314,9 @@ When a `Channel` is registered to an `EventLoopGroup`, the `Channel` is actually
 ```java
 public class MyHandler extends ChannelOutboundHandlerAdapter {
     ...
-    public void write(ChannelHandlerContext ctx, MessageList<Object> msgs, ChannelPromise p) {
+    public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise p) {
         ...
-        ctx.write(msgs, p);
+        ctx.write(msg, p);
         
         // Schedule a write timeout.
         ctx.executor().schedule(new MyWriteTimeoutTask(p), 30, TimeUnit.SECONDS);
@@ -394,7 +373,7 @@ public class MyHandler extends ChannelInboundHandlerAdapter {
     }
  
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, MessageList<Object> msgs) {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
         MyState state = ctx.attr(STATE).get();
     }
     ...
@@ -532,8 +511,10 @@ This section shows rough steps to port the Factorial example from 3.x to 4.0.  T
   1. Make it extends `ChannelInitializer<Channel>`.
   1. Instead of creating a new `ChannelPipeline`, get it via `Channel.pipeline()`.
 1. Make `FactorialServerHandler` extends `ChannelInboundHandlerAdapter`.
-  1. Replace channelDisconnected() with channelInactive().
+  1. Replace `channelDisconnected()` with `channelInactive()`.
   1. handleUpstream() is not used anymore.
+  1. Rename `messageReceived()` into `channelRead()` and adjust the method signature accordingly.
+  1. Replace `ctx.write()` with `ctx.writeAndFlush()`.
 1. Make `BigIntegerDecoder` extend `ByteToMessageDecoder<BigInteger>`.
 1. Make `NumberEncoder` extend `MessageToByteEncoder<Number>`.
   1. `encode()` does not return a buffer anymore.  Fill the encoded data to the buffer provided by `ByteToMessageDecoder`.
