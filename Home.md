@@ -57,7 +57,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
 <li>
-<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/objectecho">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
+<a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/factorial">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
 <li>
 <a href="https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example/localtime">LocalTime</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
 </ul>
@@ -102,7 +102,7 @@ There are several examples to help your experience with Netty. It is recommended
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/objectecho">ObjectEcho</a> - exchange serializable Java objects</li>
 <li>
-<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/objectecho">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
+<a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/factorial">Factorial</a> - write a stateful client / server based on custom binary protocol</li>
 <li>
 <a href="https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example/worldclock">WorldClock</a> - rapid protocol prototyping with Google Protocol Buffers integration</li>
 </ul>
