@@ -2,7 +2,7 @@
 <ul class="nav nav-list">
 <li class="nav-header">Need a Book?</li>
 <li><a href="http://www.manning.com/maurer/"><img src="https://github.com/netty/netty/wiki/images/netty-in-action.gif" alt="Book: Netty in Action"></a></li>
-<li><a href="http://www.manning.com/maurer/">Use code <strong>13netco</strong> for a 37% discount!</a></li>
+<li><a href="http://www.manning.com/maurer/">Use code <strong>mlnettyco</strong> for a 37% discount!</a></li>
 </ul>
 </div>
 
