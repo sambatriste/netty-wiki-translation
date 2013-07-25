@@ -526,4 +526,3 @@ Mostly same with porting the server, but you need to pay attention when you writ
 1. Rewrite `FactorialClient.run()` method to use the new bootstrap API.
 1. Rename `FactorialClientPipelineFactory` to `FactorialClientInitializer`.
 1. Make `FactorialClientHandler` extends `ChannelInboundHandlerAdapter`
-```
