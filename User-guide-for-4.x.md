@@ -305,7 +305,7 @@ public class TimeClient {
             // Wait until the connection is closed.
             f.channel().closeFuture().sync();
         } finally {
-            workerGroup.shudownGracefully();
+            workerGroup.shutdownGracefully();
         }
     }
 }
