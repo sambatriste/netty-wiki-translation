@@ -552,7 +552,7 @@ package io.netty.example.time;
 public class TimeEncoder extends ChannelOutboundHandlerAdapter {
     @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) {
-        UnitTime m = (UnixTime) msg;
+        UnixTime m = (UnixTime) msg;
         ByteBuf encoded = ctx.alloc().buffer(4);
         encoded.writeInt(m.value());
         ctx.write(encoded, promise); // (1)
