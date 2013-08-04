@@ -528,7 +528,7 @@ With the updated decoder, the `TimeClientHandler` does not use [`ByteBuf`] anymo
 ```java
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
-    UnixTime m = (UnixTime) msgs.get(0);
+    UnixTime m = (UnixTime) msg;
     System.out.println(m);
     ctx.close();
 }
