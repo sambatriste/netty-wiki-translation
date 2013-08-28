@@ -239,7 +239,7 @@ public class TimeServerHandler extends ChannelInboundHandlerAdapter {
 }
 ```
 
-1. As explained, the `channelActive()` method will be invoked when a connection is established and ready to generate traffic.  Let's write a 32-bit integer that represents the current time in thie method.
+1. As explained, the `channelActive()` method will be invoked when a connection is established and ready to generate traffic.  Let's write a 32-bit integer that represents the current time in this method.
 1. To send a new message, we need to allocate a new buffer which will contain the message. We are going to write a 32-bit integer, and therefore we need a [`ByteBuf`] whose capacity is at least 4 bytes. Get the current [`ByteBufAllocator`] via `ChannelHandlerContext.alloc()` and allocate a new buffer.
 1. As usual, we write the constructed message.
 
