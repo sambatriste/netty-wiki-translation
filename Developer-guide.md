@@ -1,4 +1,4 @@
-<div class="alert"><strong>Looking for a user guide?</strong> Please note that this guide is <strong>not</strong> a 'user guide'.  It is not intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.  If you are looking for the documentation for users, please visit [[the documentation home|Home]].</div>
+<div class="alert alert-danger"><strong>Looking for a user guide?</strong> Please note that this guide is <strong>not</strong> a 'user guide'.  It is not intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.  If you are looking for the documentation for users, please visit [[the documentation home|Home]].</div>
 
 ## Working with the source code
 
