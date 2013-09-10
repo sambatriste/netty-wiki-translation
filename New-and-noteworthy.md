@@ -223,7 +223,7 @@ void read(ChannelHandlerContext ctx);
 ctx.sendUpstream(evt);
  
 // After:
-ctx.fireChanenlRead(receivedMessage);
+ctx.fireChannelRead(receivedMessage);
 ```
 
 All these changes mean a user cannot extend the non-existing `ChannelEvent` interface anymore.  How then does a user define his or her own event type such as `IdleStateEvent`?  `ChannelInboundHandler` in 4.0 has a handler method called `userEventTriggered()` which is dedicated to this specific user case.
