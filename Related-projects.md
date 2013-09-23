@@ -28,6 +28,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [MessagePack](http://msgpack.org) is a binary-based efficient object serialization library that enables to exchange structured objects between many languages.
 * [Mobicents Media Server](http://www.mobicents.org) is a media gateway server that processes the audio and/or video streams associated with telephone calls or VoIP connections.
 * [Mobicents SIP Servlets](http://www.mobicents.org/products_sip_servlets.html) is an open source certified SIP Servlet implementation.
+* [Moquette MQTT broker](http://code.google.com/p/moquette-mqtt) Simple MQTT broker that uses Netty for protocol codec.
 * [Naggati](https://github.com/twitter/naggati2) is a protocol builder for Netty, written in Scala.
 * [Netflow.io](https://github.com/wasted/netflow) is a Scala/Netty Netflow Collector used at wasted.io
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
