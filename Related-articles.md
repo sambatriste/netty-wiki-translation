@@ -12,6 +12,7 @@ Please make sure the newer article appears first and there is no duplicate.
 * [Reaching 200K events/sec](http://aphyr.com/posts/269-reaching-200k-events-sec) by Kyle Kingsbury
 * [Routing Web Service Done Quickly with Scala and Netty](http://blog.sustainablesoftware.com.au/2013/01/21/routing-web-service-done-quickly-with-scala-and-netty/) by Sustainable Software Pty Ltd.
 * [Netty channels and Scala implicits](http://uberblo.gs/2013/01/netty-channels-with-scala-implicits) by Franz Bettag
+* [Netty 4 at Twitter: Reduced GC Overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead) by Trustin Lee
 
 ## 2012
 
