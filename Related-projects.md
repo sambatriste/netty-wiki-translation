@@ -17,6 +17,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [HornetQ](http://www.jboss.org/hornetq) is a project to build a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system.
 * [http-client](https://github.com/brunodecarvalho/http-client) is a high performance and throughput oriented HTTP client library.
 * [Infinispan](http://www.jboss.org/infinispan) is an extremely scalable, highly avaiable data grid platform.
+* [jaC64](http://code.google.com/p/jac64-op/) is a C64 emulator with multiplayer support.
 * [JBossWS](http://www.jboss.org/jbossws) is a feature-rich JAX-WS compatible web service stack.
 * [Jetserver](https://github.com/menacher/java-game-server) is a fast multiplayer java game server written using JBoss Netty and Mike Rettig's Jetlang. It supports TCP and UDP transmission and Flash AMF3 protocol.
 * [JXTA](http://jxta.kenai.com) is a set of open protocols that enable any connected device on the network, ranging from cell phones and wireless PDAs to PCs and servers, to communicate and collaborate in a P2P manner.
