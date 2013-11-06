@@ -202,7 +202,7 @@ void channelRegistered(ChannelHandlerContext ctx);
 void channelUnregistered(ChannelHandlerContext ctx);
 void channelActive(ChannelHandlerContext ctx);
 void channelInactive(ChannelHandlerContext ctx);
-void channelRead(ChannelHandlerContext ctx, Ojbect message);
+void channelRead(ChannelHandlerContext ctx, Object message);
  
 void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelPromise promise);
 void connect(
