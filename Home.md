@@ -13,10 +13,10 @@ Get started with the user guide and the API reference. Also, [join the community
   * [API Reference](http://netty.io/4.0/api/) (Javadoc)
   * [Source Code](http://netty.io/4.0/xref/) (Xref)
   * [[New and Noteworthy]]
-* Version 3.7
+* Version 3.8
   * [[User Guide|User guide for 3.x]]
-  * [API Reference](http://netty.io/3.7/api/) (Javadoc)
-  * [Source Code](http://netty.io/3.7/xref/) (Xref)
+  * [API Reference](http://netty.io/3.8/api/) (Javadoc)
+  * [Source Code](http://netty.io/3.8/xref/) (Xref)
 
 ### 3rd-party Articles
 
