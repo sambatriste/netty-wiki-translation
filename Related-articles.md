@@ -1,6 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2013
+* [Netty 4 - Network - Application development the easy way] (http://normanmaurer.me/presentations/2013-wjax-netty/) by Norman Maurer (WJAX 2013)
 * [Building scalable network application with Netty] (http://www.slideshare.net/JaapterWoerds/netty-jfall) by Jaap ter Woerds
 * [Making Storm Fly with Netty](http://yahooeng.tumblr.com/post/64758709722/making-storm-fly-with-netty) by Robert Evans
 * [Netty 4 at Twitter: Reduced GC Overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead) by Trustin Lee
