@@ -244,7 +244,7 @@ Note that `channelRegistered` and `channelUnregistered` are not equivalent to `c
 
 ![Netty 4 Channel state diagram for re-registration](http://img.motd.kr/uml/gist/6382530f7890b9f16472)
 
-##### `write()` does not flush automatically
+#### `write()` does not flush automatically
 
 4.0 introduced a new operation called `flush()` which explicitly flushes the outbound buffer of a `Channel`, and `write()` operation does not flush automatically.  You can think of this as a `java.io.BufferedOutputStream`, except that it works at message level.
 
