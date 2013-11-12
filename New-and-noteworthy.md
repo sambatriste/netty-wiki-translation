@@ -134,7 +134,7 @@ To control the life cycle of a `ByteBuf` in a more predictable way, Netty does n
   * Accessing a buffer whose reference count is 0,
   * Decreasing the reference count to a negative value, or
   * Increasing the reference count beyond `Integer.MAX_VALUE`.
-* Derived buffers (e.g. slices and duplicates) and swapped buffers (i.e. little endian buffers) share the reference count with the buffer it was derived from.  Note the the reference count does not change when a derived buffer is created.
+* Derived buffers (e.g. slices and duplicates) and swapped buffers (i.e. little endian buffers) share the reference count with the buffer it was derived from.  Note that the reference count does not change when a derived buffer is created.
 
 When a `ByteBuf` is used in a `ChannelPipeline`, there are additional rules you need to keep in mind:
 
