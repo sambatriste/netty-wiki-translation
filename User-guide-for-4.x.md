@@ -177,7 +177,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 }
 ```
 
-1. This inefficient loop can actually be simplified to: `System.out.println(buf.toString(io.netty.util.CharsetUtil.US_ASCII))`
+1. This inefficient loop can actually be simplified to: `System.out.println(in.toString(io.netty.util.CharsetUtil.US_ASCII))`
 1. Alternatively, you could do `in.release()` here.
 
 If you run the *telnet* command again, you will see the server prints what has received.
