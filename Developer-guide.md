@@ -1,4 +1,6 @@
-<div class="alert alert-danger"><strong>Looking for a user guide?</strong> Please note that this guide is <strong>not</strong> a 'user guide'.  It is not intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.  If you are looking for the documentation for users, please visit [[the documentation home|Home]].</div>
+<div class="alert alert-danger"><strong>Looking for a user guide?</strong> Visit [[the documentation home|Home]]. <strong>Got a question?</strong> Ask at [[StackOverflow.com]](https://stackoverflow.com/questions/tagged/netty) and tag your question with '*netty*'.</div>
+
+Please note that this guide is <strong>not</strong> a 'user guide'.  It is not intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.
 
 ## Working with the source code
 
