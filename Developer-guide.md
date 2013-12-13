@@ -34,7 +34,7 @@ Alternatively, Java 7 JRE can be selected on per-project basis for each Netty mo
 
 ### Git line ending configuration
 
-We use native line ending for all source code (i.e. '`\r`' for *nix and MacOS X, '`\r\n`' for Windows.) Please configure your Git installation so that your build does not fail and you push bad files, following the instructions below:
+We use native line ending for all source code (i.e. '`\n`' for *nix and MacOS X, '`\r\n`' for Windows.) Please configure your Git installation so that your build does not fail and you push bad files, following the instructions below:
 
 * [Dealing with line endings](https://help.github.com/articles/dealing-with-line-endings) by Github
 * [Mind the End of Your Line](http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/) by Tim Clem, for more information
