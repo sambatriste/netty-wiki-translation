@@ -364,7 +364,7 @@ In response to user demand, you can attach any object to `Channel` and `ChannelH
 public class MyHandler extends ChannelInboundHandlerAdapter {
  
     private static final AttributeKey<MyState> STATE =
-            new AttributeKey<MyState>("MyHandler.state");
+            AttributeKey.valueOf("MyHandler.state");
  
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) {
