@@ -10,7 +10,7 @@ Get started with the user guide and the API reference. Also, [join the community
   * [API Reference](http://netty.io/3.8/api/) (Javadoc)
   * [Source Code](http://netty.io/3.8/xref/) (Xref)
 
-### 3rd-party Articles
+## 3rd-party Articles
 
 We often find there are people in the world who are much more talented in technical writing than we, and they kindly wrote [[great articles|Related Articles]] for the community.
 
