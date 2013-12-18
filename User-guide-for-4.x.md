@@ -1,7 +1,6 @@
-## Preface
-## 前言
+## Preface 前言
 
-### The Problem
+### The Problem 问题
 
 Nowadays we use general purpose applications or libraries to communicate with each other. For example, we often use an HTTP client library to retrieve information from a web server and to invoke a remote procedure call via web services.
 
