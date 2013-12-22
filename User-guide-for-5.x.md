@@ -40,12 +40,12 @@ To implement the `DISCARD` protocol, the only thing you need to do is to ignore 
 package io.netty.example.discard;
 
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.ChannelHandlerAdapter;
 
 /**
  * Handles a server-side channel.
  */
-public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
+public class DiscardServerHandler extends ChannelHandlerAdapter { // (1)
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)
@@ -62,7 +62,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
 }
 ```
 
-1. `DiscardServerHandler` extends [`ChannelInboundHandlerAdapter`], which is an implementation of [`ChannelInboundHandler`]. [`ChannelInboundHandler`] provides various event handler methods that you can override. For now, it is just enough to extend [`ChannelInboundHandlerAdapter`] rather than to implement the handler interface by yourself.
+1. `DiscardServerHandler` extends [`ChannelHandlerAdapter`], which is an implementation of [`ChannelHandler`]. [`ChannelHandler`] provides various event handler methods that you can override. For now, it is just enough to extend [`ChannelHandlerAdapter`] rather than to implement the handler interface by yourself.
 1. We override the `channelRead()` event handler method here. This method is called with the received message, whenever new data is received from a client.  In this example, the type of the received message is [`ByteBuf`].
 1. To implement the `DISCARD` protocol, the handler has to ignore the received message.  [`ByteBuf`] is a reference-counted object which has to be released explicitly via the `release()` method.  Please keep in mind that it is the handler's responsibility to release any reference-counted object passed to the handler.  Usually, `channelRead()` handler method is implemented like the following:
 
@@ -77,7 +77,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
   }
   ```
 
-1. The `exceptionCaught()` event handler method is called with a Throwable when an exception was raised by Netty due to an I/O error or by a handler implementation due to the exception thrown while processing events. In most cases, the caught exception should be logged and its associated channel should be closed here, although the implementation of this method can be different depending on what you want to do to deal with an exceptional situation. For example, you might want to send a response message with an error code before closing the connection.
+1. The `exceptionCaught()` event handler method is called with a `Throwable` when an exception was raised by Netty due to an I/O error or by a handler implementation due to the exception thrown while processing events. In most cases, the caught exception should be logged and its associated channel should be closed here, although the implementation of this method can be different depending on what you want to do to deal with an exceptional situation. For example, you might want to send a response message with an error code before closing the connection.
 
 So far so good. We have implemented the first half of the `DISCARD` server. What's left now is to write the `main()` method which starts the server with the `DiscardServerHandler`.
 
@@ -214,7 +214,7 @@ Because we are going to ignore any received data but to send a message as soon a
 ```java
 package io.netty.example.time;
 
-public class TimeServerHandler extends ChannelInboundHandlerAdapter {
+public class TimeServerHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelActive(final ChannelHandlerContext ctx) { // (1)
@@ -324,7 +324,7 @@ package io.netty.example.time;
 
 import java.util.Date;
 
-public class TimeClientHandler extends ChannelInboundHandlerAdapter {
+public class TimeClientHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ByteBuf m = (ByteBuf) msg; // (1)
@@ -376,7 +376,7 @@ package io.netty.example.time;
 
 import java.util.Date;
 
-public class TimeClientHandler extends ChannelInboundHandlerAdapter {
+public class TimeClientHandler extends ChannelHandlerAdapter {
     private ByteBuf buf;
     
     @Override
@@ -417,7 +417,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
 
 #### The Second Solution
 
-Although the first solution has resolved the problem with the `TIME` client, the modified handler does not look that clean. Imagine a more complicated protocol which is composed of multiple fields such as a variable length field. Your [`ChannelInboundHandler`] implementation will become unmaintainable very quickly.
+Although the first solution has resolved the problem with the `TIME` client, the modified handler does not look that clean. Imagine a more complicated protocol which is composed of multiple fields such as a variable length field. Your [`ChannelHandler`] implementation will become unmaintainable very quickly.
 
 As you may have noticed, you can add more than one [`ChannelHandler`] to a [`ChannelPipeline`], and therefore, you can split one monolithic [`ChannelHandler`] into multiple modular ones to reduce the complexity of your application. For example, you could split `TimeClientHandler` into two handlers:
 
@@ -441,7 +441,7 @@ public class TimeDecoder extends ByteToMessageDecoder { // (1)
 }
 ```
 
-1. [`ByteToMessageDecoder`] is an implementation of [`ChannelInboundHandler`] which makes it easy to deal with the fragmentation issue.
+1. [`ByteToMessageDecoder`] is an implementation of [`ChannelHandler`] which makes it easy to deal with the fragmentation issue.
 2. [`ByteToMessageDecoder`] calls the `decode()` method with an internally maintained cumulative buffer whenever new data is received.
 3. `decode()` can decide to add nothing to `out` where there is not enough data in the cumulative buffer.  [`ByteToMessageDecoder`] will call `decode()` again when there is more data received.
 4. If `decode()` adds an object to `out`, it means the decoder decoded a message successfully.  [`ByteToMessageDecoder`] will discard the read part of the cumulative buffer.  Please remember that you don't need to decode multiple messages. [`ByteToMessageDecoder`] will keep calling the `decode()` method until it adds nothing to `out`.
@@ -544,12 +544,12 @@ public void channelActive(ChannelHandlerContext ctx) {
 }
 ```
 
-Now, the only missing piece is an encoder, which is an implementation of [`ChannelOutboundHandler`] that translates a `UnixTime` back into a [`ByteBuf`]. It's much simpler than writing a decoder because there's no need to deal with packet fragmentation and assembly when encoding a message.
+Now, the only missing piece is an encoder, which is an implementation of [`ChannelHandler`] that translates a `UnixTime` back into a [`ByteBuf`]. It's much simpler than writing a decoder because there's no need to deal with packet fragmentation and assembly when encoding a message.
 
 ```java
 package io.netty.example.time;
 
-public class TimeEncoder extends ChannelOutboundHandlerAdapter {
+public class TimeEncoder extends ChannelHandlerAdapter {
     @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) {
         UnixTime m = (UnixTime) msg;
@@ -592,37 +592,35 @@ There is more detailed information about Netty in the upcoming chapters. We also
 
 Please also note that [the community](http://netty.io/community.html) is always waiting for your questions and ideas to help you and keep improving Netty and its documentation based on your feed back. 
 
-[`Bootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/Bootstrap.html
-[`ByteBuf`]: http://netty.io/4.0/api/io/netty/buffer/ByteBuf.html
-[`ByteBufAllocator`]: http://netty.io/4.0/api/io/netty/buffer/ByteBufAllocator.html
-[`ByteToMessageDecoder`]: http://netty.io/4.0/api/io/netty/handler/codec/ByteToMessageDecoder.html
-[`Channel`]: http://netty.io/4.0/api/io/netty/channel/Channel.html
-[`ChannelConfig`]: http://netty.io/4.0/api/io/netty/channel/ChannelConfig.html
-[`ChannelFuture`]: http://netty.io/4.0/api/io/netty/channel/ChannelFuture.html
-[`ChannelFutureListener`]: http://netty.io/4.0/api/io/netty/channel/ChannelFutureListener.html
-[`ChannelHandlerContext`]: http://netty.io/4.0/api/io/netty/channel/ChannelHandlerContext.html
-[`ChannelHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelHandler.html
-[`ChannelInboundHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundHandler.html
-[`ChannelInboundHandlerAdapter`]: http://netty.io/4.0/api/io/netty/channel/ChannelInboundHandlerAdapter.html
-[`ChannelInitializer`]: http://netty.io/4.0/api/io/netty/channel/ChannelInitializer.html
-[`ChannelOption`]: http://netty.io/4.0/api/io/netty/channel/ChannelOption.html
-[`ChannelOutboundHandler`]: http://netty.io/4.0/api/io/netty/channel/ChannelOutboundHandler.html
+[`Bootstrap`]: http://netty.io/5.0/api/io/netty/bootstrap/Bootstrap.html
+[`ByteBuf`]: http://netty.io/5.0/api/io/netty/buffer/ByteBuf.html
+[`ByteBufAllocator`]: http://netty.io/5.0/api/io/netty/buffer/ByteBufAllocator.html
+[`ByteToMessageDecoder`]: http://netty.io/5.0/api/io/netty/handler/codec/ByteToMessageDecoder.html
+[`Channel`]: http://netty.io/5.0/api/io/netty/channel/Channel.html
+[`ChannelConfig`]: http://netty.io/5.0/api/io/netty/channel/ChannelConfig.html
+[`ChannelFuture`]: http://netty.io/5.0/api/io/netty/channel/ChannelFuture.html
+[`ChannelFutureListener`]: http://netty.io/5.0/api/io/netty/channel/ChannelFutureListener.html
+[`ChannelHandlerContext`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerContext.html
+[`ChannelHandler`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandler.html
+[`ChannelHandlerAdapter`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerAdapter.html
+[`ChannelInitializer`]: http://netty.io/5.0/api/io/netty/channel/ChannelInitializer.html
+[`ChannelOption`]: http://netty.io/5.0/api/io/netty/channel/ChannelOption.html
 
-[`ChannelPipeline`]: http://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html
-[`ChannelPromise`]: http://netty.io/4.0/api/io/netty/channel/ChannelPromise.html
-[`EventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/EventLoopGroup.html
-[`Future`]: http://netty.io/4.0/api/io/netty/util/concurrent/Future.html
-[`MessageToByteEncoder`]: http://netty.io/4.0/api/io/netty/handler/codec/MessageToByteEncoder.html
-[`NioEventLoopGroup`]: http://netty.io/4.0/api/io/netty/channel/nio/NioEventLoopGroup.html
-[`NioServerSocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/nio/NioServerSocketChannel.html
-[`NioSocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/nio/NioSocketChannel.html
-[`ReplayingDecoder`]: http://netty.io/4.0/api/io/netty/handler/codec/ReplayingDecoder.html
-[`ServerBootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/ServerBootstrap.html
-[`ServerChannel`]: http://netty.io/4.0/api/io/netty/channel/ServerChannel.html
-[`SocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/SocketChannel.html
+[`ChannelPipeline`]: http://netty.io/5.0/api/io/netty/channel/ChannelPipeline.html
+[`ChannelPromise`]: http://netty.io/5.0/api/io/netty/channel/ChannelPromise.html
+[`EventLoopGroup`]: http://netty.io/5.0/api/io/netty/channel/EventLoopGroup.html
+[`Future`]: http://netty.io/5.0/api/io/netty/util/concurrent/Future.html
+[`MessageToByteEncoder`]: http://netty.io/5.0/api/io/netty/handler/codec/MessageToByteEncoder.html
+[`NioEventLoopGroup`]: http://netty.io/5.0/api/io/netty/channel/nio/NioEventLoopGroup.html
+[`NioServerSocketChannel`]: http://netty.io/5.0/api/io/netty/channel/socket/nio/NioServerSocketChannel.html
+[`NioSocketChannel`]: http://netty.io/5.0/api/io/netty/channel/socket/nio/NioSocketChannel.html
+[`ReplayingDecoder`]: http://netty.io/5.0/api/io/netty/handler/codec/ReplayingDecoder.html
+[`ServerBootstrap`]: http://netty.io/5.0/api/io/netty/bootstrap/ServerBootstrap.html
+[`ServerChannel`]: http://netty.io/5.0/api/io/netty/channel/ServerChannel.html
+[`SocketChannel`]: http://netty.io/5.0/api/io/netty/channel/socket/SocketChannel.html
 
 [`io.netty.example`]: https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example
-[`io.netty.example.discard`]: http://netty.io/4.0/xref/io/netty/example/discard/package-summary.html
-[`io.netty.example.echo`]: http://netty.io/4.0/xref/io/netty/example/echo/package-summary.html
-[`io.netty.example.factorial`]: http://netty.io/4.0/xref/io/netty/example/factorial/package-summary.html
-[`io.netty.example.telnet`]: http://netty.io/4.0/xref/io/netty/example/telnet/package-summary.html
+[`io.netty.example.discard`]: http://netty.io/5.0/xref/io/netty/example/discard/package-summary.html
+[`io.netty.example.echo`]: http://netty.io/5.0/xref/io/netty/example/echo/package-summary.html
+[`io.netty.example.factorial`]: http://netty.io/5.0/xref/io/netty/example/factorial/package-summary.html
+[`io.netty.example.telnet`]: http://netty.io/5.0/xref/io/netty/example/telnet/package-summary.html
