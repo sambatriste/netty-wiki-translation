@@ -49,7 +49,7 @@ For more information about this change, please refer to [the commit 132af3a](htt
 
 ### `EmbeddedChannel` usability
 
-`readInbound()` and `readOutbound()` methods in [`EmbeddedChannel`] returns an ad-hoc type parameter so you do not need to downcast their return values.  This will reduce the verbosity of your uni test code quite a bit.
+`readInbound()` and `readOutbound()` in [`EmbeddedChannel`] return an ad-hoc type parameter so you do not need to downcast their return values.  This will reduce the verbosity of your unit test code quite a bit.
 
 ```java
 EmbeddedChannel ch = ...;
