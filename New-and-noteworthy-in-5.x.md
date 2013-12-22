@@ -28,6 +28,10 @@ Previously, it was not easy to find where the buffer leak occurred, and the leak
 
 See [[Reference counted objects]] for more information.  This feature also has been backported to 4.0.14.Final due to its importance.
 
+### `PooledByteBufAllocator` as the default allocator
+
+In 4.x, `UnpooledByteBufAllocator` was the default allocator in spite of its limitation.  Now that `PooledByteBufAllocator` has been in the wild for a while and we have advanced buffer leak tracking mechanism, it is time to make it a new default.
+
 ### Globally unique channel ID
 
 Every [`Channel`] now has a globally unique ID which is generated from:
