@@ -1,0 +1,1 @@
+This document walks you through the list of notable changes and new features in the major Netty release to give you an idea to port your application to the new version.
