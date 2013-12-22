@@ -25,9 +25,9 @@ There are several examples to help your experience with Netty. It is recommended
 
 <div class="tabbable">
 <ul class="nav nav-tabs">
-<li class="active"><a href="#wiki-example-3">3.x</a></li>
-<li><a href="#wiki-example-4">4.x</a></li>
 <li><a href="#wiki-example-5">5.x</a></li>
+<li class="active"><a href="#wiki-example-4">4.x</a></li>
+<li><a href="#wiki-example-3">3.x</a></li>
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="wiki-example-3">
