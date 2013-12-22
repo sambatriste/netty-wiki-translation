@@ -16,16 +16,16 @@ We often find there are people in the world who are much more talented in techni
 
 ## Examples
 
-There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.  You also might want to browse the complete list of examples ([3.6](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example) and [4.0](https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example).)
+There are several examples to help your experience with Netty. It is recommended to start from the first one and to finish to the last one.  You also might want to browse the complete list of examples ([3.x](https://github.com/netty/netty/tree/3/src/main/java/org/jboss/netty/example) and [4.x](https://github.com/netty/netty/tree/4.0/example/src/main/java/io/netty/example).)
 
 <div class="tabbable">
 <ul class="nav nav-tabs">
-<li class="active"><a href="#wiki-example-3">3.6</a></li>
-<li><a href="#wiki-example-4">4.0</a></li>
+<li class="active"><a href="#wiki-example-3">3.x</a></li>
+<li><a href="#wiki-example-4">4.x</a></li>
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="wiki-example-3">
-<h3>Examples for version 3.6</h3>
+<h3>Examples for version 3.x</h3>
 <h4>Fundamental</h4>
 <ul>
 <li>
@@ -70,7 +70,7 @@ There are several examples to help your experience with Netty. It is recommended
 </ul>
 </div>
 <div class="tab-pane" id="wiki-example-4">
-<h3>Examples for version 4.0</h3>
+<h3>Examples for version 4.x</h3>
 <h4>Fundamental</h4>
 <ul>
 <li>
