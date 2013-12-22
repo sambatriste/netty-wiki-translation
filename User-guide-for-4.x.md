@@ -621,7 +621,7 @@ Please also note that [the community](http://netty.io/community.html) is always 
 [`ServerChannel`]: http://netty.io/4.0/api/io/netty/channel/ServerChannel.html
 [`SocketChannel`]: http://netty.io/4.0/api/io/netty/channel/socket/SocketChannel.html
 
-[`io.netty.example`]: https://github.com/netty/netty/tree/master/example/src/main/java/io/netty/example
+[`io.netty.example`]: https://github.com/netty/netty/tree/4.0/example/src/main/java/io/netty/example
 [`io.netty.example.discard`]: http://netty.io/4.0/xref/io/netty/example/discard/package-summary.html
 [`io.netty.example.echo`]: http://netty.io/4.0/xref/io/netty/example/echo/package-summary.html
 [`io.netty.example.factorial`]: http://netty.io/4.0/xref/io/netty/example/factorial/package-summary.html
