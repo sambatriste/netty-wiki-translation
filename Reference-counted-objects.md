@@ -121,6 +121,7 @@ parent.writeBytes(...);
 try {
     while (parent.isReadable(16)) {
         ByteBuf derived = parent.readSlice(16);
+        derived.retain();
         process(derived);
     }
 } finally {
