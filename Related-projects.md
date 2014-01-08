@@ -50,6 +50,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [WaarpFtp](http://waarp.github.com/WaarpFtp/) is an FTP Server based on Netty
 * [Webbit](http://webbitserver.org) is an event-based WebSocket and HTTP server.
 * [Xitrum](http://www.xitrum.net) is an async and clustered Scala web framework and HTTP(S) server on top of Netty and Hazelcast.
+* [zooterrain](http://github.com/berndfo/zooterrain) is a small self-containing web server app which pushes all ZooKeeper znodes and their changes to the browser (using WebSocket).
 
 ## Closed Source Projects and On-line Services
 
