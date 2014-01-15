@@ -21,10 +21,6 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [JBossWS](http://www.jboss.org/jbossws) is a feature-rich JAX-WS compatible web service stack.
 * [Jetserver](https://github.com/menacher/java-game-server) is a fast multiplayer java game server written using JBoss Netty and Mike Rettig's Jetlang. It supports TCP and UDP transmission and Flash AMF3 protocol.
 * [JXTA](http://jxta.kenai.com) is a set of open protocols that enable any connected device on the network, ranging from cell phones and wireless PDAs to PCs and servers, to communicate and collaborate in a P2P manner.
-* [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
-* [Netty-SocketIO](https://github.com/mrniko/netty-socketio) is a Socket.IO server written on top of Netty
-* [SocketIO4Netty](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
-* [Netty-ZMTP](https://github.com/spotify/netty-zmtp) is a collection of Netty channel handlers that aims to implement ZMTP/1.0, the ZeroMQ Message Transport Protocol.
 * [LittleProxy](http://www.littleshoot.org/littleproxy) is a high-performance HTTP proxy.
 * [LittleShoot](http://www.littleshoot.org) is an open source P2P technology for publishing, searching, and downloading files based on open protocols and open standards.
 * [MessagePack](http://msgpack.org) is a binary-based efficient object serialization library that enables to exchange structured objects between many languages.
@@ -34,6 +30,9 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Naggati](https://github.com/twitter/naggati2) is a protocol builder for Netty, written in Scala.
 * [Netflow.io](https://github.com/wasted/netflow) is a Scala/Netty Netflow Collector used at wasted.io
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
+* [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
+* [Netty-SocketIO](https://github.com/mrniko/netty-socketio) is a Socket.IO server written on top of Netty
+* [Netty-ZMTP](https://github.com/spotify/netty-zmtp) is a collection of Netty channel handlers that aims to implement ZMTP/1.0, the ZeroMQ Message Transport Protocol.
 * [Nifty](https://github.com/facebook/nifty) is a Netty-based Thrift transport implementation.
 * [NIOSMTP](https://github.com/normanmaurer/niosmtp) is an asynchronous SMTP client implementation.
 * [OpenTSDB](http://opentsdb.net) is a distributed, scalable, Time Series Database written on top of HBase to store, index, and serve the metrics collected from computer systems.
@@ -41,6 +40,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
+* [SocketIO4Netty](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [Torrent4J](https://github.com/torrent4j/torrent4j) is a BitTorrent library implemented in pure Java.
