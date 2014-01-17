@@ -1,4 +1,4 @@
-All wiki pages of this repository is automatically exported to the official web site.  We recommend you to visit [the documentation home](http://netty.io/wiki/index.html) of [the official web site](http://netty.io/) unless you are editing the wiki pages.
+We recommend you to visit [the documentation home](http://netty.io/wiki/index.html) of [the official web site](http://netty.io/) unless you are editing the wiki pages.  Please note all wiki pages of this repository is automatically exported to the official web site.
 
 * [Visit the documentation home](http://netty.io/wiki/index.html)
 * [Browse the list of all wiki pages](http://netty.io/wiki/all-documents.html)
