@@ -1,4 +1,4 @@
-We recommend you to visit [the documentation home](http://netty.io/wiki/index.html) of [the official web site](http://netty.io/) unless you are editing the wiki pages.
+Please visit [the documentation home](http://netty.io/wiki/index.html) of [the official web site](http://netty.io/) for better experience, unless you are editing the wiki pages.
 
 * [Visit the documentation home](http://netty.io/wiki/index.html)
 * [Browse the list of all wiki pages](http://netty.io/wiki/all-documents.html)
