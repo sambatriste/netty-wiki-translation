@@ -24,7 +24,7 @@ I know.  It was [a silly mistake](https://github.com/netty/netty/issues/1590).  
 
 ### `ChannelHandlerContext.attr(..)` == `Channel.attr(..)`
 
-Both [`Channel`] and [`ChannelHandlerContext`] implement the interface [`AttributeMap`] to enable a user to attach one or more user-defined attributes to them.  What sometimes made a user confused was that a [`Channel`] and a [`ChannelHandlerContext`] had its own storage for the user-defined attributes.  For example, even if you put an attribute 'KEY_X' via `Channel.attr(KEY_X).set(valueX)`, you will never find it via `ChannelHandlerContext.attr(KEY_X).get()`.  This behavior is not only confusing but also is waste of memory.
+Both [`Channel`] and [`ChannelHandlerContext`] implement the interface [`AttributeMap`] to enable a user to attach one or more user-defined attributes to them.  What sometimes made a user confused was that a [`Channel`] and a [`ChannelHandlerContext`] had its own storage for the user-defined attributes.  For example, even if you put an attribute 'KEY_X' via `Channel.attr(KEY_X).set(valueX)`, you will never find it via `ChannelHandlerContext.attr(KEY_X).get()` and vice versa.  This behavior is not only confusing but also is waste of memory.
 
 To address this issue, we decided to keep only one map per [`Channel`] internally.  [`AttributeMap`] always uses [`AttributeKey`] as its key. [`AttributeKey`] ensures uniqueness between each key, and thus there's no point of having more than one attribute map per [`Channel`].  As long as a user defines its own [`AttributeKey`] as a private static final field of his or her [`ChannelHandler`], there will be no risk of duplicate keys.
 
