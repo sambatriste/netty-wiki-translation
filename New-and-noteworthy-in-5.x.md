@@ -22,6 +22,13 @@ I know.  It was [a silly mistake](https://github.com/netty/netty/issues/1590).  
 
 `Channel.deregister()` has been removed.  It was neither working nor used by users.  Instead, we are going to allow the re-registration of a [`Channel`] to a different event loop in the future.
 
+### `ChannelHandlerContext.attr(..)` == `Channel.attr(..)`
+
+[`AttributeMap`] always uses [`AttributeKey`] as its key. [`AttributeKey`] ensures uniqueness between each key, and thus there's no point of having more than one attribute map per [`Channel`].  A [`ChannelHandlerContext`] in Netty 4 has its own attribute map, which is waste of space and type complexity.  Therefore, we made the following changes:
+
+* A [`ChannelHandlerContext`] does not keep its own attribute map.
+* `ChannelHandlerContext.attr(..)` is now a simple shortcut to `ChannelHandlerContext.channel().attr(..)`.
+
 ### Easier and more precise buffer leak tracking
 
 Previously, it was not easy to find where the buffer leak occurred, and the leak warning was not very helpful.  We now have an advanced leak reporting mechanism which can be enabled at the cost of increased overhead.
@@ -82,12 +89,15 @@ Some types such as `AttributeKey` were unfriendly to the applications that run i
 * SPDY/3.1 support (also backported to 4.x)
 * Refactored HTTP multipart codec
 
+[`AttributeKey`]: http://netty.io/5.0/api/io/netty/util/AttributeKey.html
+[`AttributeMap`]: http://netty.io/5.0/api/io/netty/util/AttributeMap.html
 [`EventExecutor`]: http://netty.io/5.0/api/io/netty/util/concurrent/EventExecutor.html
 
 [`Channel`]: http://netty.io/5.0/api/io/netty/channel/Channel.html
 [`ChannelHandler`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandler.html
 [`ChannelHandlerAdapter`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerAdapter.html
 [`ChannelHandlerAppender`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerAppender.html
+[`ChannelHandlerContext`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerContext.html
 [`ChannelHandlerInvoker`]: http://netty.io/5.0/api/io/netty/channel/ChannelHandlerInvoker.html
 [`ChannelPipeline`]: http://netty.io/5.0/api/io/netty/channel/ChannelPipeline.html
 
