@@ -4,6 +4,16 @@ Unlike the changes between 3.x and 4.x, 5.x did not change a lot although it mad
 
 ## Core changes
 
+### Android support
+
+Given that:
+
+* mobile devices are becoming more and more powerful,
+* the most known issues with NIO and SSLEngine in ADK were fixed since Ice Cream Sandwich, and
+* users obviously want to reuse their codecs and handlers in their mobile applications,
+
+we decided to support Android (4.0 or above) officially.
+
 ### Simplified handler type hierarchy
 
 `ChannelInboundHandler` and `ChannelOutboundHandler` have been merged into [`ChannelHandler`].  [`ChannelHandler`] now has both inbound and outbound handler methods.
