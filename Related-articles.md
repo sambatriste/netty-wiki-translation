@@ -1,5 +1,8 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
+## 2014
+* [Bridging Netty, RestEasy, and Weld](http://john-ament.blogspot.com/2014/01/bridging-netty-resteasy-and-weld.html) by John Ament
+
 ## 2013
 * [Netty 4 - Network - Application development the easy way] (http://normanmaurer.me/presentations/2013-wjax-netty/) by Norman Maurer (WJAX 2013)
 * [Building scalable network application with Netty] (http://www.slideshare.net/JaapterWoerds/netty-jfall) by Jaap ter Woerds
