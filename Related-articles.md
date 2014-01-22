@@ -1,6 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2014
+* [Making HTTP content compression work in Netty 4](http://www.javacodegeeks.com/2014/01/making-http-content-compression-work-in-netty-4.html) by Andreas Haufler
 * [Bridging Netty, RestEasy, and Weld](http://john-ament.blogspot.com/2014/01/bridging-netty-resteasy-and-weld.html) by John Ament
 
 ## 2013
