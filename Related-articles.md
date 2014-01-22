@@ -5,6 +5,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 * [Bridging Netty, RestEasy, and Weld](http://john-ament.blogspot.com/2014/01/bridging-netty-resteasy-and-weld.html) by John Ament
 
 ## 2013
+* [Let's do our own full blown HTTP server with Netty 4](http://adolgarev.blogspot.com/2013/12/lets-do-our-own-full-blown-http-server.html) by Aleksandr Dolgaryev
 * [Netty 4 - Network - Application development the easy way] (http://normanmaurer.me/presentations/2013-wjax-netty/) by Norman Maurer (WJAX 2013)
 * [Building scalable network application with Netty] (http://www.slideshare.net/JaapterWoerds/netty-jfall) by Jaap ter Woerds
 * [Making Storm Fly with Netty](http://yahooeng.tumblr.com/post/64758709722/making-storm-fly-with-netty) by Robert Evans
