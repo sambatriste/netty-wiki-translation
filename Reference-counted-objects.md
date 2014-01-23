@@ -239,7 +239,7 @@ The disadvantage of reference counting is that it is easy to leak the reference-
 
 Fortunately, despite its difficulty of finding leaks, Netty will by default sample about 1% of buffer allocations to check if there is a leak in your application.  In case of leak, you will find the following log message:
 
-> LEAK: `ByteBuf.release()` was not called before it's garbage-collected. Enable advanced leak reporting to find out where the leak occurred. To enable advanced leak reporting, specify the JVM option '`-Dio.netty.leakDetectionLevel=advanced`' or call `ResourceLeakDetector.setLevel()`
+> `LEAK: ByteBuf.release() was not called before it's garbage-collected. Enable advanced leak reporting to find out where the leak occurred. To enable advanced leak reporting, specify the JVM option '-Dio.netty.leakDetectionLevel=advanced' or call ResourceLeakDetector.setLevel()`
 
 Relaunch your application with the JVM option mentioned above, then you'll see the recent locations of your application where the leaked buffer was accessed.  The following output shows a leak from our unit test (`XmlFrameDecoderTest.testDecodeWithXml()`):
 
