@@ -141,7 +141,7 @@ Sometimes, a `ByteBuf` is contained by a buffer holder, such as [`DatagramPacket
 
 A buffer holder shares the reference count of the buffer it contains, just like a derived buffer.
 
-## Reference-counted messages in `ChannelHandler`
+## Reference-counting in `ChannelHandler`
 
 ### Inbound messages
 
@@ -325,7 +325,7 @@ You can specify the leak detection level as a JVM option `-Dio.netty.leakDetecti
 java -Dio.netty.leakDetectionLevel=advanced ...
 ```
 
-### Best practice for leak-less application
+### Best practices to avoid leaks
 
 * Run your unit tests and integration tests at `PARANOID` leak detection level, as well as at `SIMPLE` level.
 * Canary your application before rolling out to the entire cluster at `SIMPLE` level for a reasonably long time to see if there's a leak.
