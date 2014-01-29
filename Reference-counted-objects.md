@@ -273,7 +273,7 @@ Created at:
 	...
 ```
 
-If you use Netty 5 or above, an additional information that helps you find which handler handled the message lastly.  The following example shows that the leaked buffer was handled by the handler whose name is `EchoServerHandler#0` and then garbage-collected, which means it is likely that `EchoServerHandler#0` forgot to release the buffer:
+If you use Netty 5 or above, an additional information is provided to help you find which handler handled the leaked buffer lastly.  The following example shows that the leaked buffer was handled by the handler whose name is `EchoServerHandler#0` and then garbage-collected, which means it is likely that `EchoServerHandler#0` forgot to release the buffer:
 
 ```
 12:05:24.374 [nioEventLoop-1-1] ERROR io.netty.util.ResourceLeakDetector - LEAK: ByteBuf.release() was not called before it's garbage-collected.
