@@ -438,7 +438,7 @@ Due to this change, some methods now accept `ChannelPromise` rather than `Channe
 
 There is no well-defined thread model in 3.x although there was an attempt to fix its inconsistency in 3.5.  4.0 defines a strict thread model that helps a user write a ChannelHandler without worrying too much about thread safety.
 
-* Netty will never call a `ChannelHandler`'s methods concurrently, unless the `ChannelHandler` is annotated with `@Shareable`. This is regardless of the type of handler methods - inbound, outbound, or life cycle event handler methods.
+* Netty will never call a `ChannelHandler`'s methods concurrently, unless the `ChannelHandler` is annotated with `@Sharable`. This is regardless of the type of handler methods - inbound, outbound, or life cycle event handler methods.
   * A user does not need to synchronize either inbound or outbound event handler methods anymore.
   * 4.0 disallows adding a `ChannelHandler` more than once unless it's annotated with `@Sharable`.
 * There is always [happens-before](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/package-summary.html#MemoryVisibility) relationship between each `ChannelHandler` method invocations made by Netty.
