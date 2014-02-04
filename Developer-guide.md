@@ -15,7 +15,7 @@ Netty project team uses [IntelliJ IDEA](http://www.jetbrains.com/idea/) as the p
 
 #### Code style
 
-Unfortunately, IntelliJ IDEA doesn't provide a way to import a code style via the configuration dialog.  Download [this code style configuration](http://netty.io/files/IntelliJ%20IDEA%20Code%20Style.zip) and unzip `Netty project.xml` into `<IntelliJ config directory>/codestyles` directory.  Choose 'Netty project' as the default code style.
+Download [this code style configuration](http://netty.io/files/IntelliJ%20IDEA%20Code%20Style.zip) and unzip `Netty project.xml` into `<IntelliJ config directory>/codestyles` directory.  Choose 'Netty project' as the default code style.
 
 #### Inspection profile
 
