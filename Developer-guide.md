@@ -77,7 +77,7 @@ We use native line ending for all source code (i.e. '`\n`' for *nix and MacOS X,
 
 ### Merging a pull request
 
-A pull request often contains multiple comments.  Those commits must be squashed into smaller number of commits with explanatory comments.
+A pull request often contains multiple comments.  Those commits must be squashed into a small number of commits with explanatory comments.
 
 Do not merge a pull request via the web UI unless there's a good reason doing that. Refer to the 'Patch and Apply' section in [the Github help page](https://help.github.com/articles/using-pull-requests#merging-a-pull-request).
 
