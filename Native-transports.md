@@ -4,8 +4,10 @@ Since 4.0.16, Netty provides the native socket transport for Linux using JNI.  T
 
 Because the native transport is compatible with the NIO transport, you can just do the following search-and-replace:
 
-* `NioEventLoop` -> `EpollEventLoop`
-* `Nio*Channel` -> `Epoll*Channel`
+* `NioEventLoopGroup` → `EpollEventLoopGroup`
+* `NioEventLoop` → `EpollEventLoop`
+* `NioServerSocketChannel` → `EpollServerSocketChannel`
+* `NioSocketChannel` → `EpollSocketChannel`
 
 ## Building the native transport
 
