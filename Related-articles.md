@@ -1,6 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2014
+* [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle) by Jeff Smick
 * [Making HTTP content compression work in Netty 4](http://andreas.haufler.info/2014/01/making-http-content-compression-work-in.html) by Andreas Haufler
 * [Bridging Netty, RestEasy, and Weld](http://john-ament.blogspot.com/2014/01/bridging-netty-resteasy-and-weld.html) by John Ament
 
