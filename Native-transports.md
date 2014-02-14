@@ -17,9 +17,9 @@ To build the native transport you need to use Linux with 64-bit kernel 2.6 or hi
 
 Please install the required tools and libraries:
 
-```
-RHEL/CentOS/Fedora:
-# sudo yum install autoconf automake libtool glibc-devel.i686 glibc-devel libgcc.i686 make
-Debian/Ubuntu:
-# sudo apt-get install autoconf automake libtool make gcc-multilib
+```bash
+# RHEL/CentOS/Fedora:
+sudo yum install autoconf automake libtool glibc-devel.i686 glibc-devel libgcc.i686 make
+# Debian/Ubuntu:
+sudo apt-get install autoconf automake libtool make gcc-multilib
 ```
