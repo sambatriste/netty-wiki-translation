@@ -55,6 +55,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 ## Closed Source Projects and On-line Services
 
 * [Avast Software](http://www.avast.com/) distributes their anti-virus updates to more than 100M users using Netty.
+* [Between](http://between.us) is private mobile SNS for couples. They built their API and messaging server with Netty.
 * [Boundary](http://blog.boundary.com/2012/05/02/know-a-delay-nagles-algorithm-and-you/) monitors the continuously changing environment of distributed applications in real-time
 * [ESN Planet](http://www.esn.me/product/planet/) is a feature-rich social real-time web platform which scales horizontally and vertically.
 * [Facebook](https://www.facebook.com/) open sourced a Netty-based Thrift transport implementation called [Nifty](https://github.com/facebook/nifty).
