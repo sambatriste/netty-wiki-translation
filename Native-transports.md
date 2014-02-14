@@ -7,7 +7,9 @@ Because the native transport is compatible with the NIO transport, you can just 
 * `NioEventLoop` -> `EpollEventLoop`
 * `Nio*Channel` -> `Epoll*Channel`
 
-## Building the native Transport
+## Building the native transport
+
+If you already have the JAR file of the native transport, you should not need to build the native transport by yourself because the JAR file already contains the necessary shared library files (e.g. `.so`) and they will be loaded automatically.
 
 To build the native transport you need to use Linux with 64-bit kernel 2.6 or higher.
 
