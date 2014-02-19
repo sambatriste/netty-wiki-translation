@@ -39,6 +39,8 @@ To implement the `DISCARD` protocol, the only thing you need to do is to ignore 
 ```java
 package io.netty.example.discard;
 
+import io.netty.buffer.ByteBuf;
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -85,8 +87,10 @@ So far so good. We have implemented the first half of the `DISCARD` server. What
 package io.netty.example.discard;
     
 import io.netty.bootstrap.ServerBootstrap;
+
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
