@@ -30,7 +30,6 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Naggati](https://github.com/twitter/naggati2) is a protocol builder for Netty, written in Scala.
 * [Netflow.io](https://github.com/wasted/netflow) is a Scala/Netty Netflow Collector used at wasted.io
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
-* [SocketIO4j](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
 * [Netty-SocketIO](https://github.com/mrniko/netty-socketio) is a Socket.IO server written on top of Netty
 * [Netty-ZMTP](https://github.com/spotify/netty-zmtp) is a collection of Netty channel handlers that aims to implement ZMTP/1.0, the ZeroMQ Message Transport Protocol.
@@ -41,6 +40,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
+* [SocketIO4j](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [Torrent4J](https://github.com/torrent4j/torrent4j) is a BitTorrent library implemented in pure Java.
