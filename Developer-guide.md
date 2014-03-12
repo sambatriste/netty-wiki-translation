@@ -74,7 +74,7 @@ Alternatively, Java 7 JRE can be selected on per-project basis for each Netty mo
 
 ## Write a meaningful commit message
 
-After making changes on Netty, please make sure your commit message contains enough contextual information so that anyone understands the intention of the changes.  Unless the commit is trivial, please use the following form:
+After making changes on Netty, please make sure your commit message contains enough contextual information so that anyone understands the intention of the changes.  Unless the commit is trivial, please use the following form (by the courtesy of Steve Gury et al):
 
 ```plain
 One line description of your change
