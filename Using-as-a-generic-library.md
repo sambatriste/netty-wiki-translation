@@ -189,7 +189,7 @@ The following classes are also useful but you will find their alternatives from 
 * `io.netty.util.NetUtil` provides commonly-used network-related constants such as the `InetAddress` for IPv4 localhost.
 * `io.netty.util.DefaultThreadFactory` is a generic `ThreadFactory` implementation that lets you configures your executor threads easily.
 
-## Comparison with Guava
+## Comparison with Guava and JDK8
 
 Because Netty tries to keep the number of its core dependencies as minimal as possible, it ended up with having some utility classes which might also be found in other popular libraries, such as [Guava](http://code.google.com/p/guava-libraries/).
 
