@@ -179,12 +179,12 @@ As you might have noticed already, `AttributeKey` is a `Constant`.
 
 ### Hashed wheel timer
 
-Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util.concurrent.ScheduledExecutorService`.  It is capable of handling a very large number of scheduled tasks and their cancellations efficiently, as shown in the following table:
+Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util.concurrent.ScheduledThreadPoolExecutor`.  It is capable of handling a very large number of scheduled tasks and their cancellations efficiently, as shown in the following table:
 
-|                    | Schedule a new task | Cancel a task
-|--------------------|---------------------|-------------------------------------------
-| `HashedWheelTimer` | O(1)                | O(1)
-| `java.util.Timer`  | O(logN)             | O(logN) where N = number of pending tasks
+|                                                      | Schedule a new task | Cancel a task
+|------------------------------------------------------|---------------------|-------------------------------------------
+| `HashedWheelTimer`                                   | O(1)                | O(1)
+| `java.util.Timer` and `ScheduledThreadPoolExecutor`  | O(logN)             | O(logN) where N = number of pending tasks
 
 Internally, it uses a hash table whose key is the timing of a task to yield the constant time for most timer operations, whereas `java.util.Timer` uses a binary heap.
 
