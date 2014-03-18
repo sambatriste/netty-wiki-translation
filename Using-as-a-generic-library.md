@@ -189,3 +189,18 @@ The following classes are also useful but you will find their alternatives from 
 * `io.netty.util.NetUtil` provides commonly-used network-related constants such as the `InetAddress` for IPv4 localhost.
 * `io.netty.util.DefaultThreadFactory` is a generic `ThreadFactory` implementation that lets you configures your executor threads easily.
 
+## Comparison with Guava
+
+Because Netty tries to keep the number of its core dependencies as minimal as possible, it ended up with having some utility classes which might also be found in other popular libraries, such as [Guava](http://code.google.com/p/guava-libraries/).
+
+Such libraries provide various utility classes and alternative data types to make JDK API less painful to work with, and they usually do a better job in that area.
+
+What Netty differentiates itself from such libraries is that it focuses on providing the constructs required for:
+
+* Asynchronous programming
+* Low-level operations (a.k.a 'mechanical sympathy') such as:
+  * Off-heap access
+  * Access to the proprietary intrinsic operations
+  * Platform-dependent behaviors
+
+We sometimes see that Java advances itself by adopting various ideas that sometimes subsumes the constructs provided by Netty.  For example, JDK 8 adds [`CompletableFuture`](http://download.java.net/jdk8/docs/api/java/util/concurrent/CompletableFuture.html) which overlaps with `io.netty.util.concurrent.Future` to some extent.  In such a case, the constructs from Netty will provide a good migration path to you, as we will deligently update our API with future migration in mind.
