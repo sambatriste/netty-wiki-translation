@@ -1,4 +1,4 @@
-[Netty](https://netty.io/) does not only provide a framework dedicated to building a network application, but also provides a set of foundation classes that have evolved over time to work fine under various uses cases.  This page will give you a short tour of such utility classes you might find very useful when you write any type of applications, even the ones that do not perform any socket I/O.
+Netty does not only provide a framework dedicated to building a network application, but also provides a set of foundation classes that have evolved over time to work fine under various uses cases.  This page will give you a short tour of such utility classes you might find very useful when you write any type of applications, even the ones that do not perform any socket I/O.
 
 ## Buffer API
 
