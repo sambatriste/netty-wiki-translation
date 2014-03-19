@@ -186,11 +186,12 @@ Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util
 
 Internally, it uses a hash table whose key is a task's timing to yield constant time for most timer operations. (`java.util.Timer` uses a binary heap.)
 
-For more information about hashed wheel timer, please see [these slides](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf).
+For more information about hashed wheel timer, please see [these slides ("Hashed and Hierarchical Timing Wheels," Varghese and Lauck)](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper ("Hashed and Hierarchical Timing Wheels: Data Structures 
+for the Efficient Implementation of a Timer Facility," Varghese and Lauck)](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf).
 
 ### Even more miscellaneous utilities
 
-The following classes are also useful but you will find their alternatives from other libraries such as Guava:
+The following classes are useful, but you will find fine alternatives in other libraries such as Guava:
 
 * `io.netty.util.CharsetUtil` provides commonly-used `java.nio.charset.Charset`s.
 * `io.netty.util.NetUtil` provides commonly-used network-related constants such as the `InetAddress` for IPv4 localhost.
@@ -198,16 +199,16 @@ The following classes are also useful but you will find their alternatives from 
 
 ## Comparison with Guava and JDK8
 
-Because Netty tries to keep the number of its core dependencies as minimal as possible, it ended up with having some utility classes which might also be found in other popular libraries, such as [Guava](http://code.google.com/p/guava-libraries/).
+Because Netty tries to minimize its set of dependencies, some of its utility classes are similar to those in other popular libraries, such as [Guava](http://code.google.com/p/guava-libraries/).
 
-Such libraries provide various utility classes and alternative data types to make JDK API less painful to work with, and they usually do a better job in that area.
+Such libraries provide various utility classes and alternative data types to make JDK API less painful to work with, and they usually do quite well at that.
 
-What Netty differentiates itself from such libraries is that it focuses on providing the constructs required for:
+Netty focuses on providing the constructs required for:
 
 * Asynchronous programming
-* Low-level operations (a.k.a 'mechanical sympathy') such as:
+* Low-level operations (a.k.a "mechanical sympathy") such as:
   * Off-heap access
   * Access to the proprietary intrinsic operations
   * Platform-dependent behaviors
 
-We sometimes see that Java advances itself by adopting various ideas that sometimes subsumes the constructs provided by Netty.  For example, JDK 8 adds [`CompletableFuture`](http://download.java.net/jdk8/docs/api/java/util/concurrent/CompletableFuture.html) which overlaps with `io.netty.util.concurrent.Future` to some extent.  In such a case, the constructs from Netty will provide a good migration path to you, as we will deligently update our API with future migration in mind.
+Java sometimes advances by adopting ideas that subsume constructs provided by Netty.  For example, JDK 8 adds [`CompletableFuture`](http://download.java.net/jdk8/docs/api/java/util/concurrent/CompletableFuture.html) which somewhat overlaps `io.netty.util.concurrent.Future`. In such a case, Netty's constructs provide a good migration path to you; We will diligently update the API with future migration in mind.
