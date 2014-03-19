@@ -72,17 +72,17 @@ Internally, Netty uses it to notify the termination of other `EventExecutor`s.
 
 ## Platform-dependent operations
 
-_Note that this feature is for internal use only at the moment.  We are considering to move it out of the internal package if there is good demand for it._
+_Note that this feature is for internal use only. We are considering moving it out of the internal package if there is sufficient demand._
 
-`io.netty.util.internal.PlatformDependent` provides various platform-dependent and potentially unsafe operations.  You can think of it as a thin layer over `sun.misc.Unsafe` and other platform dependent proprietary APIs.
+`io.netty.util.internal.PlatformDependent` provides platform-dependent and potentially unsafe operations.  You can think of it as a thin layer over `sun.misc.Unsafe` and other platform-dependent proprietary APIs.
 
 ## Other utilities
 
-To build a highly performing network application framework, we introduced various utilities to feed ourselves, and we found some of them might also be useful for you.
+To build a high-performing network application framework, we introduced utilities. You might find some useful.
 
 ### Thread-local object pool
 
-If your thread is long running and you allocate a lot of short-living objects of same type, you can take advantage of thread-local object pool, called `Recycler`.  `Recycler` will reduce the amount of the garbage you produce, reducing the memory bandwidth and the load on the garbage collector.
+If your thread is long-running and you allocate many short-living objects of same type, you can use a thread-local object pool, called `Recycler`. `Recycler` reduces the amount of the garbage you produce, reducing memory bandwidth and load on the garbage collector.
 
 ```java
 public class MyObject {
@@ -122,7 +122,7 @@ obj.recycle();
 
 ### User-extensible enum
 
-`enum` is a great language construct for representing a static set of constants, but you cannot extend it to define additional constants.  Extensible enums are useful when you have to add more constants in runtime or when you need to allow third parties to define additional constants.  For example, Use `io.netty.util.ConstantPool` instead:
+`enum` is great for a static set of constants, but you cannot extend one.  When you need to add more constants in runtime or allow third parties to define additional constants, use the extensible `io.netty.util.ConstantPool` instead:
 
 ```java
 public final class Foo extends AbstractConstant<Foo> {
@@ -154,11 +154,11 @@ private final class YourConstants {
 }
 ```
 
-Netty uses `ConstantPool` to define `ChannelOption`s so that non-core transports define transport-specific options in a type-safe way.
+Netty uses `ConstantPool` to define `ChannelOption`s so that non-core transports can define transport-specific options in a type-safe way.
 
 ### Attribute map
 
-Sometimes you have to implement the ability to attach an arbitrary property to an object, but you want to make sure accessing such a property is fast enough and as type-safe as possible.  Use `io.netty.util.AttributeMap` interface:
+Use `io.netty.util.AttributeMap` interface for a fast, type-safe collection of key-value pairs:
 
 ```java
 public class Foo extends DefaultAttributeMap {
@@ -177,16 +177,16 @@ As you might have noticed already, `AttributeKey` is a `Constant`.
 
 ### Hashed wheel timer
 
-Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util.concurrent.ScheduledThreadPoolExecutor`.  It is capable of handling a very large number of scheduled tasks and their cancellations efficiently, as shown in the following table:
+Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util.concurrent.ScheduledThreadPoolExecutor`.  It can handle many scheduled tasks and their cancellations efficiently, as shown in the following table:
 
 |                                                      | Schedule a new task | Cancel a task
 |------------------------------------------------------|---------------------|-------------------------------------------
 | `HashedWheelTimer`                                   | O(1)                | O(1)
 | `java.util.Timer` and `ScheduledThreadPoolExecutor`  | O(logN)             | O(logN) where N = number of pending tasks
 
-Internally, it uses a hash table whose key is the timing of a task to yield the constant time for most timer operations, whereas `java.util.Timer` uses a binary heap.
+Internally, it uses a hash table whose key is a task's timing to yield constant time for most timer operations. (`java.util.Timer` uses a binary heap.)
 
-For more information about hashed wheel timer, take a look into [these slides](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf).
+For more information about hashed wheel timer, please see [these slides](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf).
 
 ### Even more miscellaneous utilities
 
