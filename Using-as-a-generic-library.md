@@ -1,12 +1,12 @@
-Netty does not only provide a framework dedicated to building a network application, but also provides a set of foundation classes that have evolved over time to work fine under various uses cases.  This page will give you a short tour of such utility classes you might find very useful when you write any type of applications, even the ones that do not perform any socket I/O.
+Netty is a framework for building network applications, but also provides foundation classes handy for other uses, even programs that do not perform socket I/O.
 
 ## Buffer API
 
-`io.netty.buffer` provides a generic buffer type called `ByteBuf`.  It aims to replace `java.nio.ByteBuffer` with user-friendliness, extensibility, and performance in mind.
+`io.netty.buffer` provides a generic buffer type called `ByteBuf`. It is like `java.nio.ByteBuffer`, but faster, more user-friendly, and extensible.
 
 ### User-friendliness
 
-Have you ever forgotten to call `java.nio.ByteBuffer.flip()` and wondered why the buffer does not contain anything?  It never happens in `ByteBuf` because it has two indexes - one for reads and the other for writes:
+Have you ever forgotten to call `java.nio.ByteBuffer.flip()` and wondered why the buffer does not contain anything?  It never happens in `ByteBuf` because it has two indexes, one for reads and one for writes:
 
 ```java
 ByteBuf buf = ...;
@@ -14,21 +14,21 @@ buf.writeInt(42);
 assertThat(buf.readInt(), is(42));
 ```
 
-It also has a richer set of access methods that will help you access the content of a buffer more conveniently.  For example, it has accessor methods for unsigned primitives, searches, and string conversions.
+It has a richer set of access methods to more easily access a buffer's contents. For example, it has accessor methods for unsigned integers, searches, and strings (specifying a `CharSet`).
 
 ### Extensibility
 
-It's impossible to subclass `java.nio.ByteBuffer`, but you can with `ByteBuf`. An abstract skeletal implementation is also provided for your convenience.  This means, you can implement your own buffer implementation, such as file-backed ones, composite ones, and even a hybrid.
+You can't subclass `java.nio.ByteBuffer`, but you can with `ByteBuf`. An abstract skeletal implementation is also provided for your convenience. You can thus write your own buffer implementation, such as file-backed ones, composite ones, and even a hybrid.
 
 ### Performance
 
-When a new `java.nio.ByteBuffer` is allocated, its content always must be filled with zeroes.  This 'zeroing' process consumes both CPU cycles and memory bandwidth.  Safety is a good thing, but what practically happens is that a buffer is almost always filled from other data sources as soon as it is allocated.
+When a new `java.nio.ByteBuffer` is allocated, its content is filled with zeroes.  This "zeroing" consumes CPU cycles and memory bandwidth.  Normally, the buffer is then immediately filled from some data source, so the zeroing did no good.
 
-`java.nio.ByteBuffer` relies on the garbage collector of the JVM for reclamation of itself.  It works OK for heap buffers, but it never does for direct buffers.  By design, direct buffers are expected to live long, and therfore, trying to allocate many short-living direct NIO buffers often leads to an `OutOfMemoryError`.  Also, deallocating a direct buffer explicitly using the hidden proprietary API isn't very fast either.
+To be reclaimed, `java.nio.ByteBuffer` relies on the JVM garbage collector.  It works OK for heap buffers, but not direct buffers.  By design, direct buffers are expected to live a long time. Thus, allocating many short-lived direct NIO buffers often causes an `OutOfMemoryError`.  Also, deallocating a direct buffer explicitly using the (hidden, proprietary) API isn't very fast.
 
-The life cycle of `ByteBuf` is bound to its reference count.  When the reference count of a `ByteBuf` becomes zero, it's underlying memory region (byte[] or a direct buffer) is explicitly dereferenced, deallocated, or returned to the pool.
+A `ByteBuf`'s life cycle is bound to its reference count. When its count goes to zero, its underlying memory region (`byte[]` or direct buffer) is explicitly dereferenced, deallocated, or returned to the pool.
 
-Netty also provides a solid buffer pool implementation that does not waste CPU cycles or memory bandwidth for zeroing the buffer:
+Netty also provides a solid buffer pool implementation that does not waste CPU cycles or memory bandwidth with zeroing its buffer:
 
 ```java
 ByteBufAllocator alloc = PooledByteBufAllocator.DEFAULT;
@@ -37,19 +37,17 @@ ByteBuf buf = alloc.directBuffer(1024);
 buf.release(); // The direct buffer is returned to the pool.
 ```
 
-However, reference counting isn't a holy grail.  If the pooled buffer has been garbage-collected by JVM before its underlying memory region is returned to the pool, the pool will be exhausted eventually due to the leaks.
+However, reference counting isn't a holy grail.  If the JVM garbage-collects the pooled buffer before its underlying memory region is returned to the pool, the leaks will eventually exhaust the pool.
 
-To help you troubleshoot a leak, Netty provides leak detection mechanism, which is flexible enough to let you trade off between the performance of your application and the detail of the leak report.  For more information, please refer to [[Reference-counted-objects]].
+To help you troubleshoot a leak, Netty provides a leak-detection mechanism which is flexible enough to let you trade off between the your application's performance and the detail of the leak report.  For more information, please refer to [[Reference-counted-objects]].
 
 ## Listenable futures and event loops
 
-Performing a task asynchronously - scheduling a task and getting notified on completion - is becoming more and more important.
+Performing a task asynchronously - scheduling a task and getting notified on completion - is common, and should be easy. When `java.util.concurrent.Future` appeared first, our excitement didn't last long.: we had to _block_ to get notified on completion.  In asynchronous programming, you specify _what to do_ on completion rather than wait for the outcome.
 
-When `java.util.concurrent.Future` appeared first, our excitement didn't last long.  It was because we had to _block_ to get notified on completion.  In asynchronous programming, you must be able to specify _what has to be done_ on completion rather than waiting for the outcome.
+`io.netty.concurrent.Future` is a subtype of JDK `Future`.  It lets you add a listener which will be invoked by an event loop when the future is fulfilled.
 
-`io.netty.concurrent.Future` is a subtype of JDK `Future`.  It allows you to add a listener to it so your listener is invoked by an event loop when the future is fulfilled.
-
-`io.netty.util.concurrent.EventExecutor` is a single-threaded event loop that extends `java.util.concurrent.ScheduledExecutorService`.  You can build your own event loop with it or use it as a feature-rich task executor.  Usually, you create multiple `EventExecutor's to take advantage of parallelism:
+`io.netty.util.concurrent.EventExecutor` is a single-threaded event loop that extends `java.util.concurrent.ScheduledExecutorService`. You can build your own event loop or use it as a feature-rich task executor.  Usually, you create multiple `EventExecutor's to take advantage of parallelism:
 
 ```java
 EventExecutorGroup group = new DefaultEventExecutorGroup(4); // 4 threads
@@ -64,7 +62,7 @@ f.addListener(new FutureListener<?> {
 
 ### The global event loop
 
-Sometimes, it is very handy to have a unique executor that is always available and that doesn't need life cycle management.  `GlobalEventExecutor` is a single-threaded singleton `EventExecutor` which starts its thread lazily and stops when there's no pending task for a while. 
+Sometimes you want a unique executor that is always available and that doesn't need life cycle management. `GlobalEventExecutor` is a single-threaded singleton `EventExecutor` which starts its thread lazily and stops when there have been no pending tasks for a while. 
 
 ```java
 GlobalEventExecutor.INSTANCE.execute(new Runnable() { ... });
