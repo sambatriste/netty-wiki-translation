@@ -594,7 +594,7 @@ In this chapter, we had a quick tour of Netty with a demonstration on how to wri
 
 There is more detailed information about Netty in the upcoming chapters. We also encourage you to review the Netty examples in the [`io.netty.example`] package.
 
-Please also note that [the community](http://netty.io/community.html) is always waiting for your questions and ideas to help you and keep improving Netty and its documentation based on your feed back. 
+Please also note that [the community](http://netty.io/community.html) is always waiting for your questions and ideas to help you and keep improving Netty and its documentation based on your feedback. 
 
 [`Bootstrap`]: http://netty.io/4.0/api/io/netty/bootstrap/Bootstrap.html
 [`ByteBuf`]: http://netty.io/4.0/api/io/netty/buffer/ByteBuf.html
