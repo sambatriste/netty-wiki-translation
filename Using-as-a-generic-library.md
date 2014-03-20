@@ -10,11 +10,11 @@ Have you ever forgotten to call `java.nio.ByteBuffer.flip()` and wondered why th
 
 ```java
 ByteBuf buf = ...;
-buf.writeInt(42);
-assertThat(buf.readInt(), is(42));
+buf.writeUnsignedInt(42);
+assertThat(buf.readUnsignedInt(), is(42));
 ```
 
-It has a richer set of access methods to more easily access a buffer's contents. For example, it has accessor methods for unsigned integers, searches, and strings (specifying a `CharSet`).
+It has a richer set of access methods to more easily access a buffer's contents. For example, it has accessor methods for signed and unsigned integers, searches, and strings.
 
 ### Extensibility
 
@@ -158,7 +158,7 @@ Netty uses `ConstantPool` to define `ChannelOption`s so that non-core transports
 
 ### Attribute map
 
-Use `io.netty.util.AttributeMap` interface for a fast, type-safe collection of key-value pairs:
+Use `io.netty.util.AttributeMap` interface for a fast, type-safe, thread-safe collection of key-value pairs:
 
 ```java
 public class Foo extends DefaultAttributeMap {
