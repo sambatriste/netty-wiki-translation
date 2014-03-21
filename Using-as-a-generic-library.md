@@ -82,7 +82,7 @@ To build a high-performing network application framework, we introduced utilitie
 
 ### Thread-local object pool
 
-If your thread is long-running and you allocate many short-living objects of same type, you can use a thread-local object pool, called `Recycler`. `Recycler` reduces the amount of the garbage you produce, reducing memory bandwidth and load on the garbage collector.
+If your thread is long-running and you allocate many short-living objects of same type, you can use a thread-local object pool, called `Recycler`. It reduces the amount of the garbage you produce, saving memory bandwidth consumption and load on the garbage collector.
 
 ```java
 public class MyObject {
