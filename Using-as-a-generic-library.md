@@ -194,8 +194,8 @@ for the Efficient Implementation of a Timer Facility," Varghese and Lauck)](http
 The following classes are useful, but you will find fine alternatives in other libraries such as Guava:
 
 * `io.netty.util.CharsetUtil` provides commonly-used `java.nio.charset.Charset`s.
-* `io.netty.util.NetUtil` provides commonly-used network-related constants such as the `InetAddress` for IPv4 localhost.
-* `io.netty.util.DefaultThreadFactory` is a generic `ThreadFactory` implementation that lets you configures your executor threads easily.
+* `io.netty.util.NetUtil` provides commonly-used network-related constants such as the `InetAddress` for IPv4 and IPv6 loopback addresses.
+* `io.netty.util.DefaultThreadFactory` is a generic `ThreadFactory` implementation that lets you configure your executor threads easily.
 
 ## Comparison with Guava and JDK8
 
