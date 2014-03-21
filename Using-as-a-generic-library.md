@@ -186,7 +186,7 @@ Hashed wheel timer is a scalable alternative to `java.util.Timer` and `java.util
 
 Internally, it uses a hash table whose key is a task's timing to yield constant time for most timer operations. (`java.util.Timer` uses a binary heap.)
 
-For more information about hashed wheel timer, please see [these slides ("Hashed and Hierarchical Timing Wheels," Varghese and Lauck)](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper ("Hashed and Hierarchical Timing Wheels: Data Structures 
+For more information about hashed wheel timer, please see [these slides ("Hashed and Hierarchical Timing Wheels," Dharmapurikar)](http://www.cse.wustl.edu/~cdgill/courses/cs6874/TimingWheels.ppt) and [this paper ("Hashed and Hierarchical Timing Wheels: Data Structures 
 for the Efficient Implementation of a Timer Facility," Varghese and Lauck)](http://www.cs.columbia.edu/~nahum/w6998/papers/sosp87-timing-wheels.pdf).
 
 ### Even more miscellaneous utilities
