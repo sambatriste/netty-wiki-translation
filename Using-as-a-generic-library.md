@@ -53,7 +53,7 @@ Performing a task asynchronously - scheduling a task and getting notified on com
 EventExecutorGroup group = new DefaultEventExecutorGroup(4); // 4 threads
 Future<?> f = group.submit(new Runnable() { ... });
 f.addListener(new FutureListener<?> {
-  public void oeprationComplete(Future<?> f) {
+  public void operationComplete(Future<?> f) {
     ..
   }
 });
