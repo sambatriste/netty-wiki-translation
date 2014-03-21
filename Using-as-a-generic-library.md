@@ -47,7 +47,7 @@ Performing a task asynchronously - scheduling a task and getting notified on com
 
 `io.netty.concurrent.Future` is a subtype of JDK `Future`.  It lets you add a listener which will be invoked by an event loop when the future is fulfilled.
 
-`io.netty.util.concurrent.EventExecutor` is a single-threaded event loop that extends `java.util.concurrent.ScheduledExecutorService`. You can build your own event loop or use it as a feature-rich task executor.  Usually, you create multiple `EventExecutor's to take advantage of parallelism:
+`io.netty.util.concurrent.EventExecutor` is a single-threaded event loop that extends `java.util.concurrent.ScheduledExecutorService`. You can build your own event loop or use it as a feature-rich task executor.  Usually, you create multiple `EventExecutor`s to take advantage of parallelism:
 
 ```java
 EventExecutorGroup group = new DefaultEventExecutorGroup(4); // 4 threads
