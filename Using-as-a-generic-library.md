@@ -39,7 +39,7 @@ buf.release(); // The direct buffer is returned to the pool.
 
 However, reference counting isn't a holy grail.  If the JVM garbage-collects the pooled buffer before its underlying memory region is returned to the pool, the leaks will eventually exhaust the pool.
 
-To help you troubleshoot a leak, Netty provides a leak-detection mechanism which is flexible enough to let you trade off between the your application's performance and the detail of the leak report.  For more information, please refer to [[Reference-counted-objects]].
+To help you troubleshoot a leak, Netty provides a leak-detection mechanism which is flexible enough to let you trade off between your application's performance and the detail of the leak report.  For more information, please refer to [[Reference-counted-objects]].
 
 ## Listenable futures and event loops
 
