@@ -43,7 +43,7 @@ To help you troubleshoot a leak, Netty provides a leak-detection mechanism which
 
 ## Listenable futures and event loops
 
-Performing a task asynchronously - scheduling a task and getting notified on completion - is common, and should be easy. When `java.util.concurrent.Future` appeared first, our excitement didn't last long.: we had to _block_ to get notified on completion.  In asynchronous programming, you specify _what to do_ on completion rather than wait for the outcome.
+Performing a task asynchronously - scheduling a task and getting notified on completion - is common, and should be easy. When `java.util.concurrent.Future` appeared first, our excitement didn't last long.  We had to _block_ to get notified on completion.  In asynchronous programming, you specify _what to do_ on completion rather than wait for the outcome.
 
 `io.netty.concurrent.Future` is a subtype of JDK `Future`.  It lets you add a listener which will be invoked by an event loop when the future is fulfilled.
 
