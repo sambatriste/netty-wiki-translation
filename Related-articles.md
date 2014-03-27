@@ -1,7 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2014
-* [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (Video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
+* [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
 * [Netty: Basics for beginners](http://bhardwaj-gaurav.blogspot.com/2014/02/netty-basics-for-beginners.html) by Gaurav Bhardwaj
 * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle) by Jeff Smick
 * [Making HTTP content compression work in Netty 4](http://andreas.haufler.info/2014/01/making-http-content-compression-work-in.html) by Andreas Haufler
@@ -27,11 +27,11 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2012
 
-* [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (Video w/ [slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
+* [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (video w/ [slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
 * [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
 * [Benchmarking web frameworks for games](http://blog.juiceboxmobile.com/2012/11/20/benchmarking-web-frameworks-for-games/) by Jason McGuirk
-* [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (Video) by Brendan McAdams
-* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (Video, German) with Norman Maurer
+* [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (video) by Brendan McAdams
+* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (video, German) with Norman Maurer
 * [Run Servlets with Netty](http://www.jroller.com/agoubard/entry/run_servlets_with_netty#.USMIPDWNKUo) by Anthony Goubard
 * [High performance network programming on the JVM](http://www.slideshare.net/eonnen/high-performance-network-programming-on-the-jvm-oscon-2012) by Erik Onnen
 * [How we got SPDY working with Netty 3.5 for Socko](http://sockoweb.org/2012/06/19/spdy-netty.html) by Vibul Imtarnasan
@@ -46,7 +46,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 * [Multiplayer tic-tac-toe using WebSocket, Netty, and JQuery](http://kevinwebber.ca/blog/2011/11/2/multiplayer-tic-tac-toe-in-java-using-the-websocket-api-nett.html) by Kevin Webber
 * [Non-blocking I/O with Netty](http://www.slideshare.net/zaubersoftware/non-blocking-io-with-netty) (Spanish) by Mariano Cortesi and Fernando Zunino
 * [The Node redumption!](http://blog.creapptives.com/post/9924551244/the-node-redumption) (Node.js vs Netty) by maxpert
-* [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (Video) by TheProgrammingTuts
+* [How to: basic Netty server](http://www.youtube.com/watch?v=aI_bvkT94sA) (video) by TheProgrammingTuts
 * [Twitter search is now 3x faster](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html) by Krishna Gade
 * [Clojure: Web Socket introduction](http://blog.jayfields.com/2011/02/clojure-web-socket-introduction.html) by Jay Fields
 
