@@ -1,6 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2014
+* [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (Video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
 * [Netty: Basics for beginners](http://bhardwaj-gaurav.blogspot.com/2014/02/netty-basics-for-beginners.html) by Gaurav Bhardwaj
 * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle) by Jeff Smick
 * [Making HTTP content compression work in Netty 4](http://andreas.haufler.info/2014/01/making-http-content-compression-work-in.html) by Andreas Haufler
@@ -26,7 +27,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2012
 
-* [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (Video w/ [Slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
+* [Distributing data from cloud to more than 100 million users](http://www.youtube.com/watch?v=xRmh65mE1Qc) (Video w/ [slides](http://java.cz/dwn/1003/70613_cloud_distr_nc.pdf)) by Zbyněk Šlajchrt
 * [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
 * [Benchmarking web frameworks for games](http://blog.juiceboxmobile.com/2012/11/20/benchmarking-web-frameworks-for-games/) by Jason McGuirk
 * [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (Video) by Brendan McAdams
