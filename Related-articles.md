@@ -2,6 +2,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2014
 * [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
+* [Netty 4 - A lookup behind the scenes](http://normanmaurer.me/presentations/2014-eclipsecon-na-netty/slides.html) by Norman Maurer
 * [Netty: Basics for beginners](http://bhardwaj-gaurav.blogspot.com/2014/02/netty-basics-for-beginners.html) by Gaurav Bhardwaj
 * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle) by Jeff Smick
 * [Making HTTP content compression work in Netty 4](http://andreas.haufler.info/2014/01/making-http-content-compression-work-in.html) by Andreas Haufler
