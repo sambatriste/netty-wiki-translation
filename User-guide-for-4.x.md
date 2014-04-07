@@ -464,10 +464,10 @@ b.handler(new ChannelInitializer<SocketChannel>() {
 If you are an adventurous person, you might want to try the [`ReplayingDecoder`] which simplifies the decoder even more. You will need to consult the API reference for more information though.
 
 ```java
-public class TimeDecoder extends ReplayingDecoder<VoidEnum> {
+public class TimeDecoder extends ReplayingDecoder<Void> {
     @Override
     protected void decode(
-            ChannelHandlerContext ctx, ByteBuf in, List<Object> out, VoidEnum state) {
+            ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
         out.add(in.readBytes(4));
     }
 }
