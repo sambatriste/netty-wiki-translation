@@ -582,7 +582,7 @@ public class TimeEncoder extends MessageToByteEncoder<UnixTime> {
 
 ```
 
-The last task left is to insert a `TimeEncoder` into the [`ChannelPipeline`] on the server side, and it is left as a trivial exercise.
+The last task left is to insert a `TimeEncoder` into the [`ChannelPipeline`] on the server side before the `TimeServerHandler`, and it is left as a trivial exercise.
 
 ### Shutting Down Your Application
 
