@@ -3,7 +3,7 @@
 * Complete mavenization of the project
 * Improved OpenSSL support
 
-To minimize the maintenance burden between the upstream and the fork, we create a dedicated branch for each stable upstream release and apply our own changes on top of it.
+To minimize the maintenance burden between the upstream and the fork, we create a dedicated branch for each stable upstream release and apply our own changes on top of it, while keeping the number of maintained branches to minimum.
 
 ## Creating a new fork
 
@@ -14,7 +14,7 @@ $ git checkout bootstrap
 $ ./new-fork 1.1.29
 ```
 
-Will create a new branch called `1.1.29`, which contains a mavenized tcnative fork.  Please note that the fork does not contain any patches that will change the main source code of tcnative.  You will probably want to cherry-pick some commits from other branches that were patched already.
+will create a new branch called `1.1.29`, which contains a mavenized fork of `tcnative-1.1.29`.  Please note that the fork does not contain any patches that will change the main source code of `tcnative`.  You will probably want to cherry-pick some commits from other branches that were patched already.
 
 ## Using `netty-tcnative` to accelerate SSL performance
 
