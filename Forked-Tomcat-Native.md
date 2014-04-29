@@ -3,7 +3,7 @@
 * Complete mavenization of the project
 * Improved OpenSSL support
 
-To minimize the maintenance burden between the upstream and the fork, we create a dedicated branch for each stable upstream release and apply our own changes on top of it, while keeping the number of maintained branches to minimum.
+To minimize the maintenance burden, we create a dedicated branch for each stable upstream release and apply our own changes on top of it, while keeping the number of maintained branches to minimum.
 
 ## Creating a new fork
 
