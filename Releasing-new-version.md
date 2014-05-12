@@ -3,37 +3,37 @@
 * [Create a GnuPG key to sign the artifacts.](https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven)
 * Configure your `~/.m2/settings.xml` contains the following configuration:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<settings>
-  <servers>
-    <server>
-      <id>sonatype-nexus-snapshots</id>
-      <username>myusername</username>
-      <password>mypassword</password>
-    </server>
-    <server>
-      <id>sonatype-nexus-staging</id>
-      <username>myusername</username>
-      <password>mypassword</password>
-      <configuration>
-        <httpHeaders>
-          <!--
-            Override User-Agent header which is used when deploying an artifact
-            so that Sonatype Nexus does not create multiple staging repositories
-            when artifacts are deployed from different platforms (e.g. Linux and OSX).
-          -->
-          <property>
-            <name>User-Agent</name>
-            <value>Apache-Maven</value>
-          </property>
-        </httpHeaders>
-      </configuration>
-    </server>
-  </servers>
-  ...
-</settings>
-```
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <settings>
+      <servers>
+        <server>
+          <id>sonatype-nexus-snapshots</id>
+          <username>myusername</username>
+          <password>mypassword</password>
+        </server>
+        <server>
+          <id>sonatype-nexus-staging</id>
+          <username>myusername</username>
+          <password>mypassword</password>
+          <configuration>
+            <httpHeaders>
+              <!--
+                Override User-Agent header which is used when deploying an artifact
+                so that Sonatype Nexus does not create multiple staging repositories
+                when artifacts are deployed from different platforms (e.g. Linux and OSX).
+              -->
+              <property>
+                <name>User-Agent</name>
+                <value>Apache-Maven</value>
+              </property>
+            </httpHeaders>
+          </configuration>
+        </server>
+      </servers>
+      ...
+    </settings>
+    ```
 
 ## Standard Maven release procedure
 
@@ -58,12 +58,14 @@ Because we ship both Linux and Mac OS X artifacts, the release procedure is even
 
 1. Perform a release from 64-bit [RHEL 6.5 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet.
 1. On your Mac OS X, run the following to deploy the release artifacts to the staging repository:
-```
-$ git checkout netty-tcnative-[version]
-... You'll get a warning about detached HEAD ...
-$ mvn -Psonatype-oss-release deploy
-... The artifact with OSX native library will be deployed ...
-```
+
+    ```
+    $ git checkout netty-tcnative-[version]
+    ... You'll get a warning about detached HEAD ...
+    $ mvn -Psonatype-oss-release deploy
+    ... The artifact with OSX native library will be deployed ...
+    ```
+
 1. Make sure both the Linux and Mac OS X artifacts have been deployed into the same staging repositories.  If they are deployed into two different staging repositories, drop them all and figure out what was the problem.
 1. If both JARs (e.g. `netty-tcnative-1.1.30.Fork1-linux-x86_64.jar` and `netty-tcnative-1.1.30.Fork1-osx-x86_64.jar`) exist in the same staging repository, close and release the staging repository.
 
