@@ -1,5 +1,6 @@
 ## Before getting started
 
+* [Read the OSSRH guide from Sonatype.](http://central.sonatype.org/pages/ossrh-guide.html)
 * [Create a GnuPG key to sign the artifacts.](https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven)
 * Configure your `~/.m2/settings.xml` contains the following configuration:
 
