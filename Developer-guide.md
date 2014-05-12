@@ -2,7 +2,7 @@
 
 ### Before getting started
 
-* [[Set up your development environment|Setting-up-development-environment]].
+* [[Set up your development environment.|Setting-up-development-environment]]
 * [Read and sign the contributor license agreement](https://docs.google.com/spreadsheet/viewform?formkey=dHBjc1YzdWhsZERUQnhlSklsbG1KT1E6MQ) unless your contribution is trivial such as a single line change or a typo fix.
 
 ### Checklist
