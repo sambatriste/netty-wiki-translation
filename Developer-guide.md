@@ -1,16 +1,9 @@
 <div class="alert alert-danger"><strong>Looking for a tutorial?</strong> Visit [[the documentation home|Home]]. <strong>Got a question?</strong> Ask at <a href="https://stackoverflow.com/questions/tagged/netty">StackOverflow.com</a>.<br>Please note that this guide is <strong>not</strong> a 'user guide'.  It is not intended for the 'users' who build an application using Netty but for the contributors ('dev') who want to develop Netty itself.</div>
 
-## Set up your development environment
+## Before start to write the code
 
-See [[here|Setting-up-development-environment]].
-
-## Write a meaningful commit message
-
-See [[here|Writing-a-commit-message]].
-
-## Sign the contributor license agreement
-
-Please read and sign [the contributor license agreement](https://docs.google.com/spreadsheet/viewform?formkey=dHBjc1YzdWhsZERUQnhlSklsbG1KT1E6MQ) unless your contribution is trivial such as a single line change or a typo fix.
+* [[Set up your development environment|Setting-up-development-environment]].
+* [Read and sign the contributor license agreement](https://docs.google.com/spreadsheet/viewform?formkey=dHBjc1YzdWhsZERUQnhlSklsbG1KT1E6MQ) unless your contribution is trivial such as a single line change or a typo fix.
 
 ## Checklist
 
@@ -18,8 +11,8 @@ Please use the following checklist before pushing your commits or issuing a pull
 
 * Does your work builds without any failure when you run '`mvn test`' from shell?
 * Does your work introduce any new inspector warnings?
-* Do your commit messages follow the format mentioned in the 'writing a meaningful commit message' section above?
-* Did you sign the contributor license agreement?
+* Does your commit message or pull request description meet [[our commit message rules|Writing-a-commit-message]]?
+* Did you sign [the contributor license agreement](https://docs.google.com/spreadsheet/viewform?formkey=dHBjc1YzdWhsZERUQnhlSklsbG1KT1E6MQ)?
 
 ## Work with a pull request
 
