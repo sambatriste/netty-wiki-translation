@@ -12,7 +12,7 @@ Please use the following checklist before pushing your commits or issuing a pull
 * Does your work builds without any failure when you run '`mvn test`' from shell?
 * Does your work introduce any new inspector warnings?
 * Does your commit message or pull request description meet [[our commit message rules|Writing-a-commit-message]]?
-* Did you [eebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your pull request against the HEAD of the target branch and fix all conflicts?
+* Did you [rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your pull request against the HEAD of the target branch and fix all conflicts?
 * Did you sign [the contributor license agreement](https://docs.google.com/spreadsheet/viewform?formkey=dHBjc1YzdWhsZERUQnhlSklsbG1KT1E6MQ)?
 
 ### For contributors with push rights
