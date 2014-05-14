@@ -9,6 +9,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [BungeeCord](http://www.spigotmc.org/threads/392/) is the de facto proxy solution for combining multiple Minecraft servers into a cloud / hub system.
 * [Elastic Search](http://www.elasticsearch.org) is a distributed RESTful search engine built on top of Lucene.
 * [Eucalyptus](http://open.eucalyptus.com) is a software infrastructure for implementing on-premise cloud computing using an organization's own IT infrastructure, without modification, special-purpose hardware or reconfiguration.
+* [Finagle](http://twitter.github.io/finagle/) is an extensible RPC system for the JVM, used to construct high-concurrency servers.
 * [Forest](https://github.com/le-moulin-studio/forest) is a general purpose friend-to-friend platform.
 * [Gatling](http://gatling-tool.org) is an asynchronous and efficient stress tool developed with Netty and Akka.
 * [Hammersmith](https://github.com/bwmcadams/hammersmith) is a pure asynchronous MongoDB driver for Scala
