@@ -144,7 +144,7 @@ Now, start the command prompt (`cmd.exe`) and load the environment variables req
 REM 32-bit Windows:
 "C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 REM 64-bit Windows:
-CALL "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /Release /x64
+CALL "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /Release /x64 /xp
 ```
 
 Build APR:
