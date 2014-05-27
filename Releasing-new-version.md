@@ -58,7 +58,7 @@ The release procedure must be performed from 64-bit [RHEL 6.5 or its derivatives
 Because we ship both Linux and Mac OS X artifacts, the release procedure is even more complicated.
 
 1. Perform a release from 64-bit [RHEL 6.5 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet.
-1. On your Mac OS X, run the following to deploy the release artifacts to the staging repository:
+1. On your Mac OS X and 64-bit Windows, whose build environment is set up as documented [[here|Forked-Tomcat-Native]], run the following commands to deploy the release artifacts to the staging repository:
 
     ```
     $ git checkout netty-tcnative-[version]
@@ -67,8 +67,7 @@ Because we ship both Linux and Mac OS X artifacts, the release procedure is even
     ... The artifact with OSX native library will be deployed ...
     ```
 
-1. Make sure both the Linux and Mac OS X artifacts have been deployed into the same staging repositories.  If they are deployed into two different staging repositories, drop them all and figure out what was the problem.
-1. If both JARs (e.g. `netty-tcnative-1.1.30.Fork1-linux-x86_64.jar` and `netty-tcnative-1.1.30.Fork1-osx-x86_64.jar`) exist in the same staging repository, close and release the staging repository.
-
+1. Make sure both the Linux, Mac OS X, and Windows artifacts have been deployed into the same staging repositories.  If they are deployed into two or three different staging repositories, drop them all and figure out what was the problem.
+1. If all three JARs (e.g. `netty-tcnative-1.1.30.Fork1-linux-x86_64.jar`, `netty-tcnative-1.1.30.Fork1-osx-x86_64.jar`, and `netty-tcnative-1.1.30-Fork1-windows-x86_64.jar`) exist in the same staging repository, close and release the staging repository.
 
 [RHEL 6.5 or its derivatives]: http://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives
