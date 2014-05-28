@@ -79,7 +79,7 @@ Note that the shared library is dynamically linked against Apache Portable Runti
 
 ## How to build
 
-You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.
+You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.  If you are looking for a SNAPSHOT build, browse [our CI server](https://secure.motd.kr/jenkins/view/TCNative/).
 
 ### Building on Linux
 
