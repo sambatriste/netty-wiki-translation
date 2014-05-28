@@ -63,7 +63,7 @@ Because we ship both Linux and Mac OS X artifacts, the release procedure is even
     ```
     $ git checkout netty-tcnative-[version]
     ... You'll get a warning about detached HEAD ...
-    $ mvn -Psonatype-oss-release deploy
+    $ mvn -Psonatype-oss-release clean deploy
     ... The artifact with OSX or Windows native library will be deployed ...
     ```
 
