@@ -81,6 +81,8 @@ Note that the shared library is dynamically linked against Apache Portable Runti
 
 You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.  If you are looking for a SNAPSHOT build, browse [our CI server](https://secure.motd.kr/jenkins/view/TCNative/).
 
+If you are on a platform we don't ship the JARs with the native libraries, such as Windows x86_32, follow the instructions in this section.
+
 ### Building on Linux
 
 Install the required packages:
@@ -93,7 +95,14 @@ sudo apt-get install autoconf automake libtool make gcc-multilib tar libapr1-dev
 ```
 
 Build the package and install it into your local Maven repository:
+
 ```bash
+git clone https://github.com/netty/netty-tcnative.git
+cd netty-tcnative
+# To build a specific version: (e.g. netty-tcnative-1.1.30.Fork2)
+git checkout netty-tcnative-[version]
+# To build a snapshot: (e.g. 1.1.30)
+git checkout [branch]
 mvn clean install
 ```
 
@@ -115,6 +124,12 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib $LDFLAGS"
 Build the package and install it into your local Maven repository:
 
 ```bash
+git clone https://github.com/netty/netty-tcnative.git
+cd netty-tcnative
+# To build a specific version: (e.g. netty-tcnative-1.1.30.Fork2)
+git checkout netty-tcnative-[version]
+# To build a snapshot: (e.g. 1.1.30)
+git checkout [branch]
 mvn clean install
 ```
 
@@ -171,6 +186,10 @@ Clone `netty-tcnative` and build it:
 ```bat
 git clone https://github.com/netty/netty-tcnative.git
 cd netty-tcnative
+REM To build a specific version: (e.g. netty-tcnative-1.1.30.Fork2)
+git checkout netty-tcnative-[version]
+REM To build a snapshot: (e.g. 1.1.30)
+git checkout [branch]
 mvn clean install
 ```
 
@@ -180,7 +199,7 @@ Checking out the branch `bootstrap` and running the `new-fork` script with the u
 
 ```
 $ git checkout bootstrap
-$ ./new-fork 1.1.29
+$ ./new-fork 1.1.29 1
 ```
 
 will create a new branch called `1.1.29`, which contains a mavenized fork of `tcnative-1.1.29`.  Please note that the fork does not contain any patches that will change the main source code of `tcnative`.  You will probably want to cherry-pick some commits from other branches that were patched already.
