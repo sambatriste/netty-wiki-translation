@@ -89,9 +89,9 @@ Install the required packages:
 
 ```bash
 # RHEL/CentOS/Fedora:
-sudo yum install autoconf automake libtool glibc-devel.i686 glibc-devel libgcc.i686 make tar apr-devel openssl-devel
+sudo yum install autoconf automake libtool glibc-devel make tar apr-devel openssl-devel
 # Debian/Ubuntu:
-sudo apt-get install autoconf automake libtool make gcc-multilib tar libapr1-dev libssl-dev
+sudo apt-get install autoconf automake libtool make tar libapr1-dev libssl-dev
 ```
 
 Build the package and install it into your local Maven repository:
