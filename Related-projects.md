@@ -7,6 +7,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Arquillian](http://www.jboss.org/arquillian.html) is an innovative in-container testing platform for the JVM
 * [Async HTTP Client](https://github.com/AsyncHttpClient/async-http-client) is a simple-to-use library that allows you to execute HTTP requests and process the HTTP responses asynchronously.
 * [BungeeCord](http://www.spigotmc.org/threads/392/) is the de facto proxy solution for combining multiple Minecraft servers into a cloud / hub system.
+* [Couchbase](http://www.couchbase.com) is a distributed NoSQL document-oriented database that is optimized for interactive applications.
 * [Elastic Search](http://www.elasticsearch.org) is a distributed RESTful search engine built on top of Lucene.
 * [Eucalyptus](http://open.eucalyptus.com) is a software infrastructure for implementing on-premise cloud computing using an organization's own IT infrastructure, without modification, special-purpose hardware or reconfiguration.
 * [Finagle](http://twitter.github.io/finagle/) is an extensible RPC system for the JVM, used to construct high-concurrency servers.
