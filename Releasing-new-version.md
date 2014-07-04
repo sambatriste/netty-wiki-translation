@@ -96,4 +96,64 @@ We use [bintray.com](https://bintray.com/netty/downloads/netty/view) for hosting
    1. Click the 'Show in download list'.
    1. Now go back to the 'General' tab. Your tarball should be visible in the direct download list.
 
+## Update the web site
+
+Our official web site is built with [Awestruct](http://awestruct.org/). Please make sure you are familiar with Awestruct and its related markup languages such as [HAML](http://haml.info/) and Markdown.
+
+If you did not yet, clone the web site project:
+
+```
+git clone git@github.com:netty/netty-website.git
+cd netty-website
+```
+
+`_config/site.yml` contains important metadata about the latest Netty versions.  For example, it has the following section:
+
+```
+releases:
+  - version: 5.0.0.Alpha1
+    date: 22-Dec-2013
+    stable: false
+    branch: master
+  - version: 4.0.21.Final
+    date: 01-Jul-2014
+    stable: true
+  - version: 3.9.2.Final
+    date: 11-Jun-2014
+    stable: true
+```
+
+Update it with the new version number and release date.  You could also update the stability and the Git branch if necessary.
+
+Try to generate the web site to confirm that the new version shows up in the generated web site.  The generated web site is located in the `_site` directory and you can browse it from your favorite web browser by opening `_site/index.html`.
+
+```
+_bin/clean.sh
+_bin/generate.sh
+```
+
+Update the Javadoc and Xref to the latest one.  You can copy them from your `netty/target/checkout/all/target` directory:
+
+```bash
+cd 4.1 # or the version you are working on
+rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/api .
+rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/xref .
+git add -A .
+cd ..
+```
+
+Also, don't forget to add `_config/site.yml` we updated to the Git index when you commit:
+
+```
+git add _config/site.yml
+git commit -m "Release 4.1.0.Beta1"
+git push
+```
+
+Now you are ready to push the web site:
+
+```
+_bin/deploy.sh
+```
+
 [RHEL 6.5 or its derivatives]: http://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives
