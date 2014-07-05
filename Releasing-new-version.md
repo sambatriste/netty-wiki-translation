@@ -166,7 +166,11 @@ _bin/deploy.sh
 
 ## Make an announcement
 
-Write a blog post.  The blog posts are located in the `news` directory of the web site project.  Once you wrote one, deploy it using the `_bin/deploy.sh` script.
+Write a blog post.  The blog posts are located in the `news` directory of the web site project.
+
+Make sure the file name does not contains a dot (.) or a whitespace (e.g. OK: `2014-07-04-4-1-0-Beta1-released.html.md` NOT OK: `2014-07-04-4.1.0.Beta1-released.html.md`
+
+Deploy the new blog post using the `_bin/deploy.sh` script.
 
 Once the new blog post is up, make another announcement via your personal Twitter account, and retweet it using our official Twitter account.
 
