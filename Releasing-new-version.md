@@ -70,6 +70,10 @@ Because we ship both Linux and Mac OS X artifacts, the release procedure is even
 1. Make sure both the Linux, Mac OS X, and Windows artifacts have been deployed into the same staging repositories.  If they are deployed into two or three different staging repositories, drop them all and figure out what was the problem.
 1. If all three JARs (e.g. `netty-tcnative-1.1.30.Fork1-linux-x86_64.jar`, `netty-tcnative-1.1.30.Fork1-osx-x86_64.jar`, and `netty-tcnative-1.1.30-Fork1-windows-x86_64.jar`) exist in the same staging repository, close and release the staging repository.
 
+## Close the milestone in Github
+
+Go [here](https://github.com/netty/netty/issues/milestones) to close the released milestone.
+
 ## Upload a tarball
 
 We use [bintray.com](https://bintray.com/netty/downloads/netty/view) for hosting tarballs.
