@@ -96,6 +96,10 @@ We use [bintray.com](https://bintray.com/netty/downloads/netty/view) for hosting
    1. Click the 'Show in download list'.
    1. Now go back to the 'General' tab. Your tarball should be visible in the direct download list.
 
+## Update the 'new and noteworthy' page
+
+We have a dedicated 'new and noteworthy' page for each minor versions.  Add or update it if necessary.  If you added one, add it also to [[New and noteworthy]] list.
+
 ## Update the web site
 
 Our official web site is built with [Awestruct](http://awestruct.org/). Please make sure you are familiar with Awestruct and its related markup languages such as [HAML](http://haml.info/) and Markdown.
