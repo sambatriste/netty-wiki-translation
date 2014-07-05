@@ -160,4 +160,10 @@ Now you are ready to push the web site:
 _bin/deploy.sh
 ```
 
+## Make an announcement
+
+Write a blog post.  The blog posts are located in the `news` directory of the web site project.  Once you wrote one, deploy it using the `_bin/deploy.sh` script.
+
+Once the new blog post is up, make another announcement via your personal Twitter account, and retweet it using our official Twitter account.
+
 [RHEL 6.5 or its derivatives]: http://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives
