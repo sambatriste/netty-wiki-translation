@@ -1,7 +1,9 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
 ## 2014
-* [Moving on to Netty4] (http://wp.me/s4yzgW-n) by Gaurav Bhardwaj
+
+* [Netty and a Fresh View of Web Development](http://www.iteratia.com/blog/netty-and-a-fresh-view-of-web-development/) by Iteratia
+* [Moving on to Netty4](http://bhardwajgaurav.wordpress.com/2014/04/20/n/) by Gaurav Bhardwaj
 * [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
 * [Netty 4 - A lookup behind the scenes](http://normanmaurer.me/presentations/2014-eclipsecon-na-netty/slides.html) by Norman Maurer
 * [Netty: Basics for beginners](http://bhardwaj-gaurav.blogspot.com/2014/02/netty-basics-for-beginners.html) by Gaurav Bhardwaj
