@@ -42,6 +42,7 @@ Please make sure the list is sorted alphabetically and remove unmaintained proje
 * [Play Framework](http://www.playframework.org) is a clean alternative web application framework to J2EE stack, which focuses on developer productivity and targets RESTful architecture.
 * [PS3 Media Server](http://code.google.com/p/ps3mediaserver) is a DLNA compliant UPNP Media Server for PS3 which transcodes and streams any kind of media files.
 * [Pushy](http://relayrides.github.io/pushy/) is a Java library for sending APNs (iOS/OS X) push notifications.
+* [Redisson](https://github.com/mrniko/redisson) provides a distributed and scalable Java data structures (Set, SortedSet, Map, ConcurrentMap, List, Queue, Deque, Lock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog) on top of Redis server.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
 * [SocketIO4j](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
