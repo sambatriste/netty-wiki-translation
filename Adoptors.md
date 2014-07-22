@@ -1,4 +1,4 @@
-## Closed Source Projects and On-line Services
+This page lists the companies or entities who adopted Netty in their projects or products.  Make sure to sort the list alphabetically and keep the list up-to-date.
 
 * [Avast Software](http://www.avast.com/) distributes their anti-virus updates to more than 100M users using Netty.
 * [Between](http://between.us) is private mobile SNS for couples. They built their API and messaging server with Netty.
