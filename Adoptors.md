@@ -7,7 +7,6 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Between](http://between.us/)
   * A private mobile SNS for couples. They built their API and messaging server with Netty.
   * [Between system architecture](http://engineering.vcnc.co.kr/2013/04/between-system-architecture/)
-
 * [Boundary](http://www.boundary.com/)
   * Monitors the continuously changing environment of distributed applications in real-time.
   * [Know a delay: Nagle's algorithm and you](http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/)
@@ -33,6 +32,6 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
   * [Netty 4 at Twitter reduced GC overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead)
   * [Twitter Search is now 3x faster.](https://blog.twitter.com/2011/twitter-search-now-3x-faster)
-* [Yahoo][http://www.yahoo.com/)
+* [Yahoo](http://www.yahoo.com/)
   * [Making Storm fly with Netty](http://yahooeng.tumblr.com/post/64758709722/making-storm-fly-with-netty)
 
