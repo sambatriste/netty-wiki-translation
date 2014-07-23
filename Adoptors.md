@@ -2,7 +2,7 @@ This page lists the organizations who adopted Netty in their projects or product
 
 * [Avast Software](http://www.avast.com/)
   * Distributes their anti-virus updates to more than 100M users using Netty.
-  * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf)
+  * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf) (slides)
   * [Streaming updates - real time system for distributing updates to millions of users](http://www.karry.cz/karry/blog/2013/10/16/avast!_streaming_updates_-_real-time_system_for_distributing_updates_to_millions_of_users/)
 * [Between](http://between.us/)
   * A private mobile app for couples with over 5 million users to store and share their memories, providing an exclusive communication channel just between the two.
@@ -29,7 +29,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [A tweet by @diwakergupta](https://twitter.com/diwakergupta/status/491338718834196480)
 * [Minecraft](https://minecraft.net/)
 * [Netflix](https://www.netflix.com/)
-  * [NetflixOSS Meetup](http://www.youtube.com/watch?v=aEuNBk1b5OE) (Video)
+  * [NetflixOSS Meetup](http://www.youtube.com/watch?v=aEuNBk1b5OE) (video)
   * [Ribbon](https://github.com/Netflix/ribbon) - an inter-process communication (remote procedure calls) library with built-in software load balancers
   * [RxNetty](https://github.com/Netflix/RxNetty) - the Reactive extension (Rx) adaptor for Netty
 * [Red Hat](http://www.redhat.com)
