@@ -41,6 +41,9 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Sears Holdings Corporation](http://www.searsholdings.com/)
   * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
   * [A tweet by @adyrcz](https://twitter.com/adyrcz/status/491335978230226945)
+* [Spark Profit](https://sparkprofit.com/)
+  * A free trading simulator that measures your predictive skill
+  * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
 * [StumbleUpon](http://www.stumbleupon.com/)
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
 * [Twitter](https://twitter.com/)
