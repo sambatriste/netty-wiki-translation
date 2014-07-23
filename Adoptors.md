@@ -33,6 +33,11 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Remember The Milk](http://www.rememberthemilk.com/)
   * An on-line task management service
   * [Real time updating comes to the Remember The Milk web app](http://blog.rememberthemilk.com/2011/08/real-time-updating-comes-to-the-remember-the-milk-web-app/)
+* [Sears Holdings Corporation](http://www.searsholdings.com/)
+  * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
+  * [A tweet by `@adyrcz`](https://twitter.com/adyrcz/status/491335978230226945)
+* [StumbleUpon](http://www.stumbleupon.com/)
+  * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
 * [Twitter](https://twitter.com/)
   * [Finagle](https://twitter.github.io/finagle/) and [Cloudhopper](https://github.com/twitter/cloudhopper-smpp)
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
