@@ -21,6 +21,9 @@ This page lists the organizations who adopted Netty in their projects or product
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
 * [LiquidLabs LogScape](http://www.liquidlabs.com/)
   * A high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
+* [Maginatics](https://maginatics.com/)
+  * Delivers software-only storage platform natively designed for software-defined data centers and the cloud providers.
+  * [A tweet by @diwakergupta](https://twitter.com/diwakergupta/status/491338718834196480)
 * [Netflix](https://www.netflix.com/)
   * [NetflixOSS Meetup](http://www.youtube.com/watch?v=aEuNBk1b5OE) (Video)
   * [Ribbon](https://github.com/Netflix/ribbon) - an inter-process communication (remote procedure calls) library with built-in software load balancers
