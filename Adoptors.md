@@ -10,6 +10,10 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Boundary](http://www.boundary.com/)
   * Monitors the continuously changing environment of distributed applications in real-time.
   * [Know a delay: Nagle's algorithm and you](http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/)
+* [Datastax](http://datastax.com/)
+  * [Robust and scalable distributed queries with DSE Search 4.0](http://www.datastax.com/dev/blog/robust-and-scalable-distributed-queries)
+* [Elasticsearch](http://elasticsearch.com/)
+  * [Open Source, Distributed, RESTful Search Engine](https://github.com/elasticsearch/elasticsearch/)
 * [ESN Planet](http://www.esn.me/product/planet/)
   * A feature-rich social real-time web platform which scales horizontally and vertically.
   * [Useful tools for Netty](http://pushingtheweb.com/2010/06/useful-tools-for-jboss-netty/)
@@ -56,6 +60,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
   * [Netty 4 at Twitter reduced GC overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead)
   * [Twitter Search is now 3x faster.](https://blog.twitter.com/2011/twitter-search-now-3x-faster)
+* [Wasted IO](http://wasted.io)
+  * [Netflow](https://github.com/wasted/netflow)
 * [Yahoo](http://www.yahoo.com/)
   * [Making Storm fly with Netty](http://yahooeng.tumblr.com/post/64758709722/making-storm-fly-with-netty)
-
