@@ -25,6 +25,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * Brings the power of big data text analytics into Microsoft Word.
   * [A tweet by @adisesha](https://twitter.com/adisesha/status/491449830665752577)
 * [Instagram](http://instagram.com)
+  * Used for IG Direct
   * [A tweet by @rbanson](https://twitter.com/rbranson/status/411368634573795328)
 * [Kakao Talk](http://www.kakao.com/talk)
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
