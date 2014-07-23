@@ -41,6 +41,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * An on-line task management service
   * [Real time updating comes to the Remember The Milk web app](http://blog.rememberthemilk.com/2011/08/real-time-updating-comes-to-the-remember-the-milk-web-app/)
 * [SAPO](http://www.sapo.pt/)
+  * A Portuguese internet service provider and web portal
   * [A tweet by @lneves](https://twitter.com/lneves/status/491515284352933888)
 * [Sears Holdings Corporation](http://www.searsholdings.com/)
   * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
