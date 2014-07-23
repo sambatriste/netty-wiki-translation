@@ -5,8 +5,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf)
   * [Streaming updates - real time system for distributing updates to millions of users](http://www.karry.cz/karry/blog/2013/10/16/avast!_streaming_updates_-_real-time_system_for_distributing_updates_to_millions_of_users/)
 * [Between](http://between.us/)
-  * A private mobile SNS for couples. They built their API and messaging server with Netty.
-  * [Between system architecture](http://engineering.vcnc.co.kr/2013/04/between-system-architecture/)
+  * A private mobile app for couples with over 5 million users to store and share their memories, providing an exclusive communication channel just between the two.
+  * [Between system architecture](http://engineering.vcnc.co.kr/2013/04/between-system-architecture/) (Korean; they built their API and messaging server with Netty.)
 * [Boundary](http://www.boundary.com/)
   * Monitors the continuously changing environment of distributed applications in real-time.
   * [Know a delay: Nagle's algorithm and you](http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/)
