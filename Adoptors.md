@@ -17,6 +17,9 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Nifty](https://github.com/facebook/nifty) - Netty-based Thrift transport implementation
 * [Google](https://www.google.com/)
   * [OpenBidder](https://developers.google.com/ad-exchange/rtb/open-bidder/guides/webserver) - an open source real-time bidding (RTB) framework enabling you to bid ads at real time.
+* [Infinote](http://infinote.com/)
+  * Brings the power of big data text analytics into Microsoft Word.
+  * [A tweet by @adisesha](https://twitter.com/adisesha/status/491449830665752577)
 * [Kakao Talk](http://www.kakao.com/talk)
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
 * [LiquidLabs LogScape](http://www.liquidlabs.com/)
