@@ -7,7 +7,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf) (slides)
   * [Streaming updates - real time system for distributing updates to millions of users](http://www.karry.cz/karry/blog/2013/10/16/avast!_streaming_updates_-_real-time_system_for_distributing_updates_to_millions_of_users/)
 * [Between](http://between.us/)
-  * A private mobile app for couples with over 5 million users to store and share their memories, providing an exclusive communication channel just between the two.
+  * A private mobile app for couples with over 5 million users to store and share their memories, providing an exclusive communication channel just between the two
   * [Between system architecture](http://engineering.vcnc.co.kr/2013/04/between-system-architecture/) (Korean; they built their API and messaging server with Netty.)
 * [Boundary](http://www.boundary.com/)
   * Monitors the continuously changing environment of distributed applications in real-time.
@@ -18,7 +18,7 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Elasticsearch](http://elasticsearch.com/)
   * [Open Source, Distributed, RESTful Search Engine](https://github.com/elasticsearch/elasticsearch/)
 * [ESN Planet](http://www.esn.me/product/planet/)
-  * A feature-rich social real-time web platform which scales horizontally and vertically.
+  * A feature-rich social real-time web platform which scales horizontally and vertically
   * [Useful tools for Netty](http://pushingtheweb.com/2010/06/useful-tools-for-jboss-netty/)
 * [Facebook](https://www.facebook.com/)
   * [Nifty](https://github.com/facebook/nifty) - Netty-based Thrift transport implementation
@@ -33,7 +33,7 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Kakao Talk](http://www.kakao.com/talk)
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
 * [LiquidLabs LogScape](http://www.liquidlabs.com/)
-  * A high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications.
+  * A high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications
 * [Maginatics](https://maginatics.com/)
   * Delivers software-only storage platform natively designed for software-defined data centers and the cloud providers.
   * [A tweet by @diwakergupta](https://twitter.com/diwakergupta/status/491338718834196480)
