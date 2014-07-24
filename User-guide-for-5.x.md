@@ -1,3 +1,7 @@
+### 3rd-party translations
+
+* [Chinese](http://ifeve.com/netty5-user-guide/)
+
 ## Preface
 
 ### The Problem
