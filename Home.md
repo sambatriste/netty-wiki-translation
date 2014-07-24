@@ -4,5 +4,6 @@ Please visit [the documentation home](http://netty.io/wiki/index.html) of [the o
 * [Browse the list of all wiki pages](http://netty.io/wiki/all-documents.html)
 * [Browse the list of 3rd-party articles](http://netty.io/wiki/related-articles.html)
 * [Browse the list of 3rd-party projects](http://netty.io/wiki/related-projects.html)
+* [Browse the list of adopters](http://netty.io/wiki/adopters.html)
 
 Please note all wiki pages of this repository is automatically exported to the official web site.
