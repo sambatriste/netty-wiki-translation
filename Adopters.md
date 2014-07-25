@@ -27,6 +27,7 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Facebook](https://www.facebook.com/)
   * [Nifty](https://github.com/facebook/nifty) - Netty-based Thrift transport implementation
   * [See case studies chapter of Netty in Action](http://manning.com/maurer/)
+  * [Presto](http://prestodb.io) - Distributed SQL query engine for big data 
 * [Firebase](http://www.firebase.com) 
   * [Using Netty for the core services](https://5f5.org/ruminations/netty-meets-openssl.html)
   * [See case studies chapter of Netty in Action](http://manning.com/maurer/) 
@@ -55,6 +56,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Infinispan](http://infinispan.org/) - a distributed in-memory key/value data grid and cache
   * [HornetQ](http://hornetq.jboss.org/) - a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system
   * [AeroGear Push](http://aerogear.org/) - support for different push notification technologies like Google Cloud Messaging, Apple's APNs or Mozilla's SimplePush
+  * [Vert.x](http://vertx.io) - Vert.x is a lightweight, high performance application platform for the JVM that's designed for modern mobile, web, and enterprise applications.
+  * [RHQ](http://rhq.jboss.org) - RHQ is an enterprise management solution for JBoss middleware projects, Tomcat, Apache Web Server, and numerous other server-side applications.
 * [Remember The Milk](http://www.rememberthemilk.com/)
   * An on-line task management service
   * [Real time updating comes to the Remember The Milk web app](http://blog.rememberthemilk.com/2011/08/real-time-updating-comes-to-the-remember-the-milk-web-app/)
@@ -64,6 +67,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Sears Holdings Corporation](http://www.searsholdings.com/)
   * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
   * [A tweet by @adyrcz](https://twitter.com/adyrcz/status/491335978230226945)
+* [Neo4j]
+  * [Neo4j](http://neo4j.com) - Graph database
 * [Nous](https://www.nous.net/)
   * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
   * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
