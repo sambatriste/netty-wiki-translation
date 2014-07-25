@@ -81,9 +81,11 @@ This page lists the organizations who adopted Netty in their projects or product
   * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
 * [Pivotal](http://gopivotal.com)
   * [Project Reactor](https://github.com/reactor/reactor) -  a foundation for reactive fastdata applications on the JVM
+* [Shaka Technologies](http://www.shakatechnologies.com)
+  * [Tweet by @ShakaTechs](https://twitter.com/ShakaTechs/status/450948036341284864)
 * [StumbleUpon](http://www.stumbleupon.com/)
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
-* [Typesafe](http://typesafe.com
+* [Typesafe](http://typesafe.com)
   * [Play Framework](http://www.playframework.com) - The High Velocity Web Framework For Java and Scala
 * [Twitter](https://twitter.com/)
   * [Finagle](https://twitter.github.io/finagle/) and [Cloudhopper](https://github.com/twitter/cloudhopper-smpp)
