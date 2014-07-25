@@ -7,6 +7,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * Distributes their anti-virus updates to more than 100M users using Netty.
   * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf) (slides)
   * [Streaming updates - real time system for distributing updates to millions of users](http://www.karry.cz/karry/blog/2013/10/16/avast!_streaming_updates_-_real-time_system_for_distributing_updates_to_millions_of_users/)
+* [Basho](http://basho.com)
+  * [Riak Java client](https://github.com/basho/riak-java-client)
 * [Between](http://between.us/)
   * A private mobile app for couples with over 5 million users to store and share their memories, providing an exclusive communication channel just between the two
   * [Between system architecture](http://engineering.vcnc.co.kr/2013/04/between-system-architecture/) (Korean; they built their API and messaging server with Netty.)
