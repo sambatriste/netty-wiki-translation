@@ -13,6 +13,9 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Boundary](http://www.boundary.com/)
   * Monitors the continuously changing environment of distributed applications in real-time.
   * [Know a delay: Nagle's algorithm and you](http://boundary.com/blog/2012/05/02/know-a-delay-nagles-algorithm-and-you/)
+* [Cisco](http://cisco.com)
+* [Couchbase](http://couchbase.com)
+  * [Couchbase Java SDK Internals](http://blog.couchbase.com/couchbase-java-sdk-internals)
 * [DataStax](http://datastax.com/)
   * A commercial Cassandra vendor
   * [Robust and scalable distributed queries with DSE Search 4.0](http://www.datastax.com/dev/blog/robust-and-scalable-distributed-queries)
