@@ -38,6 +38,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [See case studies chapter of Netty in Action](http://manning.com/maurer/) 
 * [Google](https://www.google.com/)
   * [OpenBidder](https://developers.google.com/ad-exchange/rtb/open-bidder/guides/webserver) - an open source real-time bidding (RTB) framework enabling you to bid ads at real time.
+* [IBM](http://ibm.com)
 * [Infinote](http://infinote.com/)
   * Brings the power of big data text analytics into Microsoft Word.
   * [A tweet by @adisesha](https://twitter.com/adisesha/status/491449830665752577)
