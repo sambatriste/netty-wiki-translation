@@ -63,6 +63,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Nous](https://www.nous.net/)
   * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
   * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
+* [Outbrain](http://www.outbrain.com/)
+  * [OB1K](http://de.slideshare.net/eranharel/ob1k-new-better-faster-devops-friendly-java-container-by-outbrain)
 * [Pivotal](http://gopivotal.com)
   * [Project Reactor](https://github.com/reactor/reactor) -  a foundation for reactive fastdata applications on the JVM
 * [Red Hat](http://www.redhat.com)
