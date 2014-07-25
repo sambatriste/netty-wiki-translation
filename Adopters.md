@@ -94,6 +94,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
 * [Typesafe](http://typesafe.com)
   * [Play Framework](http://www.playframework.com) - The High Velocity Web Framework For Java and Scala
+* [Tuplejump](http://www.tuplejump.com)
+  * [Tweet by @satyaprakash007](https://twitter.com/satyaprakash007/status/492392169747910659)
 * [Twitter](https://twitter.com/)
   * [Finagle](https://twitter.github.io/finagle/) and [Cloudhopper](https://github.com/twitter/cloudhopper-smpp)
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
