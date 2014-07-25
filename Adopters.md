@@ -46,6 +46,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [A tweet by @rbanson](https://twitter.com/rbranson/status/411368634573795328)
 * [Kakao Talk](http://www.kakao.com/talk)
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
+* [Kaazing](http://kaazing.com)
 * [LiquidLabs LogScape](http://www.liquidlabs.com/)
   * A high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications
 * [Maginatics](https://maginatics.com/)
@@ -98,3 +99,4 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Netflow](https://github.com/wasted/netflow)
 * [Yahoo](http://www.yahoo.com/)
   * [Making Storm fly with Netty](http://yahooeng.tumblr.com/post/64758709722/making-storm-fly-with-netty)
+* [Zynga](http://zynga.com)
