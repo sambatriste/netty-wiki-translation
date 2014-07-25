@@ -58,6 +58,13 @@ This page lists the organizations who adopted Netty in their projects or product
   * [NetflixOSS Meetup](http://www.youtube.com/watch?v=aEuNBk1b5OE) (video)
   * [Ribbon](https://github.com/Netflix/ribbon) - an inter-process communication (remote procedure calls) library with built-in software load balancers
   * [RxNetty](https://github.com/Netflix/RxNetty) - the Reactive extension (Rx) adaptor for Netty
+* [Neo4j]
+  * [Neo4j](http://neo4j.com) - Graph database
+* [Nous](https://www.nous.net/)
+  * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
+  * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
+* [Pivotal](http://gopivotal.com)
+  * [Project Reactor](https://github.com/reactor/reactor) -  a foundation for reactive fastdata applications on the JVM
 * [Red Hat](http://www.redhat.com)
   * Uses Netty in their commercial products based on their open source projects.
   * [Infinispan](http://infinispan.org/) - a distributed in-memory key/value data grid and cache
@@ -76,13 +83,6 @@ This page lists the organizations who adopted Netty in their projects or product
   * [A tweet by @adyrcz](https://twitter.com/adyrcz/status/491335978230226945)
 * [Squarespace](http://www.squarespace.com)
   * Using Netty to make a better Web
-* [Neo4j]
-  * [Neo4j](http://neo4j.com) - Graph database
-* [Nous](https://www.nous.net/)
-  * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
-  * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
-* [Pivotal](http://gopivotal.com)
-  * [Project Reactor](https://github.com/reactor/reactor) -  a foundation for reactive fastdata applications on the JVM
 * [Shaka Technologies](http://www.shakatechnologies.com)
   * [Tweet by @ShakaTechs](https://twitter.com/ShakaTechs/status/450948036341284864)
 * [StumbleUpon](http://www.stumbleupon.com/)
@@ -94,6 +94,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
   * [Netty 4 at Twitter reduced GC overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead)
   * [Twitter Search is now 3x faster.](https://blog.twitter.com/2011/twitter-search-now-3x-faster)
+* [Unbounce](http://unbounce.com)
+  * [Tweet by @ddossot](https://twitter.com/ddossot/status/453536628342923264)
 * [Urban Airship](http://urbanairship.com)
   * [See case studies chapter of Netty in Action](http://manning.com/maurer/)
 * [Wasted IO](http://wasted.io)
