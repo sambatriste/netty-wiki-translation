@@ -67,6 +67,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Sears Holdings Corporation](http://www.searsholdings.com/)
   * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
   * [A tweet by @adyrcz](https://twitter.com/adyrcz/status/491335978230226945)
+* [Squarespace](http://www.squarespace.com)
+  * Using Netty to make a better Web
 * [Neo4j]
   * [Neo4j](http://neo4j.com) - Graph database
 * [Nous](https://www.nous.net/)
