@@ -81,6 +81,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Sears Holdings Corporation](http://www.searsholdings.com/)
   * An integrated retailer focused on seamlessly connecting the digital and physical shopping experiences
   * [A tweet by @adyrcz](https://twitter.com/adyrcz/status/491335978230226945)
+* [Spotify](https://www.spotify.com/)
+  * [netty-zmtp](https://github.com/spotify/netty-zmtp) - A collection of Netty channel handlers that aims to implement ZMTP, the ZeroMQ Message Transport Protocol.
 * [Square](http://square.com)
 * [Squarespace](http://www.squarespace.com)
   * Using Netty to make a better Web
