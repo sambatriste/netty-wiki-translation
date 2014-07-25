@@ -58,7 +58,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [NetflixOSS Meetup](http://www.youtube.com/watch?v=aEuNBk1b5OE) (video)
   * [Ribbon](https://github.com/Netflix/ribbon) - an inter-process communication (remote procedure calls) library with built-in software load balancers
   * [RxNetty](https://github.com/Netflix/RxNetty) - the Reactive extension (Rx) adaptor for Netty
-* [Neo4j]
+* [Neo4j](http://neo4j.com)
   * [Neo4j](http://neo4j.com) - Graph database
 * [Nous](https://www.nous.net/)
   * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
