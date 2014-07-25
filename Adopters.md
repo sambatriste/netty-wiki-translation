@@ -1,5 +1,6 @@
 This page lists the organizations who adopted Netty in their projects or products.  Make sure to sort the list alphabetically and keep the list up-to-date.
 
+* [1&1](http://1und1.de)
 * [Airbnb](http://www.airbnb.com/)
   * [Plog](https://github.com/airbnb/plog) - Fire-and-forget UDP logging service with custom Netty pipelines & extensive monitoring
 * [Avast Software](http://www.avast.com/)
@@ -15,6 +16,9 @@ This page lists the organizations who adopted Netty in their projects or product
 * [DataStax](http://datastax.com/)
   * A commercial Cassandra vendor
   * [Robust and scalable distributed queries with DSE Search 4.0](http://www.datastax.com/dev/blog/robust-and-scalable-distributed-queries)
+* [Droplr](http://www.droplr.com)
+  * Using Netty for their HTTP API.
+  * [See case studies chapter of Netty in Action](http://manning.com/maurer/)
 * [Elasticsearch](http://elasticsearch.com/)
   * [Open Source, Distributed, RESTful Search Engine](https://github.com/elasticsearch/elasticsearch/)
 * [ESN Planet](http://www.esn.me/product/planet/)
@@ -22,6 +26,10 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Useful tools for Netty](http://pushingtheweb.com/2010/06/useful-tools-for-jboss-netty/)
 * [Facebook](https://www.facebook.com/)
   * [Nifty](https://github.com/facebook/nifty) - Netty-based Thrift transport implementation
+  * [See case studies chapter of Netty in Action](http://manning.com/maurer/)
+* [Firebase](http://www.firebase.com) 
+  * [Using Netty for the core services](https://5f5.org/ruminations/netty-meets-openssl.html)
+  * [See case studies chapter of Netty in Action](http://manning.com/maurer/) 
 * [Google](https://www.google.com/)
   * [OpenBidder](https://developers.google.com/ad-exchange/rtb/open-bidder/guides/webserver) - an open source real-time bidding (RTB) framework enabling you to bid ads at real time.
 * [Infinote](http://infinote.com/)
@@ -59,13 +67,19 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Nous](https://www.nous.net/)
   * [Spark Profit](https://sparkprofit.com/) - a free trading simulator that measures your predictive skill
   * [A tweet by @justinshort](https://twitter.com/justinshort/status/491438156877529088)
+* [Pivotal](http://gopivotal.com)
+  * [Project Reactor](https://github.com/reactor/reactor) -  a foundation for reactive fastdata applications on the JVM
 * [StumbleUpon](http://www.stumbleupon.com/)
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
+* [Typesafe](http://typesafe.com
+  * [Play Framework](http://www.playframework.com) - The High Velocity Web Framework For Java and Scala
 * [Twitter](https://twitter.com/)
   * [Finagle](https://twitter.github.io/finagle/) and [Cloudhopper](https://github.com/twitter/cloudhopper-smpp)
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
   * [Netty 4 at Twitter reduced GC overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead)
   * [Twitter Search is now 3x faster.](https://blog.twitter.com/2011/twitter-search-now-3x-faster)
+* [Urban Airship](http://urbanairship.com)
+  * [See case studies chapter of Netty in Action](http://manning.com/maurer/)
 * [Wasted IO](http://wasted.io)
   * [Netflow](https://github.com/wasted/netflow)
 * [Yahoo](http://www.yahoo.com/)
