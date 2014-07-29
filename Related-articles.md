@@ -2,10 +2,12 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2014
 
+* [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
+* [State of Netty](https://speakerdeck.com/trustin/state-of-netty) by Trustin Lee at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [Netty server implementation: Part 1](https://www.youtube.com/watch?v=5CHc0hEhKbM) and [Part 2](https://www.youtube.com/watch?v=Xwa_JYtI5-M) (video) by Christian Tucker
 * [Netty and a Fresh View of Web Development](http://www.iteratia.com/blog/netty-and-a-fresh-view-of-web-development/) by Iteratia Corporation
-* [Moving on to Netty4](http://bhardwajgaurav.wordpress.com/2014/04/20/n/) by Gaurav Bhardwaj
-* [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
+* [Moving on to Netty 4](http://bhardwajgaurav.wordpress.com/2014/04/20/n/) by Gaurav Bhardwaj
+* [Netty best practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer at Facebook
 * [Netty 4 - A lookup behind the scenes](http://normanmaurer.me/presentations/2014-eclipsecon-na-netty/slides.html) by Norman Maurer
 * [Netty: Basics for beginners](http://bhardwaj-gaurav.blogspot.com/2014/02/netty-basics-for-beginners.html) by Gaurav Bhardwaj
 * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle) by Jeff Smick
