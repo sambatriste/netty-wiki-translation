@@ -2,6 +2,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2014
 
+* [Netty server implementation: Part 1](https://www.youtube.com/watch?v=5CHc0hEhKbM) and [Part 2](https://www.youtube.com/watch?v=Xwa_JYtI5-M) (video) by Christian Tucker
 * [Netty and a Fresh View of Web Development](http://www.iteratia.com/blog/netty-and-a-fresh-view-of-web-development/) by Iteratia Corporation
 * [Moving on to Netty4](http://bhardwajgaurav.wordpress.com/2014/04/20/n/) by Gaurav Bhardwaj
 * [Netty Best Practices](https://www.youtube.com/watch?v=_GRIyCMNGGI) (video w/ [slides](http://normanmaurer.me/presentations/2014-facebook-eng-netty/slides.html)) by Norman Maurer
