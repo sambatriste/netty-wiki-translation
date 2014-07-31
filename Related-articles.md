@@ -2,6 +2,7 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 ## 2014
 
+* [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
 * [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [State of Netty](https://speakerdeck.com/trustin/state-of-netty) by Trustin Lee at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [Netty server implementation: Part 1](https://www.youtube.com/watch?v=5CHc0hEhKbM) and [Part 2](https://www.youtube.com/watch?v=Xwa_JYtI5-M) (video) by Christian Tucker
