@@ -1,5 +1,7 @@
 Please make sure the newer article appears first (i.e. descending sort by publication date) and there is no duplicate.
 
+TODO: Highlight recommended readings
+
 ## 2014
 
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
