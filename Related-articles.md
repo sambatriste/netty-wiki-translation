@@ -4,6 +4,7 @@ TODO: Highlight recommended readings
 
 ## 2014
 
+* [State of the Art JVM Networking with Netty 4](https://speakerdeck.com/daschl/state-of-the-art-jvm-networking-with-netty-4) by Michael Nitschinger at JAX 2014
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
 * [Why Netty](http://normanmaurer.me/presentations/2014-netflix-netty/slides.html) by Norman Maurer at Netflix
 * [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
