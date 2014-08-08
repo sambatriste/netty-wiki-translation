@@ -4,11 +4,14 @@ TODO: Highlight recommended readings
 
 ## 2014
 
+* [Real time analytics with Netty, Storm, Kafka](http://www.slideshare.net/tantrieuf31/real-time-analytics-with-netty-storm-kafka) (slides) by Trieu Nguyen
 * [State of the Art JVM Networking with Netty 4](https://speakerdeck.com/daschl/state-of-the-art-jvm-networking-with-netty-4) by Michael Nitschinger at JAX 2014
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
 * [Why Netty](http://normanmaurer.me/presentations/2014-netflix-netty/slides.html) by Norman Maurer at Netflix
-* [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
-* [State of Netty](https://speakerdeck.com/trustin/state-of-netty) by Trustin Lee at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
+* [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) (slides w/ [video](https://www.youtube.com/watch?v=WsMOJqAYW5M)) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
+* [Netty at Facebook](https://www.youtube.com/watch?v=zK2A9gWKxIE) (video) by Andrew Cox at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
+* [State of Netty](https://speakerdeck.com/trustin/state-of-netty) (slides w/ [video](https://www.youtube.com/watch?v=0aoeSsKarc8)) by Trustin Lee at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
+* [Netty at Twitter with Finagle](https://www.youtube.com/watch?v=HJP_108i0ik) (video) by Evan Meagher at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [Netty server implementation: Part 1](https://www.youtube.com/watch?v=5CHc0hEhKbM) and [Part 2](https://www.youtube.com/watch?v=Xwa_JYtI5-M) (video) by Christian Tucker
 * [Netty and a Fresh View of Web Development](http://www.iteratia.com/blog/netty-and-a-fresh-view-of-web-development/) by Iteratia Corporation
 * [Moving on to Netty 4](http://bhardwajgaurav.wordpress.com/2014/04/20/n/) by Gaurav Bhardwaj
