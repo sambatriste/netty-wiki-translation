@@ -7,7 +7,7 @@ TODO: Highlight recommended readings
 * [Real time analytics with Netty, Storm, Kafka](http://www.slideshare.net/tantrieuf31/real-time-analytics-with-netty-storm-kafka) (slides) by Trieu Nguyen
 * [State of the Art JVM Networking with Netty 4](https://speakerdeck.com/daschl/state-of-the-art-jvm-networking-with-netty-4) (slides) by Michael Nitschinger at JAX 2014
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
-* [Why Netty](http://normanmaurer.me/presentations/2014-netflix-netty/slides.html) by Norman Maurer at Netflix
+* [Why Netty](http://normanmaurer.me/presentations/2014-netflix-netty/slides.html) (slides) by Norman Maurer at Netflix
 * [Netty best practices](http://normanmaurer.me/presentations/2014-twitter-meetup-netty/slides.html) (slides w/ [video](https://www.youtube.com/watch?v=WsMOJqAYW5M)) by Norman Maurer at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [Netty at Facebook](https://www.youtube.com/watch?v=zK2A9gWKxIE) (video) by Andrew Cox at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
 * [State of Netty](https://speakerdeck.com/trustin/state-of-netty) (slides w/ [video](https://www.youtube.com/watch?v=0aoeSsKarc8)) by Trustin Lee at [#NettyMeetup](https://twitter.com/search?q=%23NettyMeetup)
