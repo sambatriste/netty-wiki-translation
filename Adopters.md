@@ -3,6 +3,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [1&1](http://1und1.de)
 * [Airbnb](http://www.airbnb.com/)
   * [Plog](https://github.com/airbnb/plog) - Fire-and-forget UDP logging service with custom Netty pipelines & extensive monitoring
+* [Apache Spark](http://spark.apache.org/)
+  * General purpose cluster compute framework - using Netty for shuffle data communication
 * [Avast Software](http://www.avast.com/)
   * Distributes their anti-virus updates to more than 100M users using Netty.
   * [Optimizing your cloud for millions of connections](http://s3-eu-west-1.amazonaws.com/presentations2012/14_presentation.pdf) (slides)
