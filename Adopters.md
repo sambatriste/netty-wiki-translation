@@ -20,6 +20,8 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Cisco](http://cisco.com)
 * [Couchbase](http://couchbase.com)
   * [Couchbase Java SDK Internals](http://blog.couchbase.com/couchbase-java-sdk-internals)
+* [Databricks](http://databricks.com)
+  * Use Netty for RPC layer
 * [DataStax](http://datastax.com/)
   * A commercial Cassandra vendor
   * [Robust and scalable distributed queries with DSE Search 4.0](http://www.datastax.com/dev/blog/robust-and-scalable-distributed-queries)
