@@ -74,3 +74,4 @@ Even though it's not recommended, it is possible to overcome the above restricti
 [`Callable`]: http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html
 [`RejectedExecutionException`]: http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/RejectedExecutionException.html
 [2250]: https://github.com/netty/netty/issues/2250
+[`ChannelFuture`]: http://netty.io/5.0/api/io/netty/channel/ChannelFuture.html
