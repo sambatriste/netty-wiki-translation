@@ -72,7 +72,7 @@ Because we ship both Linux and Mac OS X artifacts, the release procedure is even
 
 ## Close the milestone in Github
 
-Go [here](https://github.com/netty/netty/issues/milestones) to close the released milestone.
+Go [here](https://github.com/netty/netty/milestones) to close the released milestone.
 
 ## Upload a tarball
 
