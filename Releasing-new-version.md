@@ -144,8 +144,8 @@ Update the Javadoc and Xref to the latest one.  You can copy them from your `net
 
 ```bash
 cd 4.1 # or the version you are working on
-rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/api .
-rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/xref .
+rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/api .  # Note no trailing slash!
+rsync -aiP --delete ~/Workspace/netty/target/checkout/all/target/xref . # Note no trailing slash!
 git add -A .
 cd ..
 ```
