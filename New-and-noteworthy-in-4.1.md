@@ -90,12 +90,17 @@ The logic that calculates the new capacity of the expanded `ByteBuf` has been mo
 ## New codecs and handlers
 
 * Binary memcache protocol codec
-* BZip2 compression codec
+* Compression codecs
+  * BZip2
+  * FastLZ
+  * LZ4
+  * LZF
 * DNS protocol codec
 * HAProxy protocol codec
 * MQTT protocol codec
 * SPDY/3.1 support
 * STOMP codec
+* SOCKSx codec that supports version 4, 4a, and 5; see `socksx` package.
 * [`XmlFrameDecoder`] that enables streaming of XML documents.
 * [`JsonObjectDecoder`] that enables streaming of JSON objects.
 * IP filtering handlers
@@ -122,6 +127,13 @@ In 4.0, there was no way to reject an oversized HTTP message before a client sen
 
 This release adds an overridable method called `handleOversizedMessage` so that a user can perform his or her preferred task.  By default, it responds with '413 Request Entity Too Large' response and closed the connection.
 
+### `ChunkedInput` and `ChunkedWriteHandler`
+
+[`ChunkedInput`] has two new methods; `progress()` and `length()` which return the progress of its transfer and the total length of the stream respectively.  [`ChunkedWriteHandler`] uses this information to notify [`ChannelProgressiveFutureListener`].
+
+### `SnappyFramedEncoder` and `SnappyFramedDecoder`
+
+These two classes have been renamed to `SnappyFrameEncoder` and `SnappyFrameDecoder`. The old classes were marked as deprecated and they are actually the subclasses of the new ones.
 
 [`AttributeKey`]: http://netty.io/4.1/api/io/netty/util/AttributeKey.html
 [`AttributeMap`]: http://netty.io/4.1/api/io/netty/util/AttributeMap.html
@@ -144,3 +156,7 @@ This release adds an overridable method called `handleOversizedMessage` so that 
 [`AsciiString`]: http://netty.io/4.1/api/io/netty/handler/codec/AsciiString.html
 [`TextHeaders`]: http://netty.io/4.1/api/io/netty/handler/codec/TextHeaders.html
 [`MessageAggregator`]: http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html
+
+[`ChunkedInput`]: http://netty.io/4.1/api/io/netty/handler/stream/ChunkedInput.html
+[`ChunkedWriteHandler`]: http://netty.io/4.1/api/io/netty/handler/stream/ChunkedWriteHandler.html
+[`ChannelProgressiveFutureListener`]: http://netty.io/4.1/api/io/netty/channel/ChannelProgressiveFutureListener.html
