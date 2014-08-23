@@ -405,7 +405,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
         m.release();
         
         if (buf.readableBytes() >= 4) { // (3)
-            long currentTimeMillis = (buf.readInt() - 2208988800L) * 1000L;
+            long currentTimeMillis = (buf.readUnsignedInt() - 2208988800L) * 1000L;
             System.out.println(new Date(currentTimeMillis));
             ctx.close();
         }
@@ -497,17 +497,17 @@ import java.util.Date;
 
 public class UnixTime {
 
-    private final int value;
+    private final long value;
     
     public UnixTime() {
-        this((int) (System.currentTimeMillis() / 1000L + 2208988800L));
+        this(System.currentTimeMillis() / 1000L + 2208988800L);
     }
     
-    public UnixTime(int value) {
+    public UnixTime(long value) {
         this.value = value;
     }
         
-    public int value() {
+    public long value() {
         return value;
     }
         
@@ -562,7 +562,7 @@ public class TimeEncoder extends ChannelHandlerAdapter {
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) {
         UnixTime m = (UnixTime) msg;
         ByteBuf encoded = ctx.alloc().buffer(4);
-        encoded.writeInt(m.value());
+        encoded.writeLong(m.value());
         ctx.write(encoded, promise); // (1)
     }
 }
@@ -580,7 +580,7 @@ To simplify even further, you can make use of [`MessageToByteEncoder`]:
 public class TimeEncoder extends MessageToByteEncoder<UnixTime> {
     @Override
     protected void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) {
-        out.writeInt(msg.value());
+        out.writeLong(msg.value());
     }
 }
 
