@@ -1,6 +1,6 @@
 ### 3rd-party translations
 
-* [Chinese](http://ifeve.com/netty5-user-guide/)
+* [Simplified Chinese](http://ifeve.com/netty5-user-guide/)
 
 ## Preface
 
