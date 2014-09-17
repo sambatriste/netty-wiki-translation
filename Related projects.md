@@ -2,6 +2,7 @@ Make sure the list contains open source projects only and is sorted alphabetical
 
 * [Akka](http://akka.io/) is a Scala-based platform that provides simpler scalability, fault-tolerance, concurrency, and remoting through the actor model and software transactional memory.
 * [Apache James Server](http://james.apache.org/server) is a modular e-mail server platform that integrates SMTP, POP3, IMAP, and NNTP.
+* [Apache Spark](http://spark.apache.org) is a fast and general purpose cluster compute framework, commonly used for "Big Data" applications.
 * [Arquillian](http://www.jboss.org/arquillian.html) is an innovative in-container testing platform for the JVM
 * [Async HTTP Client](https://github.com/AsyncHttpClient/async-http-client) is a simple-to-use library that allows you to execute HTTP requests and process the HTTP responses asynchronously.
 * [BungeeCord](http://www.spigotmc.org/threads/392/) is the de facto proxy solution for combining multiple Minecraft servers into a cloud / hub system.
