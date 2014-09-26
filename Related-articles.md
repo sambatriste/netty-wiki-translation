@@ -47,7 +47,7 @@ TODO: Highlight recommended readings
 * [Liftweb and Netty for Web development](http://www.slideshare.net/theoengland/liftweb-and-netty-for-web-developmentkey) by Franz Bettag
 * [Benchmarking web frameworks for games](http://blog.juiceboxmobile.com/2012/11/20/benchmarking-web-frameworks-for-games/) by Jason McGuirk
 * [Asynchronous & non-blocking Scala: a look at Netty and NIO](http://vimeo.com/53402471) (video) by Brendan McAdams
-* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM&list=UUOFxxGt-PmzYGy5wnNVuReg&index=4&feature=plcp) (video, German) with Norman Maurer
+* [Interview about Netty 4](http://www.youtube.com/watch?v=VBOvIxXITDM) (video, German) with Norman Maurer
 * [Run Servlets with Netty](http://www.jroller.com/agoubard/entry/run_servlets_with_netty#.USMIPDWNKUo) by Anthony Goubard
 * [High performance network programming on the JVM](http://www.slideshare.net/eonnen/high-performance-network-programming-on-the-jvm-oscon-2012) by Erik Onnen
 * [How we got SPDY working with Netty 3.5 for Socko](http://sockoweb.org/2012/06/19/spdy-netty.html) by Vibul Imtarnasan
