@@ -4,6 +4,7 @@ TODO: Highlight recommended readings
 
 ## 2014
 
+* [High Performance Services in Scala](http://www.youtube.com/watch?v=THcAwoA5G2w) (video) by Greg Soltis
 * [Real time analytics with Netty, Storm, Kafka](http://www.slideshare.net/tantrieuf31/real-time-analytics-with-netty-storm-kafka) (slides) by Trieu Nguyen
 * [State of the Art JVM Networking with Netty 4](https://speakerdeck.com/daschl/state-of-the-art-jvm-networking-with-netty-4) (slides) by Michael Nitschinger at JAX 2014
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
