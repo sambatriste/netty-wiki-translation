@@ -49,7 +49,7 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Instagram](http://instagram.com)
   * Used for IG Direct
   * [A tweet by @rbanson](https://twitter.com/rbranson/status/411368634573795328)
-* [K3P0](http://kaazing.com)
+* [K3P0](https://github.com/kaazing/robot)
   * A network protocol testing toolkit used to certify compliance and functionality
 * [Kaazing](http://kaazing.com)
 * [Kakao Talk](http://www.kakao.com/talk)
