@@ -49,9 +49,11 @@ This page lists the organizations who adopted Netty in their projects or product
 * [Instagram](http://instagram.com)
   * Used for IG Direct
   * [A tweet by @rbanson](https://twitter.com/rbranson/status/411368634573795328)
+* [K3P0](http://kaazing.com)
+  * A network protocol testing toolkit used to certify compliance and functionality
+* [Kaazing](http://kaazing.com)
 * [Kakao Talk](http://www.kakao.com/talk)
   * A mobile messenger over 100 million people use.  They built their Android push server with Netty.
-* [Kaazing](http://kaazing.com)
 * [LiquidLabs LogScape](http://www.liquidlabs.com/)
   * A high performance log visualization tool that scales to thousands of machines; suitable for grid, cloud or SOA applications
 * [Maginatics](https://maginatics.com/)
