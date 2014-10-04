@@ -299,7 +299,7 @@ group.register(ch);
 ch.deregister().sync();
  
 // Perform some blocking operation here.
-mySocket.configureBlocking(false);
+mySocket.configureBlocking(true);
 myFile.transferFrom(mySocket, ...);
  
 // Register back again to another event loop group.
