@@ -204,7 +204,7 @@ Alternatively, you could consider extending `SimpleChannelHandler` which calls `
 
 ### Outbound messages
 
-Unlike inbound messages, the messages are created by your application, and it is the responsibility of Netty to release it after writing it out to the wire.  However, the handlers that intercepts your write requests should make sure to release any intermediary objects properly. (e.g. encoders)
+Unlike inbound messages, outbound messages are created by your application, and it is the responsibility of Netty to release these after writing them out to the wire.  However, the handlers that intercept your write requests should make sure to release any intermediary objects properly. (e.g. encoders)
 
 ```java
 // Simple-pass through
