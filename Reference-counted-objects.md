@@ -53,8 +53,8 @@ assert buf.refCnt() == 1;
 
 The general rule of thumb is that the party who accesses a reference-counted object lastly is responsible for the destruction of the reference-counted object. More specifically:
 
-* If a component is supposed to pass a reference-counted object to the other component, the component usually does not need to destroy it but defer the decision to the other component.
-* If a component consumes a reference-counted object and nothing else will access it anymore, the component should destroy it by its own.
+* If a [sending] component is supposed to pass a reference-counted object to another [receiving] component, the sending component usually does not need to destroy it but defers that decision to the receiving component.
+* If a component consumes a reference-counted object and knows nothing else will access it anymore (i.e., does not pass along a reference to yet another component), the component should destroy it.
 
 Here is a simple example:
 
