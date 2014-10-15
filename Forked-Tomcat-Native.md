@@ -108,6 +108,11 @@ mvn clean install
 
 ### Building on Mac OS X
 
+First of you need to install [Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12). After this make sure you install the command line tools as well:
+```bash
+xcode-select --install
+```
+
 Use [Homebrew](http://brew.sh/) to install the required packages:
 
 ```bash
@@ -203,4 +208,3 @@ $ ./new-fork 1.1.29 1
 ```
 
 will create a new branch called `1.1.29`, which contains a mavenized fork of `tcnative-1.1.29`.  Please note that the fork does not contain any patches that will change the main source code of `tcnative`.  You will probably want to cherry-pick some commits from other branches that were patched already.
-
