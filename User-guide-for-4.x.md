@@ -564,7 +564,7 @@ public class TimeEncoder extends ChannelOutboundHandlerAdapter {
 }
 ```
 
-1. There are quite a few important things to important in this single line.
+1. There are quite a few important things in this single line.
 
    First, we pass the original [`ChannelPromise`] as-is so that Netty marks it as success or failure when the encoded data is actually written out to the wire.
    
