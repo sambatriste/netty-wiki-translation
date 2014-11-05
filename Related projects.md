@@ -44,6 +44,7 @@ Make sure the list contains open source projects only and is sorted alphabetical
 * [Ratpack](http://www.ratpack.io/) is a simple, capable, toolkit for creating high performance web applications.
 * [Redisson](https://github.com/mrniko/redisson) provides a distributed and scalable Java data structures (Set, SortedSet, Map, ConcurrentMap, List, Queue, Deque, Lock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog) on top of Redis server.
 * [RESTExpress](https://github.com/RestExpress/RestExpress) is a lightweight, fast, micro-framework for building stand-alone REST services in Java. It supports JSON and XML serialization automagically as well as ISO 8601 date formats.
+* [RHQ project collectd decoder](https://github.com/rhq-project/netty-collectd) decodes collectd UDP datagrams.
 * [SocketIO4j](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
