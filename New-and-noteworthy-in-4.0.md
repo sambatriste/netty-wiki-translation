@@ -159,7 +159,7 @@ Along with the new standalone buffer API, 4.0 provides various constructs which 
 
 They are used as the base of the channel API which will be explained later in this document.  For example, `ChannelFuture` extends `io.netty.util.concurrent.Future` and `EventLoopGroup` extends `EventExecutorGroup`.
 
-![Event loop type hierarchy diagram](http://img.motd.kr/uml/gist/8a6c3c47800370ee898a "")
+![Event loop type hierarchy diagram](http://uml.mvnsearch.org/gist/8a6c3c47800370ee898a "")
 
 ## Channel API changes
 
@@ -184,7 +184,7 @@ public interface ChannelHandler {
 
 The following diagram depicts the new type hierarchy:
 
-![ChannelHandler type hierarchy diagram](http://img.motd.kr/uml/gist/188244c4b3d6b01c0156)
+![ChannelHandler type hierarchy diagram](http://uml.mvnsearch.org/gist/188244c4b3d6b01c0156)
 
 #### `ChannelHandler` with no event object
 
@@ -232,17 +232,17 @@ All these changes mean a user cannot extend the non-existing `ChannelEvent` inte
 
 When a new connected `Channel` is created in 3.x, at least three `ChannelStateEvent`s are triggered: `channelOpen`, `channelBound`, and `channelConnected`.  When a `Channel` is closed, at least 3 more: `channelDisconnected`, `channelUnbound`, and `channelClosed`.
 
-![Netty 3 Channel state diagram](http://img.motd.kr/uml/gist/4335d63c530b6e1c5e2e)
+![Netty 3 Channel state diagram](http://uml.mvnsearch.org/gist/4335d63c530b6e1c5e2e)
 
 However, it's of dubious value to trigger that many events.  It is more useful for a user to get notified when a `Channel` enters the state where it can perform reads and writes.
 
-![Netty 4 Channel state diagram](http://img.motd.kr/uml/gist/6effb68ad2515ca0d618)
+![Netty 4 Channel state diagram](http://uml.mvnsearch.org/gist/6effb68ad2515ca0d618)
 
 `channelOpen`, `channelBound`, and `channelConnected` have been merged to `channelActive`.  `channelDisconnected`, `channelUnbound`, and `channelClosed` have been merged to `channelInactive`.  Likewise, `Channel.isBound()` and `isConnected()` have been merged to `isActive()`.
 
 Note that `channelRegistered` and `channelUnregistered` are not equivalent to `channelOpen` and `channelClosed`.  They are new states introduced to support dynamic registration, deregistration, and re-registration of a `Channel`, as illustrated below:
 
-![Netty 4 Channel state diagram for re-registration](http://img.motd.kr/uml/gist/6382530f7890b9f16472)
+![Netty 4 Channel state diagram for re-registration](http://uml.mvnsearch.org/gist/6382530f7890b9f16472)
 
 #### `write()` does not flush automatically
 
