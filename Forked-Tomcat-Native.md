@@ -73,13 +73,13 @@ Note that the shared library is dynamically linked against Apache Portable Runti
 * If you are on Linux, you probably don't need to do anything because you can install them using your system's package manager.
 * If you are on Mac, you have to install `openssl` package using [Homebrew](http://brew.sh/).
 * If you are on Windows, you have to:
-  * Build APR by yourself (or get it from [our CI server](https://secure.motd.kr/jenkins/view/TCNative/job/apr-1.5.1-windows-x86_64/lastSuccessfulBuild/artifact/dist/bin/)),
+  * Build APR by yourself (or get it from [our CI server](http://clinker.netty.io/jenkins/view/TCNative/job/apr-1.5.1-windows-x86_64/lastSuccessfulBuild/artifact/dist/bin/)),
   * Install [OpenSSL for Windows](http://slproweb.com/products/Win32OpenSSL.html), and
   * Add the directories that contain the .DLL files to `%PATH%`.
 
 ## How to build
 
-You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.  If you are looking for a SNAPSHOT build, browse [our CI server](https://secure.motd.kr/jenkins/view/TCNative/).
+You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.  If you are looking for a SNAPSHOT build, browse [our CI server](http://clinker.netty.io/jenkins/view/TCNative/).
 
 If you are on a platform we don't ship the JARs with the native libraries, such as Windows x86_32, follow the instructions in this section.
 
