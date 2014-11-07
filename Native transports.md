@@ -36,6 +36,10 @@ Because the native transport is not part of the Netty core, you need to pull the
 
 Note that you must specify the proper classifier for the dependency.  `os-maven-plugin` in the `extensions` section in the `pom.xml` file will set `os.detected.classifier` property automatically.  For more information. refer to [the homepage of the `os-maven-plugin`](https://github.com/trustin/os-maven-plugin).
 
+For using the native transport in a sbt project,please add lines below in you libraryDependencies
+```
+"io.netty" % "netty-transport-native-epoll" % "${project.version}" classifier "linux-x86_64"
+```
 ## Building the native transport
 
 If you already have the JAR file of the native transport, you should not need to build the native transport by yourself because the JAR file already contains the necessary shared library files (e.g. `.so`, `.dll`, `.dynlib`) and they will be loaded automatically.
