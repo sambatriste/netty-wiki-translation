@@ -2,7 +2,7 @@
 
 ## Install the necessary build tools
 
-Your must have [Oracle JDK 7](http://java.oracle.com/) or above, [Apache Maven 3.0.5](http://maven.apache.org/) or above, and [Git](http://git-scm.com/) installed on your machine.  If you are on Linux, you have to install the additional packages mentioned in [[Native-transports]].
+Your must have [Oracle JDK 7](http://java.oracle.com/) or above, [Apache Maven 3.1.1](http://maven.apache.org/) or above, and [Git](http://git-scm.com/) installed on your machine.  If you are on Linux, you have to install the additional packages mentioned in [[Native-transports]].
 
 ## Git line ending configuration
 
