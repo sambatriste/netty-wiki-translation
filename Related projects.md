@@ -32,6 +32,7 @@ Make sure the list contains open source projects only and is sorted alphabetical
 * [Netflow.io](https://github.com/wasted/netflow) is a Scala/Netty Netflow Collector used at wasted.io
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
 * [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
+* [Netty-Livereload](https://github.com/alexvictoor/netty-livereload) is the [Livereload](http://livereload.com/) protocol implementation on Netty WebSocket implementation.
 * [Netty-SocketIO](https://github.com/mrniko/netty-socketio) is a Socket.IO server written on top of Netty
 * [Netty-ZMTP](https://github.com/spotify/netty-zmtp) is a collection of Netty channel handlers that aims to implement ZMTP/1.0, the ZeroMQ Message Transport Protocol.
 * [Nifty](https://github.com/facebook/nifty) is a Netty-based Thrift transport implementation.
