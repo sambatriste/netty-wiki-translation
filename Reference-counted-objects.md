@@ -112,7 +112,7 @@ assert parent.refCnt() == 1;
 assert derived.refCnt() == 1;
 ```
 
-In contrast, `ByteBuf.copy()` (and `ByteBuf.readBytes(int)`) is _not_ a _derived_ buffer.  The returned `ByteBuf` is an allocated will need to be released.
+In contrast, `ByteBuf.copy()` and `ByteBuf.readBytes(int)` are _not derived_ buffers.  The returned `ByteBuf` is allocated will need to be released.
 
 Note that a parent buffer and its derived buffers share the same reference count, and the reference count does not increase when a derived buffer is created.  Therefore, if you are going to pass a derived buffer to other component of your application, you'll have to call `retain()` it first.
 
