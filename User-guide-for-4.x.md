@@ -493,17 +493,17 @@ import java.util.Date;
 
 public class UnixTime {
 
-    private final int value;
+    private final long value;
     
     public UnixTime() {
-        this((int) (System.currentTimeMillis() / 1000L + 2208988800L));
+        this(System.currentTimeMillis() / 1000L + 2208988800L);
     }
     
-    public UnixTime(int value) {
+    public UnixTime(long value) {
         this.value = value;
     }
         
-    public int value() {
+    public long value() {
         return value;
     }
         
@@ -523,7 +523,7 @@ protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
         return;
     }
 
-    out.add(new UnixTime(in.readInt()));
+    out.add(new UnixTime(in.readUnsignedInt()));
 }
 ```
 
