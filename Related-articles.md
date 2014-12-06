@@ -6,6 +6,7 @@ TODO: Highlight recommended readings
 
 * [Real-time collaborative authoring in AEM with WebSockets and Netty](http://mszu.github.io/rtca-aem/) (slides) by Mark Szumowski
 * [High Performance Services in Scala](http://www.youtube.com/watch?v=THcAwoA5G2w) (video) by Greg Soltis
+* [Multithreaded UDP server with Netty on Linux](http://marrachem.blogspot.com/2014/09/multi-threaded-udp-server-with-netty-on.html) by Mikom
 * [Real time analytics with Netty, Storm, Kafka](http://www.slideshare.net/tantrieuf31/real-time-analytics-with-netty-storm-kafka) (slides) by Trieu Nguyen
 * [State of the Art JVM Networking with Netty 4](https://speakerdeck.com/daschl/state-of-the-art-jvm-networking-with-netty-4) (slides) by Michael Nitschinger at JAX 2014
 * [Netty 4 - Intro → Changes → HTTP → Lessons learned](http://normanmaurer.me/presentations/2014-http-netty/slides.html) by Norman Maurer
