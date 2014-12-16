@@ -1,4 +1,4 @@
-Make sure the list contains open source projects only and is sorted alphabetically.  Remove unmaintained projects (no commit activity for last 12 months.)
+Make sure the list contains only open source projects documented in English and the list is sorted alphabetically.  Remove unmaintained projects (no commit activity for last 12 months.)
 
 * [Akka](http://akka.io/) is a Scala-based platform that provides simpler scalability, fault-tolerance, concurrency, and remoting through the actor model and software transactional memory.
 * [Apache James Server](http://james.apache.org/server) is a modular e-mail server platform that integrates SMTP, POP3, IMAP, and NNTP.
@@ -57,4 +57,3 @@ Make sure the list contains open source projects only and is sorted alphabetical
 * [Webbit](http://webbitserver.org) is an event-based WebSocket and HTTP server.
 * [Xitrum](http://www.xitrum.net) is an async and clustered Scala web framework and HTTP(S) server on top of Netty and Hazelcast.
 * [zooterrain](http://github.com/berndfo/zooterrain) is a small self-containing web server app which pushes all ZooKeeper znodes and their changes to the browser (using WebSocket).
-* [cocosocket](http://git.oschina.net/beykery/cocosocket) is a framework for online game,server part of it is on top of netty.
