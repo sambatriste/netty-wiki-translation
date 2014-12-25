@@ -5,6 +5,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Plog](https://github.com/airbnb/plog) - Fire-and-forget UDP logging service with custom Netty pipelines & extensive monitoring
 * [Apache Spark](http://spark.apache.org/)
   * General purpose cluster compute framework - using Netty for shuffle data communication
+* [Apple](http://apple.com) 
+  * Using Netty for various services.
 * [ArkaSoft](http://www.arkasoft.com)
   * [Freddo/DTalk](https://code.google.com/p/freddo/)
   * [Freddo Telephony](https://github.com/chillblox/freddo-telephony/)
