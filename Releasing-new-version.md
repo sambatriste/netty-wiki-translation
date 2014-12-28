@@ -51,13 +51,13 @@ Following the standard Maven release procedure should be enough.
 
 ## Netty 4 and beyond
 
-The release procedure must be performed from 64-bit [RHEL 6.5 or its derivatives] so that we can easily ensure the ABI compatibility of the native libraries we ship.
+The release procedure must be performed from 64-bit [RHEL 6.6 or its derivatives] so that we can easily ensure the ABI compatibility of the native libraries we ship.
 
 ## [[Netty/TomcatNative|Forked-Tomcat-Native]]
 
 Because we ship both Linux and Mac OS X artifacts, the release procedure is even more complicated.
 
-1. Perform a release from 64-bit [RHEL 6.5 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet.
+1. Perform a release from 64-bit [RHEL 6.6 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet.
 1. On your Mac OS X and 64-bit Windows, whose build environment is set up as documented [[here|Forked-Tomcat-Native]], run the following commands to deploy the release artifacts to the staging repository:
 
     ```
@@ -174,4 +174,4 @@ Deploy the new blog post using the `_bin/deploy.sh` script.
 
 Once the new blog post is up, make another announcement via your personal Twitter account, and retweet it using our official Twitter account.
 
-[RHEL 6.5 or its derivatives]: http://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives
+[RHEL 6.6 or its derivatives]: http://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives
