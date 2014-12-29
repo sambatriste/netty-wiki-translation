@@ -103,8 +103,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Tweet by @ShakaTechs](https://twitter.com/ShakaTechs/status/450948036341284864)
 * [StumbleUpon](http://www.stumbleupon.com/)
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
-* [Typesafe](http://typesafe.com)
-  * [Play Framework](http://www.playframework.com) - The High Velocity Web Framework For Java and Scala
+* [TripleLift](http://triplelift.com)
 * [Tuplejump](http://www.tuplejump.com)
   * [Tweet by @satyaprakash007](https://twitter.com/satyaprakash007/status/492392169747910659)
 * [Twitter](https://twitter.com/)
@@ -112,6 +111,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Netty at Twitter with Finagle](https://blog.twitter.com/2014/netty-at-twitter-with-finagle)
   * [Netty 4 at Twitter reduced GC overhead](https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead)
   * [Twitter Search is now 3x faster.](https://blog.twitter.com/2011/twitter-search-now-3x-faster)
+* [Typesafe](http://typesafe.com)
+  * [Play Framework](http://www.playframework.com) - The High Velocity Web Framework For Java and Scala
 * [Unbounce](http://unbounce.com)
   * [Tweet by @ddossot](https://twitter.com/ddossot/status/453536628342923264)
 * [Urban Airship](http://urbanairship.com)
