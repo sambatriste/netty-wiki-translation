@@ -106,6 +106,65 @@ git checkout [branch]
 mvn clean install
 ```
 
+#### Version 'libssl.so.10' not found (required by libnetty-tcnative.so)
+
+If you are on Debian or its derived distributions such as Ubuntu, you might see an error message as follows when trying to use the OpenSSL provider:
+
+```
+java.lang.UnsatisfiedLinkError: /tmp/libnetty-tcnative8018331010701115954.so: /usr/lib/x86_64-linux-gnu/libssl.so.10: version `libssl.so.10' not found (required by /tmp/libnetty-tcnative8018331010701115954.so)
+        at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+        at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+        at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+        at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1851)
+        at java.lang.Runtime.load0(Runtime.java:795)
+        at java.lang.System.load(System.java:1062)
+        at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:193)
+        at io.netty.handler.ssl.OpenSsl.<clinit>(OpenSsl.java:39)
+```
+
+It is because RHEL and Debian use different [soname](http://en.wikipedia.org/wiki/Soname) for `libssl.so` and `libcrypto.so`.  The simplest workaround is to build and install netty-tcnative locally, so that `libnetty-tcnative.so` is linked for Debian.  Alternatively, you can build and install OpenSSL locally, with the following instructions:
+
+```
+$ tar xvf openssl-<version>.tar.gz
+$ cd openssl-<version>
+
+$ perl -pi -e 's/\.so\.\\\$\(SHLIB_MAJOR\)\.\\\$\(SHLIB_MINOR\)/\.so\.\\\$\(SHLIB_SONAMEVER\)/g' Configure
+$ perl -pi -e 's/\$sotmp\.\\\$\(SHLIB_MAJOR\) /\$sotmp\.\\\$\(SHLIB_SONAMEVER\) /g' Configure
+$ perl -pi -e 's/^(SHLIB_MAJOR=)/SHLIB_SONAMEVER=10\n$1/' Makefile.org
+$ perl -pi -e 's/=\$\(SHLIB_MAJOR\)\.\$\(SHLIB_MINOR\)/=\$\(SHLIB_SONAMEVER\)/g' Makefile.org
+
+$ export CFLAGS='-fPIC'
+$ ./config --openssldir=/usr/local/openssl \
+           zlib enable-camellia enable-seed enable-tlsext enable-rfc3779 enable-cms enable-md2 \
+           no-mdc2 no-gost no-srp shared
+
+$ make depend
+$ make all
+$ sudo make install
+```
+
+Note the `perl` commands that replace the soname of the shared libraries.  If all worked as expected, you should see that the shared libraries with the corrected sonames are located at `/usr/local/openssl/lib`:
+
+```
+$ ls -l /usr/local/openssl/lib
+total 7320
+drwxr-sr-x 2 root staff    4096 Jan  6 11:20 engines
+drwxr-sr-x 2 root staff    4096 Jan  6 11:01 pkgconfig
+-rw-r--r-- 1 root staff 3987218 Jan  6 11:20 libcrypto.a
+lrwxrwxrwx 1 root staff      15 Jan  6 11:20 libcrypto.so -> libcrypto.so.10
+-r-xr-xr-x 1 root staff 2282847 Jan  6 11:20 libcrypto.so.10
+-rw-r--r-- 1 root staff  732856 Jan  6 11:20 libssl.a
+lrwxrwxrwx 1 root staff      12 Jan  6 11:20 libssl.so -> libssl.so.10
+-r-xr-xr-x 1 root staff  477873 Jan  6 11:20 libssl.so.10
+```
+
+Now, export the `LD_LIBRARY_PATH` environment variable so that the dynamic linker picks the OpenSSL shared libraries:
+
+```
+export LD_LIBRARY_PATH="/usr/local/openssl/lib"
+java ... com.example.my_netty_app.Main
+```
+
 ### Building on Mac OS X
 
 First of you need to install [Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12). After this make sure you install the command line tools as well:
