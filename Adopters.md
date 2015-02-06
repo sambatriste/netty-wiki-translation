@@ -103,6 +103,8 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Tweet by @ShakaTechs](https://twitter.com/ShakaTechs/status/450948036341284864)
 * [StumbleUpon](http://www.stumbleupon.com/)
   * [OpenTSDB](https://github.com/OpenTSDB/opentsdb)
+* [TinkerPop](http://tinkerpop.com)
+  * [Gremlin Server](https://github.com/tinkerpop/tinkerpop3/)
 * [TripleLift](http://triplelift.com)
 * [Tuplejump](http://www.tuplejump.com)
   * [Tweet by @satyaprakash007](https://twitter.com/satyaprakash007/status/492392169747910659)
