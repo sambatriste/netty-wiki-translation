@@ -203,6 +203,7 @@ Install the following packages:
 
 * [Visual C++ 2010 Express](http://www.visualstudio.com/en-us/downloads#d-2010-express)
 * [Windows SDK for Windows 7](http://www.microsoft.com/en-us/download/details.aspx?id=8279)
+  * Uninstall Visual C++ 2010 Redistributable Packages (both x86 and x64) and reboot if installation fails.
 * [Visual Studio 2010 Service Pack 1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
 * [Visual C++ 2010 Service Pack 1 Compiler Update](http://www.microsoft.com/en-us/download/details.aspx?id=4422)
 * OpenSSL for Windows
