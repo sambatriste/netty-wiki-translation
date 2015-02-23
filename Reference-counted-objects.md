@@ -1,4 +1,6 @@
-Since Netty version 4, the life cycle of certain objects are managed by their reference counts rather than the garbage collector.  [`ByteBuf`](http://netty.io/4.0/api/index.html?io/netty/buffer/ByteBuf.html) is the most notable type which takes advantage of reference counting to improve the allocation and deallocation performance.
+Since Netty version 4, the life cycle of certain objects are managed by their reference counts, so that Netty can return them (or their shared resources) to an object pool (or an object allocator) as soon as it is not used anymore.  Garbage collection and reference queues do not provide such efficient real-time guarantee of unreachability while reference-counting does at the cost of slight inconvenience.
+
+[`ByteBuf`](http://netty.io/4.0/api/index.html?io/netty/buffer/ByteBuf.html) is the most notable type which takes advantage of reference counting to improve the allocation and deallocation performance, and this page will explain how reference counting in Netty works using `ByteBuf`.
 
 ## Basics of reference counting
 
