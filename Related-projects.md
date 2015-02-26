@@ -29,7 +29,7 @@ Make sure the list contains only open source projects documented in English and 
 * [Mobicents Media Server](http://www.mobicents.org) is a media gateway server that processes the audio and/or video streams associated with telephone calls or VoIP connections.
 * [Mobicents SIP Servlets](http://www.mobicents.org/products_sip_servlets.html) is an open source certified SIP Servlet implementation.
 * [Moquette MQTT broker](http://code.google.com/p/moquette-mqtt) Simple MQTT broker that uses Netty for protocol codec.
-* [Naggati](https://github.com/twitter/naggati2) is a protocol builder for Netty, written in Scala.
+* [Naggati](https://github.com/twitter/naggati2) "**it's (DEPRECATED) now**" is a protocol builder for Netty, written in Scala. 
 * [Netflow.io](https://github.com/wasted/netflow) is a Scala/Netty Netflow Collector used at wasted.io
 * [Netty Tools](https://github.com/cgbystrom/netty-tools) is a small collection of tools useful when working with Netty, which includes various HTTP clients and servers, bandwidth meter, and Thrift RPC processor.
 * [Netty-ICAP Codec](https://github.com/jmimo/netty-icap) is a high performance full RFC3507 compliant ICAP codec implementation. This protocol is mostly used in proxy environments in order to offload work to external servers.
