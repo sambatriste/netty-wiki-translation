@@ -46,6 +46,7 @@ This page lists the organizations who adopted Netty in their projects or product
   * [Using Netty for the core services](https://5f5.org/ruminations/netty-meets-openssl.html)
   * [See case studies chapter of Netty in Action](http://manning.com/maurer/) 
 * [Google](https://www.google.com/)
+  * [gRPC](https://github.com/grpc/grpc-java) - An HTTP/2-based remote procedure call (RPC) system.
   * [OpenBidder](https://developers.google.com/ad-exchange/rtb/open-bidder/guides/webserver) - an open source real-time bidding (RTB) framework enabling you to bid ads at real time.
 * [IBM](http://ibm.com)
 * [Infinote](http://infinote.com/)
