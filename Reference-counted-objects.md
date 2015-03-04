@@ -238,7 +238,7 @@ public void write(ChannelHandlerContext ctx, Object message, ChannelPromise prom
 
 ## Troubleshooting buffer leaks
 
-The disadvantage of reference counting is that it is easy to leak the reference-counted objects.  Because JVM is not aware of the reference counting Netty implements, it will automatically GC them once they become unreachable even if their reference counts are not zero. An object once garbage collected cannot be resurrected, and thus cannot be returned to the pool it came from or will produce memory leak.
+The disadvantage of reference counting is that it is easy to leak the reference-counted objects.  Because JVM is not aware of the reference counting Netty implements, it will automatically GC them once they become unreachable even if their reference counts are not zero. An object once garbage collected cannot be resurrected, and thus cannot be returned to the pool it came from and thus will produce memory leak.
 
 
 Fortunately, despite its difficulty of finding leaks, Netty will by default sample about 1% of buffer allocations to check if there is a leak in your application.  In case of leak, you will find the following log message:
