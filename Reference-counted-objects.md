@@ -351,3 +351,13 @@ public void testSomething() throws Exception {
     ...
 }
 ```
+
+
+
+***
+External Links:
+Why do we need to manually handle reference counting for Netty ByteBuf if JVM GC is still in place?
+http://stackoverflow.com/questions/28647048/why-do-we-need-to-manually-handle-reference-counting-for-netty-bytebuf-if-jvm-gc
+
+Buffer ownership in Netty 4: How is buffer life-cycle managed?
+http://stackoverflow.com/questions/15781276/buffer-ownership-in-netty-4-how-is-buffer-life-cycle-managed
