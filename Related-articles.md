@@ -2,6 +2,9 @@ Please make sure the newer article appears first (i.e. descending sort by public
 
 TODO: Highlight recommended readings
 
+## 2015
+
+* [Netty: A Different Kind of Web(Socket) Server](https://keyholesoftware.com/2015/03/16/netty-a-different-kind-of-websocket-server/) by John Boardman
 ## 2014
 
 * [Real-time collaborative authoring in AEM with WebSockets and Netty](http://mszu.github.io/rtca-aem/) (slides) by Mark Szumowski
