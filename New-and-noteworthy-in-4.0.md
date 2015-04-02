@@ -159,7 +159,7 @@ Along with the new standalone buffer API, 4.0 provides various constructs which 
 
 They are used as the base of the channel API which will be explained later in this document.  For example, `ChannelFuture` extends `io.netty.util.concurrent.Future` and `EventLoopGroup` extends `EventExecutorGroup`.
 
-![Event loop type hierarchy diagram](http://uml.mvnsearch.org/gist/8a6c3c47800370ee898a "")
+![Event loop type hierarchy diagram](http://uml.mvnsearch.org/gist/d4ad91f17abd117e30f1 "")
 
 ## Channel API changes
 
