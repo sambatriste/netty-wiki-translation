@@ -7,11 +7,6 @@ Nowadays we use general purpose applications or libraries to communicate with ea
 However, a general purpose protocol or its implementation sometimes does not scale very well. It is like we don't use a general purpose HTTP server to exchange huge files, e-mail messages, and near-realtime messages such as financial information and multiplayer game data. What's required is a highly optimized protocol implementation which is dedicated to a special purpose. For example, you might want to implement an HTTP server which is optimized for AJAX-based chat application, media streaming, or large file transfer. You could even want to design and implement a whole new protocol which is precisely tailored to your need.
 Another inevitable case is when you have to deal with a legacy proprietary protocol to ensure the interoperability with an old system. What matters in this case is how quickly we can implement that protocol while not sacrificing the stability and performance of the resulting application.
 
-##背景
-### 问题
-如今我们使用通用的程序或者库来进行相互通讯。比如，我们经常使用HTTP 客户端库从一个WEB服务器获取信息或者使用web service进行远程方法调用。
-然而，通用的协议或它的实现有时规模不是非常好。这就像我们不使用一个通用的HTTP服务器来交换大文件，电子邮件，和近实时信息，如财务信息和多人游戏数据。我们需要的是一种专门为一个特殊目的高度优化的协议实现。例如，你可能想要实现基于AJAX的聊天应用程序，流媒体，或大文件传输优化的HTTP服务器。你甚至可以想设计和实施一个全新的协议，而这恰恰适合您的需要的。
-另一个不可避免的情况是，当你为确保与旧系统的互操作性而去处理遗留的专有协议。在这种情况下重要的是如何迅速扩展协议而不牺牲最终的应用程序的稳定性和性能。
 ## The Solution
 
 _[The Netty project](http://netty.io/)_ is an effort to provide an asynchronous event-driven network application framework and tooling for the rapid development of maintainable high-performance · high-scalability protocol servers and clients.
@@ -21,9 +16,6 @@ In other words, Netty is an NIO client server framework which enables quick and 
 'Quick and easy' does not mean that a resulting application will suffer from a maintainability or a performance issue. Netty has been designed carefully with the experiences earned from the implementation of a lot of protocols such as FTP, SMTP, HTTP, and various binary and text-based legacy protocols. As a result, Netty has succeeded to find a way to achieve ease of development, performance, stability, and flexibility without a compromise.
 
 Some users might already have found other network application framework that claims to have the same advantage, and you might want to ask what makes Netty so different from them. The answer is the philosophy it is built on. Netty is designed to give you the most comfortable experience both in terms of the API and the implementation from the day one. It is not something tangible but you will realize that this philosophy will make your life much easier as you read this guide and play with Netty.
-
-## 解决方案
-_[Netty 项目](http://netty.io/)_是一个为了提供异步事件驱动的网络应用框架和工具，它用于进行高性能和高扩展性协议服务器和客户端的快速开发。换句话说，Netty的是一个NIO客户端服务器框架，可以快速和容易的进行例如协议服务器和客户端网络应用的开发。它大大简化并优化网络编程，例如TCP和UDP套接字服务器开发。
 
 ## Getting Started
 
