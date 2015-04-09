@@ -77,6 +77,8 @@ Note that the shared library is dynamically linked against Apache Portable Runti
   * Install [OpenSSL for Windows](http://slproweb.com/products/Win32OpenSSL.html), and
   * Add the directories that contain the .DLL files to `%PATH%`.
 
+**Important:** If you use Linux and want to make use of ALPN (you will need this for http2) you need to ensure you have openssl >= 1.0.2 installed. If this is not provided by the package system of your distro you will need to compile it by your own and set the LD_LIBRARY_PATH as explained in [How to built](http://netty.io/wiki/forked-tomcat-native.html#wiki-h2-2).
+
 ## How to build
 
 You don't usually need to build `netty-tcnative` by yourself because we officially ship the JARs with the native libraries for Linux x86_64, Mac OS X x86_64, and Windows x86_64.  If you are looking for a SNAPSHOT build, browse [our CI server](http://clinker.netty.io/jenkins/view/TCNative/).
