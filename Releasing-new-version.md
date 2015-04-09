@@ -57,14 +57,16 @@ The release procedure must be performed from 64-bit [RHEL 6.6 or its derivatives
 
 Because we ship both Linux and Mac OS X artifacts, the release procedure is even more complicated.
 
-1. Perform a release from 64-bit [RHEL 6.6 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet.
+1. Perform a release from 64-bit [RHEL 6.6 or its derivatives] like you did for Netty 4.  However, do not close the staging repository just yet. Write down the repository name which was used for staging (like onetty-1102).
 1. On your Mac OS X and 64-bit Windows, whose build environment is set up as documented [[here|Forked-Tomcat-Native]], run the following commands to deploy the release artifacts to the staging repository:
 
     ```
     $ git checkout netty-tcnative-[version]
     ... You'll get a warning about detached HEAD ...
-    $ mvn -Psonatype-oss-release clean deploy
-    ... The artifact with OSX or Windows native library will be deployed ...
+    $ mvn -Psonatype-oss-release clean package gpg:sign org.sonatype.plugins:nexus-staging-maven-plugin:deploy \\ 
+    -DstagingRepositoryId=ionetty-1102 -DnexusUrl=https://oss.sonatype.org -DserverId=sonatype-nexus-staging
+    ... The artifact with OSX or Windows native library will be deployed. ...
+    ... Please replace ionetty-1102 with the correct id.  ...
     ```
 
 1. Make sure both the Linux, Mac OS X, and Windows artifacts have been deployed into the same staging repositories.  If they are deployed into two or three different staging repositories, drop them all and figure out what was the problem.
