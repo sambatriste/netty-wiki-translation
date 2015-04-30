@@ -177,7 +177,7 @@ xcode-select --install
 Use [Homebrew](http://brew.sh/) to install the required packages:
 
 ```bash
-brew install autoconf automake libtool openssl
+brew install autoconf automake libtool openssl apr
 ```
 
 Add the following exports to your `~/.bash_profile`, so that the compiler and linker finds OpenSSL built by Homebrew.
