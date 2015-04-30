@@ -73,7 +73,7 @@ Note that the shared library is dynamically linked against Apache Portable Runti
 * If you are on Linux, you probably don't need to do anything because you can install them using your system's package manager.
 * If you are on Mac, you have to install `openssl` package using [Homebrew](http://brew.sh/).
 * If you are on Windows, you have to:
-  * Build APR by yourself (or get it from [our CI server](http://clinker.netty.io/jenkins/view/TCNative/job/apr-1.5.1-windows-x86_64/lastSuccessfulBuild/artifact/dist/bin/)),
+  * Build APR by yourself (or get the 64-bit DLL from [our CI server](http://clinker.netty.io/jenkins/job/apr-windows/lastSuccessfulBuild/artifact/dist/bin/)),
   * Install [OpenSSL for Windows](http://slproweb.com/products/Win32OpenSSL.html), and
   * Add the directories that contain the .DLL files to `%PATH%`.
 
