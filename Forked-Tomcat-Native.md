@@ -217,8 +217,8 @@ Install the following packages:
     * [Win64 OpenSSL 1.0.2a](http://slproweb.com/download/Win64OpenSSL-1_0_2a.exe)
   * Set the installation directory to: `C:\Workspaces\openssl-1.0.2a-dist`
   * Choose 'Copy OpenSSL DLLs to: the OpenSSL binaries (/bin) directory'
-* [Apache Portable Runtime (APR) 1.5.1](http://www.us.apache.org/dist//apr/apr-1.5.1-win32-src.zip)
-  * Unzip into: `C:\Workspaces\apr-1.5.1`
+* [Apache Portable Runtime (APR) 1.5.2](http://www.us.apache.org/dist/apr/apr-1.5.2-win32-src.zip)
+  * Unzip into: `C:\Workspaces\apr-1.5.2`
 
 Now, start the command prompt (`cmd.exe`) and load the environment variables required for Visual C++:
 
@@ -232,18 +232,18 @@ CALL "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /Release /x64
 Build APR:
 
 ```bat
-cd "C:\Workspaces\apr-1.5.1"
+cd "C:\Workspaces\apr-1.5.2"
 REM 32-bit Windows
-nmake /f Makefile.win ARCH="Win32 Release" PREFIX=..\apr-1.5.1-dist buildall install
+nmake /f Makefile.win ARCH="Win32 Release" PREFIX=..\apr-1.5.2-dist buildall install
 REM 64-bit Windows
-nmake /f Makefile.win ARCH="x64 Release" PREFIX=..\apr-1.5.1-dist buildall install
+nmake /f Makefile.win ARCH="x64 Release" PREFIX=..\apr-1.5.2-dist buildall install
 ```
 
 Set the required environment variables for building `netty-tcnative` on Windows:
 
 ```bat
-set APR_INCLUDE_DIR=C:\Workspaces\apr-1.5.1\include
-set APR_LIB_DIR=C:\Workspaces\apr-1.5.1-dist\lib
+set APR_INCLUDE_DIR=C:\Workspaces\apr-1.5.2\include
+set APR_LIB_DIR=C:\Workspaces\apr-1.5.2-dist\lib
 set OPENSSL_INCLUDE_DIR=C:\Workspaces\openssl-1.0.2a-dist\include
 set OPENSSL_LIB_DIR=C:\Workspaces\openssl-1.0.2a-dist\lib\VC
 ```
