@@ -203,7 +203,7 @@ mvn clean install
 
 Install the following packages:
 
-* [Visual C++ 2010 Express](http://www.visualstudio.com/en-us/downloads#d-2010-express)
+* [Visual C++ 2010 Express](https://app.vssps.visualstudio.com/profile/review?download=true&family=VisualStudioCExpress&release=VisualStudio2010&type=web&slcid=0x409)
 * [Windows SDK for Windows 7](http://www.microsoft.com/en-us/download/details.aspx?id=8279)
   * Uninstall Visual C++ 2010 Redistributable Packages (both x86 and x64) and reboot if installation fails.
 * [Visual Studio 2010 Service Pack 1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
