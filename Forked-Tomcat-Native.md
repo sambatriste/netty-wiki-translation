@@ -211,10 +211,10 @@ Install the following packages:
 * OpenSSL for Windows
   * If you are on 32-bit Windows:
     * [Visual C++ 2008 Redistributable Package (x86)](http://www.microsoft.com/en-us/download/details.aspx?id=29)
-    * [Win32 OpenSSL 1.2.0a](http://slproweb.com/download/Win32OpenSSL-1_0_2a.exe)
+    * [Win32 OpenSSL 1.0.2a](http://slproweb.com/download/Win32OpenSSL-1_0_2a.exe)
   * If you are on 64-bit Windows:
     * [Visual C++ 2008 Redistributable Package (x64)](http://www.microsoft.com/en-us/download/details.aspx?id=15336)
-    * [Win64 OpenSSL 1.2.0a](http://slproweb.com/download/Win64OpenSSL-1_0_2a.exe)
+    * [Win64 OpenSSL 1.0.2a](http://slproweb.com/download/Win64OpenSSL-1_0_2a.exe)
   * Set the installation directory to: `C:\Workspaces\openssl-1.0.2a-dist`
   * Choose 'Copy OpenSSL DLLs to: the OpenSSL binaries (/bin) directory'
 * [Apache Portable Runtime (APR) 1.5.1](http://www.us.apache.org/dist//apr/apr-1.5.1-win32-src.zip)
