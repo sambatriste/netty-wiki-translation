@@ -49,6 +49,7 @@ Make sure the list contains only open source projects documented in English and 
 * [RHQ collectd decoder](https://github.com/rhq-project/netty-collectd) decodes collectd UDP datagrams.
 * [SocketIO4j](https://github.com/socketIo4Netty) is a Socket.IO server based on Netty.
 * [Spigot](http://www.spigotmc.org/) is a high performance Minecraft server based on CraftBukkit designed to provide the highest possible performance and reliability. It uses Netty for its custom network stack.
+* [Spinach](https://github.com/mp911de/spinach) is a scalable thread-safe [Disque](https://github.com/antirez/disque) client providing both synchronous and asynchronous connections.
 * [Teiid](http://www.jboss.org/teiid) is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
 * [Torrent4J](https://github.com/torrent4j/torrent4j) is a BitTorrent library implemented in pure Java.
 * [TomP2P](http://tomp2p.net) is an extended DHT (distributed hash table) which stores values for a location key in a sorted table.
