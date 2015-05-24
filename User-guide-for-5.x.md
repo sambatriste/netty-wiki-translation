@@ -363,15 +363,15 @@ It looks very simple and does not look any different from the server side exampl
 
 In a stream-based transport such as TCP/IP, received data is stored into a socket receive buffer. Unfortunately, the buffer of a stream-based transport is not a queue of packets but a queue of bytes. It means, even if you sent two messages as two independent packets, an operating system will not treat them as two messages but as just a bunch of bytes. Therefore, there is no guarantee that what you read is exactly what your remote peer wrote. For example, let us assume that the TCP/IP stack of an operating system has received three packets: 
 
-![Three packets received as they were sent](http://uml.mvnsearch.org/gist/82e3fbe0e2d4df28322b)
+![Three packets received as they were sent](http://99btgc01.info/uploads/2015/02/buf01.png)
 
 Because of this general property of a stream-based protocol, there's high chance of reading them in the following fragmented form in your application:
 
-![Three packets split and merged into four buffers](http://uml.mvnsearch.org/gist/b31c0bd7bbfc69fd82d6)
+![Three packets split and merged into four buffers](http://99btgc01.info/uploads/2015/02/buf02.png)
 
 Therefore, a receiving part, regardless it is server-side or client-side, should defrag the received data into one or more meaningful frames that could be easily understood by the application logic. In case of the example above, the received data should be framed like the following:
 
-![Four buffers defragged into three](http://uml.mvnsearch.org/gist/82e3fbe0e2d4df28322b)
+![Four buffers defragged into three](http://99btgc01.info/uploads/2015/02/buf01.png)
 
 #### The First Solution
 
