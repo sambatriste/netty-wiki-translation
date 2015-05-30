@@ -15,6 +15,10 @@ We use native line ending for all source code (i.e. '`\n`' for *nix and MacOS X,
 
 Netty project team uses [IntelliJ IDEA](http://www.jetbrains.com/idea/) as the primary IDE, although we are fine with using other development environments as long as you adhere to our coding style.
 
+### Use the same-bit version with your OS
+
+If you are on 64-bit operating system, use the 64-bit version of IntelliJ IDEA.  For an instance, the start menu shortcut points to the 32-bit binary even if you are using 64-bit Windows.  You'll have to find the `idea64.exe` in the installation directory and use it instead.  Otherwise, you'll see IntelliJ IDEA complains that it cannot find `io.netty:netty-tcnative:windows-x86_32`.
+
 ### Code style
 
 Download [this code style configuration](http://netty.io/files/IntelliJ%20IDEA%20Code%20Style.zip) and unzip `Netty project.xml` into `<IntelliJ config directory>/codestyles` directory.  Choose 'Netty project' as the default code style.
