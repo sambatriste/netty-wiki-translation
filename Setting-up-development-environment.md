@@ -65,9 +65,9 @@ The Netty project licenses
 
 1. Ensure to use the same-bit version with your OS. e.g. Use 64-bit Eclipse if you are on 64-bit OS.
 1. [Download os-maven-plugin](http://repo1.maven.org/maven2/kr/motd/maven/os-maven-plugin/1.2.0.Final/os-maven-plugin-1.2.0.Final.jar) and put it into `<ECLIPSE_HOME>/plugins` directory to work around the problem where m2e does not evaluate an extension specified in our `pom.xml`.  (Unlike its name, it's both a Maven plugin and an Eclipse plugin.)
-1. Import the project via the 'File -> Import... -> Existing Maven Projects' menu.
+1. Import the project via the 'File → Import... → Existing Maven Projects' menu.
 1. Netty project Maven `pom.xml` settings dictate use of Java SE 1.6, while implicitly using Java 7 (1.7) features if present.  This may result in compilation errors in Eclipse.  There are two ways to work around this problem:
-  1. Look in the 'Window -> Preferences -> Installed JRE' menu:
+  1. Look in the 'Window → Preferences → Installed JRE' menu:
     * Make sure you have Java 7 installation available under 'Installed JRE'
-    * Map this Java 7 installation onto Java 6: 'Installed JRE -> Execution Environments -> Java SE 1.6'
+    * Map this Java 7 installation onto Java 6: 'Installed JRE → Execution Environments → Java SE 1.6'
   1. Alternatively, Java 7 JRE can be selected on per-project basis for each Netty module.
